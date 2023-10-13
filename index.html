@@ -1,58 +1,118 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reset.min.css">
-		<!-- <link rel="stylesheet" href="dist/reset.css"> -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.min.css">
-		<!-- <link rel="stylesheet" href="dist/reveal.css"> -->
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/black.min.css"> -->
-		<link rel="stylesheet" href="/themes/nord.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/nord.min.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-                    This is the Title
-                </section>
-				<section>Slide 2</section>
-                <!-- Code -->
-                <section data-markdown>
-                    <script type="text/template">
-                        ```php [1|3-5]
-                        public function foo()
-                        {
-                            $foo = array(
-                                'bar' => 'bar'
-                            )
-                        }
-                        ```
-                    </script>
-                </section>
-			</div>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reset.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="/themes/nord.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/nord.min.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown>
+				# This is the Title
+				Presenter: Haifeng Jin
+			</section>
+			<section data-markdown>
+				## Bullet points
+				* aasdf asdf
+				* aasdf asdf
+				* aasdf asdf
+				* aasdf asdf
+			</section>
+			<!-- Code -->
+			<section data-markdown>
+				<script type="text/template">
+                ```php [1|3-5]
+                    public function foo()
+                    {
+                        $foo = array(
+                            'bar' => 'bar'
+                        )
+                    }
+                ```
+                </script>
+			</section>
+			<section>
+				<div style="display: flex; justify-content: center;">
+				<div style="width:300px">
+					<img src="/img/keras-unicorn.png" width="100%">
+					<div>asdf</div>
+				</div>
+				<div style="width:300px">
+					<img src="/img/keras-unicorn.png" width="100%">
+					<div>asdf</div>
+				</div>
+
+				</div>
+			</section>
+			<section>
+				<h1>Thank you!</h1>
+				<div style="align-items: center; display: flex; flex-direction: column; line-height: 2;">
+					<div style="text-align: left;">
+						<div>
+							<i class="bi-envelope-fill" style="margin-right:10px;"></i> <span>haifeng.jin@pm.me</span>
+						</div>
+						<div>
+							<i class="bi-medium" style="margin-right:10px;"></i> <span>Haifeng Jin</span>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="my-slide-number"> 1 </div>
 		</div>
+	</div>
 
-		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.min.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.min.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Set presentation resolution
+			width: 1920,
+			height: 1080,
+
+			// Display presentation control arrows
+			controls: false,
+
+			// Display slide number to false
+			// Add my own element under <slides>
+			slideNumber: false,
+
+			// Display a presentation progress bar
+			progress: false,
+
+			// Transition style
+			transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+			// Transition speed
+			transitionSpeed: 'fast', // default/fast/slow
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+		Reveal.on('slidechanged', event => {
+			var element = document.getElementsByClassName('my-slide-number')[0];
+			element.innerHTML = Reveal.getIndices(event.currentSlide).h + 1;
+			console.log(Reveal.getIndices(event.currentSlide).h);
+		});
+	</script>
+</body>
+
 </html>
