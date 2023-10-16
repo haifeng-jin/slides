@@ -107,7 +107,9 @@
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
+
 		Reveal.on('slidechanged', event => {
+			// Changing slide number.
 			var element = document.getElementsByClassName('my-slide-number')[0];
 			element.innerHTML = Reveal.getIndices(event.currentSlide).h + 1;
 			console.log(Reveal.getIndices(event.currentSlide).h);
