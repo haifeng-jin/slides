@@ -1,0 +1,113 @@
+@import url(/css/theme.css);
+
+:root {
+    /* For fragment animation */
+    --r-h-translate: 1920px;
+    --r-v-translate: 80px;
+}
+
+/* Layouts */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom fragment animations */
+.fragment.fade-in-up {
+    transform: translate(0, var(--r-v-translate));
+    visibility: hidden;
+    opacity: 0;
+}
+
+.fragment.fade-in-up.visible {
+    transform: translate(0, 0);
+    opacity: 1;
+    visibility: visible;
+    transition: var(--r-transition-time) ease-out;
+}
+
+.fragment.fade-in-left {
+    transform: translate(var(--r-h-translate), 0);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.fragment.fade-in-left.visible {
+    transform: translate(0, 0);
+    opacity: 1;
+    visibility: visible;
+    transition: var(--r-transition-time) ease-out;
+}
+
+.fragment.fade-in-right {
+    transform: translate(calc(var(--r-h-translate) * -1), 0);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.fragment.fade-in-right.visible {
+    transform: translate(0, 0);
+    opacity: 1;
+    visibility: visible;
+    transition: var(--r-transition-time) ease-out;
+}
+
+.fragment.fade-out-up.visible {
+    transform: translate(0, calc(var(--r-v-translate) * -1));
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--r-transition-time) ease-out;
+}
+
+.fragment.fade-out-left.visible {
+    transform: translate(calc(var(--r-h-translate) * -1), 0);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--r-transition-time) ease-out;
+}
+
+.fragment.fade-out-right.visible {
+    transform: translate(var(--r-h-translate), 0);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--r-transition-time) ease-out;
+}
+
+/* Components */
+.progress-container {
+    width: 50%;
+    background-color: #4C566A;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--r-main-color);
+    transition: var(--r-transition-time) ease-out;
+    border-radius: 15px 0 0 15px;
+    padding-right: 15px;
+}
+
+.my-slide-number {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    font-size: var(--r-slide-number-font-size);
+}
+
+@property --num {
+    syntax: '<integer>';
+    initial-value: 20;
+    inherits: false;
+}
+
+.counter {
+    transition: --num var(--r-transition-time) ease-out;
+    counter-reset: num var(--num);
+}
+
+.counter::after {
+    content: counter(num) "%";
+}
