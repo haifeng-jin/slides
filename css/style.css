@@ -72,6 +72,10 @@
     transition: var(--r-transition-time) var(--r-ease);
 }
 
+.fragment.blur-out.visible {
+    filter: blur(20px);
+}
+
 /* Components */
 .progress-container {
     width: 50%;
