@@ -29,26 +29,24 @@
     transition: var(--r-transition-time) var(--r-ease);
 }
 
-.fragment.fade-in-left {
+.fragment.move-in-from-right {
     transform: translate(var(--r-h-translate), 0);
     visibility: hidden;
-    opacity: 0;
 }
 
-.fragment.fade-in-left.visible {
+.fragment.move-in-from-right.visible {
     transform: translate(0, 0);
-    opacity: 1;
     visibility: visible;
     transition: var(--r-transition-time) var(--r-ease);
 }
 
-.fragment.fade-in-right {
+.fragment.move-in-from-left {
     transform: translate(calc(var(--r-h-translate) * -1), 0);
     visibility: hidden;
     opacity: 0;
 }
 
-.fragment.fade-in-right.visible {
+.fragment.move-in-from-left.visible {
     transform: translate(0, 0);
     opacity: 1;
     visibility: visible;
@@ -62,16 +60,14 @@
     transition: var(--r-transition-time) var(--r-ease);
 }
 
-.fragment.fade-out-left.visible {
+.fragment.move-out-to-left.visible {
     transform: translate(calc(var(--r-h-translate) * -1), 0);
-    opacity: 0;
     visibility: hidden;
     transition: var(--r-transition-time) var(--r-ease);
 }
 
-.fragment.fade-out-right.visible {
+.fragment.move-out-to-right.visible {
     transform: translate(var(--r-h-translate), 0);
-    opacity: 0;
     visibility: hidden;
     transition: var(--r-transition-time) var(--r-ease);
 }
@@ -90,6 +86,12 @@
     transition: var(--r-transition-time) ease-out;
     border-radius: 15px 0 0 15px;
     padding-right: 15px;
+
+    /* For the number counter inside */
+    color: var(--r-background-color);
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 .my-slide-number {
