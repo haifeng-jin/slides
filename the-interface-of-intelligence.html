@@ -181,15 +181,15 @@
 			</section>
 			<section data-auto-animate>
 				<div class="centered">
-					<div style="width:25%;" >
-						<img src="/img/android.svg">
+					<div style="width:25%;">
+						<img src="/img/android2.svg">
 					</div>
 				</div>
 			</section>
 			<section data-auto-animate>
 				<div class="centered">
 					<div style="width:25%;">
-						<img style="width:70%;" src="/img/android.svg">
+						<img style="width:70%;" src="/img/android2.svg">
 					</div>
 					<div style="width:25%;">
 						<img style="width:70%;" src="/img/pytorch.svg">
@@ -199,7 +199,7 @@
 			<section data-auto-animate>
 				<div class="centered">
 					<div style="width:25%;">
-						<img style="width:60%;" src="/img/android.svg">
+						<img style="width:60%;" src="/img/android2.svg">
 					</div>
 					<div style="width:25%;">
 						<img style="width:60%;" src="/img/pytorch.svg">
@@ -212,7 +212,7 @@
 			<section data-auto-animate>
 				<div class="centered">
 					<div style="width:25%;">
-						<img style="width:50%;" src="/img/android.svg">
+						<img style="width:50%;" src="/img/android2.svg">
 					</div>
 					<div style="width:25%;">
 						<img style="width:50%;" src="/img/pytorch.svg">
@@ -245,16 +245,68 @@
 					</div>
 				</div>
 			</section>
-			<section data-auto-animate>
+			<section data-auto-animate id="android">
 				<div class="centered">
 					<div style="width:40%">
-						<img width="50%" src="/img/android2.svg">
+						<div class="fragment custom move-out-to-left" data-fragment-index="1">
+							<img width="50%" src="/img/android2.svg">
+						</div>
 						<br>
 						<br>
 						<h2>Free code</h2>
 					</div>
 					<div style="width:40%">
-						<img width="50%" src="/img/google-play.svg">
+						<div class="fragment custom move-out-to-left" data-fragment-index="1">
+							<img width="50%" src="/img/google-play.svg">
+						</div>
+						<br>
+						<br>
+						<h2>Paid service</h2>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate id="chrome">
+				<div class="centered">
+					<div style="width:40%">
+						<div class="fragment custom move-in-from-right" data-fragment-index="1">
+							<div class="fragment custom move-out-to-left" data-fragment-index="2">
+								<img width="50%" src="/img/chrome.svg">
+							</div>
+						</div>
+						<br>
+						<br>
+						<h2>Free code</h2>
+					</div>
+					<div style="width:40%">
+						<div class="fragment custom move-in-from-right" data-fragment-index="1">
+							<div class="fragment custom move-out-to-left" data-fragment-index="2">
+								<img width="50%" src="/img/google.svg">
+							</div>
+						</div>
+						<br>
+						<br>
+						<h2>Paid service</h2>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate id="tensorflow">
+				<div class="centered">
+					<div style="width:40%">
+						<div class="fragment custom move-in-from-right" data-fragment-index="1">
+							<div class="fragment custom move-out-to-left" data-fragment-index="2">
+								<img width="50%" src="/img/tensorflow.svg">
+							</div>
+						</div>
+						<br>
+						<br>
+						<h2>Free code</h2>
+					</div>
+					<div style="width:40%">
+						<div class="fragment custom move-in-from-right" data-fragment-index="1">
+							<div class="fragment custom move-out-to-left" data-fragment-index="2">
+								<img width="50%" src="/img/google-cloud.svg">
+							</div>
+						</div>
 						<br>
 						<br>
 						<h2>Paid service</h2>
@@ -373,22 +425,38 @@
 			current_slide = event.currentSlide;
 			var element = document.getElementsByClassName('my-slide-number')[0];
 			element.innerHTML = Reveal.getIndices(event.currentSlide).h + 1;
+			if (["tensorflow", "chrome"].includes(current_slide.id)) {
+				Reveal.nextFragment();
+			};
 		});
 
-		var progress_index = 0;
+		var progress_indices = {
+			"tensorflow": 0,
+			"chrome": 0,
+			"android": 0,
+			"python-percentage": 0,
+		};
 		var progress_values = [20, 60, 80];
 
 		Reveal.on('fragmentshown', event => {
+			progress_index = ++progress_indices[current_slide.id];
+			if (["chrome", "tensorflow"].includes(current_slide.id) && progress_index == 2) {
+				setTimeout(Reveal.next, 300);
+			};
+			if (["android"].includes(current_slide.id) && progress_index == 1) {
+				setTimeout(Reveal.next, 300);
+			};
 			if (current_slide.id == "python-percentage") {
-				value = progress_values[++progress_index]
+				value = progress_values[progress_index]
 				document.getElementById("progress-bar").style.width = value + "%";
 				document.getElementById("counter").style.setProperty("--num", value);
 			};
 		});
 
 		Reveal.on('fragmenthidden', event => {
+			progress_index = --progress_indices[current_slide.id];
 			if (current_slide.id == "python-percentage") {
-				value = progress_values[--progress_index]
+				value = progress_values[progress_index]
 				document.getElementById("progress-bar").style.width = value + "%";
 				document.getElementById("counter").style.setProperty("--num", value);
 			};
