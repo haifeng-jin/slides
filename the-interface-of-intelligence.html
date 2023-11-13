@@ -293,9 +293,7 @@
 				<div class="centered">
 					<div style="width:40%">
 						<div class="fragment custom move-in-from-right" data-fragment-index="1">
-							<div class="fragment custom move-out-to-left" data-fragment-index="2">
-								<img width="50%" src="/img/tensorflow.svg">
-							</div>
+							<img width="50%" src="/img/tensorflow.svg">
 						</div>
 						<br>
 						<br>
@@ -303,9 +301,7 @@
 					</div>
 					<div style="width:40%">
 						<div class="fragment custom move-in-from-right" data-fragment-index="1">
-							<div class="fragment custom move-out-to-left" data-fragment-index="2">
 								<img width="50%" src="/img/google-cloud.svg">
-							</div>
 						</div>
 						<br>
 						<br>
@@ -440,10 +436,10 @@
 
 		Reveal.on('fragmentshown', event => {
 			progress_index = ++progress_indices[current_slide.id];
-			if (["chrome", "tensorflow"].includes(current_slide.id) && progress_index == 2) {
+			if (current_slide.id == "chrome" && progress_index == 2) {
 				setTimeout(Reveal.next, 300);
 			};
-			if (["android"].includes(current_slide.id) && progress_index == 1) {
+			if (current_slide.id == "android" && progress_index == 1) {
 				setTimeout(Reveal.next, 300);
 			};
 			if (current_slide.id == "python-percentage") {
