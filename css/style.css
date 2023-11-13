@@ -15,6 +15,11 @@
     align-items: center;
 }
 
+.filter {
+    /* For blur to work with safari */
+    will-change: transform;
+}
+
 /* Custom fragment animations */
 .fragment.fade-in-up {
     transform: translate(0, var(--r-v-translate));
