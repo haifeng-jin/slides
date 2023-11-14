@@ -226,7 +226,7 @@
 				</div>
 			</section>
 			<section>
-				<h1>Why do we do open source?</h1>
+				<h1>Why do we open source?</h1>
 			</section>
 			<section data-auto-animate>
 				<div class="centered">
@@ -252,14 +252,12 @@
 							<img width="50%" src="/img/android2.svg">
 						</div>
 						<br>
-						<br>
 						<h2>Free code</h2>
 					</div>
 					<div style="width:40%">
 						<div class="fragment custom move-out-to-left" data-fragment-index="1">
 							<img width="50%" src="/img/google-play.svg">
 						</div>
-						<br>
 						<br>
 						<h2>Paid service</h2>
 					</div>
@@ -274,7 +272,6 @@
 							</div>
 						</div>
 						<br>
-						<br>
 						<h2>Free code</h2>
 					</div>
 					<div style="width:40%">
@@ -283,7 +280,6 @@
 								<img width="50%" src="/img/google.svg">
 							</div>
 						</div>
-						<br>
 						<br>
 						<h2>Paid service</h2>
 					</div>
@@ -296,18 +292,80 @@
 							<img width="50%" src="/img/tensorflow.svg">
 						</div>
 						<br>
-						<br>
 						<h2>Free code</h2>
 					</div>
 					<div style="width:40%">
 						<div class="fragment custom move-in-from-right" data-fragment-index="1">
-								<img width="50%" src="/img/google-cloud.svg">
+							<img width="50%" src="/img/google-cloud.svg">
 						</div>
-						<br>
 						<br>
 						<h2>Paid service</h2>
 					</div>
 				</div>
+				<aside class="notes">
+					In my opinoin, Google did not have a clear business model when they first open source TensorFlow.
+					Otherwise, TensorFlow would be much more successful than it is today.
+				</aside>
+			</section>
+			<section>
+				<h1>Why open source TensorFlow?</h1>
+				<aside class="notes">
+					It is a mix of factors.
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<ul>
+						<li>Professional branding</li>
+					</ul>
+				</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<ul>
+						<li>Professional branding</li>
+						<li>Keep engineers happy</li>
+					</ul>
+				</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<ul>
+						<li>Professional branding</li>
+						<li>Keep engineers happy</li>
+						<li>Full control over its infra</li>
+					</ul>
+				</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<ul>
+						<li>Making money</li>
+						<li>Professional branding</li>
+						<li>Keep engineers happy</li>
+						<li>Full control over its infra</li>
+					</ul>
+				</h1>
+				<aside class="notes">
+					Four main reasons why a company do open source.
+					With all these goals in mind, how did Google do?
+				</aside>
+			</section>
+			<section>
+				<h1>TensorFlow dominated the market killed Theano, Caffe2, MXNet</h1>
+			</section>
+			<section>
+				<h1>PyTorch took half of the market away</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>Keras stays here all the time</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>Keras stays here all the time</h1>
+				<h1>Theano, TensorFlow, PyTorch, JAX</h1>
+			</section>
+			<section>
+				<h1>How do we excell in open source?</h1>
 			</section>
 			<section data-markdown>
 				<script type="text/template">
@@ -320,18 +378,6 @@
                     }
                 ```
                 </script>
-			</section>
-			<section>
-				<div class="centered">
-					<div style="width:20%">
-						<img src="/img/keras-unicorn.png" width="100%">
-						<div>Keras Unicorn</div>
-					</div>
-					<div style="width:20%">
-						<img src="/img/avatar.png" width="100%">
-						<div>Avatar</div>
-					</div>
-				</div>
 			</section>
 			<section id="python-percentage">
 				<div class="centered" style="height: 300px">
@@ -421,9 +467,6 @@
 			current_slide = event.currentSlide;
 			var element = document.getElementsByClassName('my-slide-number')[0];
 			element.innerHTML = Reveal.getIndices(event.currentSlide).h + 1;
-			if (["tensorflow", "chrome"].includes(current_slide.id)) {
-				Reveal.nextFragment();
-			};
 		});
 
 		var progress_indices = {
@@ -438,24 +481,38 @@
 			progress_index = ++progress_indices[current_slide.id];
 			if (current_slide.id == "chrome" && progress_index == 2) {
 				setTimeout(Reveal.next, 300);
-			};
+				setTimeout(Reveal.next, 300);
+			}
 			if (current_slide.id == "android" && progress_index == 1) {
 				setTimeout(Reveal.next, 300);
-			};
+				setTimeout(Reveal.next, 300);
+			}
 			if (current_slide.id == "python-percentage") {
 				value = progress_values[progress_index]
 				document.getElementById("progress-bar").style.width = value + "%";
 				document.getElementById("counter").style.setProperty("--num", value);
-			};
+			}
 		});
 
 		Reveal.on('fragmenthidden', event => {
 			progress_index = --progress_indices[current_slide.id];
+			if (progress_index < 0) {
+				progress_index = progress_indices[current_slide.id] = 0;
+			}
+
+			if (current_slide.id == "chrome" && progress_index == 0) {
+				setTimeout(Reveal.prev, 300);
+				setTimeout(Reveal.prev, 300);
+			}
+			if (current_slide.id == "tensorflow" && progress_index == 0) {
+				setTimeout(Reveal.prev, 300);
+				setTimeout(Reveal.prev, 300);
+			}
 			if (current_slide.id == "python-percentage") {
 				value = progress_values[progress_index]
 				document.getElementById("progress-bar").style.width = value + "%";
 				document.getElementById("counter").style.setProperty("--num", value);
-			};
+			}
 		});
 	</script>
 </body>
