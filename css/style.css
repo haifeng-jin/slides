@@ -111,7 +111,7 @@
 
 @property --num {
     syntax: '<integer>';
-    initial-value: 20;
+    initial-value: 0;
     inherits: false;
 }
 
