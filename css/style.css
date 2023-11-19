@@ -109,17 +109,34 @@
     bottom: 30px;
 }
 
-@property --num {
-    syntax: '<integer>';
-    initial-value: 0;
-    inherits: false;
+@property --percent {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --temp {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --v1 {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --v2 {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
 }
 
 .counter {
-    transition: --num var(--r-transition-time) ease-out;
-    counter-reset: num var(--num);
+    transition: --percent var(--r-transition-time) ease-out;
+    --v1: max(var(--percent) - 0.5, 0);
+    --v2: max((var(--percent) - var(--v1)) * 10 - 0.5, 0);
+    counter-reset: v1 var(--v1) v2 var(--v2);
 }
 
-.counter::after {
-    content: counter(num) "%";
+.counter::before {
+  content: counter(v1) "." counter(v2) "%";
 }
