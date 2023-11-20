@@ -16,7 +16,7 @@
 }
 
 .filter {
-    /* For blur to work with safari */
+    /* For blur to work with Safari */
     will-change: transform;
 }
 
@@ -78,6 +78,17 @@
 }
 
 .fragment.blur-out.visible {
+    /* For blur to work with Safari */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -ms-filter: blur(20px);
+
     filter: blur(20px);
 }
 
@@ -110,24 +121,27 @@
 }
 
 @property --percent {
-  syntax: "<number>";
-  initial-value: 0;
-  inherits: false;
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: false;
 }
+
 @property --temp {
-  syntax: "<number>";
-  initial-value: 0;
-  inherits: false;
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: false;
 }
+
 @property --v1 {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
 }
+
 @property --v2 {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
 }
 
 .counter {
@@ -138,5 +152,5 @@
 }
 
 .counter::before {
-  content: counter(v1) "." counter(v2) "%";
+    content: counter(v1) "." counter(v2) "%";
 }
