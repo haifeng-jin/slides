@@ -934,23 +934,12 @@
 		});
 
 		var progress_indices = {
-			"tensorflow": 0,
-			"chrome": 0,
-			"android": 0,
 			"python-percentage": 0,
 		};
 		var progress_values = [26.91, 48.41, 92.61];
 
 		Reveal.on('fragmentshown', event => {
 			progress_index = ++progress_indices[current_slide.id];
-			if (current_slide.id == "chrome" && progress_index == 2) {
-				setTimeout(Reveal.next, 300);
-				setTimeout(Reveal.next, 300);
-			}
-			if (current_slide.id == "android" && progress_index == 1) {
-				setTimeout(Reveal.next, 300);
-				setTimeout(Reveal.next, 300);
-			}
 			if (current_slide.id == "python-percentage") {
 				value = progress_values[progress_index]
 				document.getElementById("progress-bar").style.width = value + "%";
@@ -964,14 +953,6 @@
 				progress_index = progress_indices[current_slide.id] = 0;
 			}
 
-			if (current_slide.id == "chrome" && progress_index == 0) {
-				setTimeout(Reveal.prev, 300);
-				setTimeout(Reveal.prev, 300);
-			}
-			if (current_slide.id == "tensorflow" && progress_index == 0) {
-				setTimeout(Reveal.prev, 300);
-				setTimeout(Reveal.prev, 300);
-			}
 			if (current_slide.id == "python-percentage") {
 				value = progress_values[progress_index]
 				document.getElementById("progress-bar").style.width = value + "%";
