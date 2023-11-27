@@ -769,22 +769,20 @@
 					Now, I will present three simple yet powerful rules to make
 					UX better. These are the most valuable knowledge I learned
 					through the past few years working on Keras.
-
-					Keras has been around for a comparatively long time as it always
-					updates under the hood to adapt to the latest trends. The
-					backend shifted from Theano, MXNet, to TensorFlow, to
-					PyTorch and JAX.
-
-					It has an active community of users ranging from machine
-					learning veterans like Google to the latest and hottest
-					startups like Midjourney.
-
-					So let's get to it.
 				</aside>
 			</section>
 			<section data-auto-animate>
 				<h1>Keras 3</h1>
 				<aside class="notes">
+					Before we dive in a few quick updates from the Keras team.
+					Keras 3 has just been released with game-changing new features.
+
+					Keras has been around for a comparatively long time as a
+					developer interface sits on top of the deep learning
+					frameworks.
+					
+					It supported Theano, MXNet, and TensorFlow.
+
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -795,6 +793,17 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					Now, with Keras3, we officially support 3 backends:
+					TensorFlow, JAX and PyTorch.
+
+					Now, with one set of code, you get the benefits from all
+					frameworks. The eager developing and debugging experience of
+					PyTorch. Tap into the comprehensive tooling of the
+					TensorFlow ecosystem. Faster training with JAX on TPU.
+
+					Because of these benefits, it got adopted by MidJourney
+					right away. They want the deployment path with PyTorch and
+					want faster training with JAX.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -806,6 +815,14 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					It is backward-compatible and future-proof. The Keras API
+					has not been changed much ever since its very first release.
+					You can easily migrate your code to Keras 3 with no changes
+					unless you did something really special.
+					
+					Keras will continue to support any new backends in the
+					future. If one day PyTorch is gone, and a new framework
+					comes along, you still don't need to change your code.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -818,6 +835,11 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					NumPy API is the best API for tensor operations. You can
+					easily find documentation, stack overflow answers, or ask
+					ChatGPT to write the code. We implemented the NumPy API in
+					Keras for you to customize your model. It works on all
+					backends.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -831,6 +853,20 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					Finally, we have a set of backend-agnostic distributed APIs
+					for you to easily shard your models and data, which is
+					extremely useful for large models.
+				</aside>
+			</section>
+			<section>
+				<h1>The 3 simple rules</h1>
+				<h2>from Keras</h2>
+				<aside class="notes">
+					Keras is a high-level API, and it is the best of its kind if
+					considered independent of the underlying frameworks. And the
+					high-level API is just about user experience. Here are the 3
+					simple rules that we followed to ensure this user
+					experience.
 				</aside>
 			</section>
 			<section>
