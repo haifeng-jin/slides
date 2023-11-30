@@ -1072,6 +1072,7 @@
 				torch.relu(x, inplace=True)
 				x = torch._foreach_add(x, y)
 				torch._foreach_add_(x, y)
+				x.cuda()
 				</code></pre>
 				<aside class="notes">
 				</aside>
@@ -1182,6 +1183,76 @@
 			<section>
 				<h1>Principle 3:</h1>
 				<h1>Interaction over documentation</h1>
+				<aside class="notes">
+					Principle number 3, interaction over documentation.
+					No one likes to read long documentations if they can figure
+					it out just by trying out.
+				</aside>
+			</section>
+			<section>
+				<h2>Good example: PyTorch inplace ops</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					x = x.add(y)
+					x.add_(y)
+					x = x.mul(y)
+					x.mul_(y)
+				</code></pre>
+				<aside class="notes">
+					APIs should follow the same logic.
+					From a interactive perspective, these are good,
+					but, of course, they introduced cognitive load.
+				</aside>
+			</section>
+			<section>
+				<h2>Good example: Keras layers</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					from keras import layers
+
+					layers.MaxPooling2D()
+					layers.GlobalMaxPooling1D()
+					layers.GlobalAveragePooling3D()
+				</code></pre>
+				<aside class="notes">
+					With a clear naming convention, the users can easily
+					remember the layer names without checking documentation.
+				</aside>
+			</section>
+			<section>
+				<h2>Print helpful error messages</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					# Bad example:
+					raise ValueError("Tensor shape mismatch.")
+					# Good example:
+					raise ValueError(
+						"Tensor shape mismatch. "
+						"Expected: (batch, num_features). "
+						f"Received: {x.shape}"
+					)
+				</code></pre>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h2>Best example: give the instructions directly</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					import math
+
+					math.sqr(4)
+					"AttributeError: module 'math' has no attribute 'sqr'. Did you mean: 'sqrt'?"
+				</code></pre>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="text-align: left;">
+						<h2>Principle 1: Design end-to-end workflows</h2>
+						<h2>Principle 2: Minimize cognitive load</h2>
+						<h2>Principle 3: Interaction over documentation</h2>
+					</div>
+				</div>
+				<aside class="notes">
+				</aside>
 			</section>
 			<section>
 				<h1>Thank you!</h1>
