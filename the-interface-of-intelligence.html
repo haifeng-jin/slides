@@ -1006,7 +1006,177 @@
 				<h1>Principle 2:</h1>
 				<h1>Minimize cognitive load</h1>
 				<aside class="notes">
-					Principle number two, minimize the cognitive load for the user when learning to use your software.
+					Principle number two, minimize the cognitive load for the
+					user when learning to use your software. Do not force the
+					user to learn anything unless it is really necessary.  Let's
+					see some good examples.
+				</aside>
+			</section>
+			<section>
+				<h2>Good example: Keras modeling</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				model = keras.Sequential([
+					layers.Dense(10, activation="relu"),
+					layers.Dense(num_classes, activation="softmax"),
+				])
+				model.compile(loss='categorical_crossentropy')
+				model.fit(...)
+				model.predict(...)
+				</code></pre>
+				<aside class="notes">
+					One good example is the Keras modeling API, which is pretty intuitive.
+					The model builders already have these concepts in mind, like a model is a stack of layers.
+					It needs a loss function. We can fit it with data or make it predict on data.
+					So basically, no new concepts learned in order to use Keras.
+				</aside>
+			</section>
+			<section>
+				<h2>Good example: PyTorch modeling</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					class MyModel(nn.Module):
+						def forward(self, x):
+							if x.sum() > 0:
+								return self.path_a(x)
+							return self.path_b(x)
+				</code></pre>
+				<aside class="notes">
+					Another good example is the PyTorch modeling.
+					The code is executed just like Python code.
+					All tensors are just real tensors with real values.
+					You can depend on the value of a tensor to decide your path
+					with plain Python code.
+				</aside>
+			</section>
+			<section>
+				<h2>Bad example: Keras with JAX or TensorFlow</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					class MyModel(keras.Model):
+						def call(self, x):
+							return ops.cond(
+								ops.sum(inputs) > 0,
+								lambda : self.path_a(inputs),
+								lambda : self.path_b(inputs),
+							)
+				</code></pre>
+				<aside class="notes">
+					You can also do this with Keras with TensorFlow or JAX
+					backend, but needs to be written in a different way.
+					All the if conditions need to be written with this ops.cond function.
+					This is less intuitive which is bad. In compensation, it brings
+					significant improvement in training speed.
+				</aside>
+			</section>
+			<section>
+				<h2>Bad example: PyTorch memory and speed optimization</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				torch.relu(x, inplace=True)
+				x = torch._foreach_add(x, y)
+				torch._foreach_add_(x, y)
+				</code></pre>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<h2>Bad example: PyTorch compute gradients</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers="1-6|5" class="language-python">
+				inputs, labels = batch
+				outputs = model(inputs)
+				loss = torch.nn.functional.cross_entropy(outputs, labels)
+				optimizer.zero_grad()
+				loss.backward()
+				optimizer.step()
+				</code></pre>
+				<aside class="notes">
+					loss.backward computes the gradients.
+					This is introducing a new concept of actually computing the gradients. 
+					I don't think the user has to know about it.
+				</aside>
+			</section>
+			<section>
+				<h2>Good example: keras.ops, tensorflow.numpy, jax.numpy</h2>
+				<aside class="notes">
+					When you have to introduce some cognitive load,
+					just reuse what people already familiar with.
+				</aside>
+			</section>
+			<section>
+				<h1>Worst case: trick the users</h1>
+				<aside class="notes">
+					The worst thing you can do with user experience is to trick the users.
+					Trick the user to believe your API is something else than what it really is.
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h2>Really bad example: How to pad the images?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				import torch.nn.functional as F
+				# pad the 32x32 images to (1+32+1)x(2+32+2)
+				# (100, 3, 32, 32) to (100, 3, 34, 36)
+				</code></pre>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h2>Really bad example: How to pad the images?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				import torch.nn.functional as F
+				# pad the 32x32 images to (1+32+1)x(2+32+2)
+				# (100, 3, 32, 32) to (100, 3, 34, 36)
+				out = F.pad(
+					torch.empty(100, 3, 32, 32),
+					pad=((0, 0), (0, 0), (1, 1), (2, 2)),
+				)
+				</code></pre>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h2>Really bad example: How to pad the images?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				import torch.nn.functional as F
+				# pad the 32x32 images to (1+32+1)x(2+32+2)
+				# (100, 3, 32, 32) to (100, 3, 34, 36)
+				out = F.pad(
+					torch.empty(100, 3, 32, 32),
+					pad=(2, 2, 1, 1),
+				)
+				</code></pre>
+				<aside class="notes">
+					The correct answer is this. You need to reverse the order of the sequence.
+				</aside>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h2>Really bad example: What is the output?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				value = True
+
+				@tf.function
+				def get_value():
+					return value
+
+				value = False
+				print(get_value())
+				# False?
+				</code></pre>
+				<aside class="notes">
+					Will it print True or False?
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h2>Really bad example: What is the output?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				value = True
+
+				@tf.function
+				def get_value():
+					return value
+
+				value = False
+				print(get_value())
+				# True!
+				</code></pre>
+				<aside class="notes">
+					It prints False.
 				</aside>
 			</section>
 			<section>
