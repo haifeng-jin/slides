@@ -1075,6 +1075,10 @@
 				x.cuda()
 				</code></pre>
 				<aside class="notes">
+					Here is the catch of the flexibiliy of PyTorch. You would have to optimize the memory and speed by
+					yourself.
+					It introduced these APIs and new concepts to do so, like the inplace arguments for the ops,
+					The parallel ops API and explicit device placement.
 				</aside>
 			</section>
 			<section>
@@ -1115,6 +1119,7 @@
 				# (100, 3, 32, 32) to (100, 3, 34, 36)
 				</code></pre>
 				<aside class="notes">
+					How to pad image tensors in PyTorch?
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1129,6 +1134,7 @@
 				)
 				</code></pre>
 				<aside class="notes">
+					The intuitive way would be like this.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1143,7 +1149,7 @@
 				)
 				</code></pre>
 				<aside class="notes">
-					The correct answer is this. You need to reverse the order of the sequence.
+					However, the correct answer is this. You need to reverse the order of the sequence.
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
@@ -1230,6 +1236,13 @@
 					)
 				</code></pre>
 				<aside class="notes">
+					Another important part of interaction between the developer and the software is the error message.
+					We should always try to print helpful error messages.
+
+					Let's see these examples.
+					The first one has not much information. Just says tensor shape mismatch.
+					While the second one contains much more useful information for the user to find the bug.
+					It shows what is the expected shape and what is the wrong shape passed to it.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1241,6 +1254,9 @@
 					"AttributeError: module 'math' has no attribute 'sqr'. Did you mean: 'sqrt'?"
 				</code></pre>
 				<aside class="notes">
+					The best error message would be directly point the user to the fix.
+					This is a general Python error message.
+					It guessed what is wrong with the code and directly pointed the user to the fix.
 				</aside>
 			</section>
 			<section>
@@ -1278,33 +1294,50 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					It is because the devil is in the details.
 					There are just too many details to figure out.
 					You need to resources to do these.
 					So you need to ...
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
-				<h1>Leverage community contribution</h1>
+				<h1>Leverage community contributions</h1>
+				<aside class="notes">
+					Leverage community contributions
+				</aside>
 			</section>
 			<section data-auto-animate>
-				<h1>Leverage community contribution</h1>
+				<h1>Leverage community contributions</h1>
 				<h2>
 					<ul>
 						<li>Product perfection</li>
 					</ul>
 				</h2>
+				<aside class="notes">
+					Here are some reasons why you should leverage community contributions.
+					You will have a lot of contributors to help you polish your software,
+					removing the pain points they saw during their usages.
+				</aside>
 			</section>
 			<section data-auto-animate>
-				<h1>Leverage community contribution</h1>
+				<h1>Leverage community contributions</h1>
 				<h2>
 					<ul>
 						<li>Product perfection</li>
 						<li>Gain user trust</li>
 					</ul>
 				</h2>
+				<aside class="notes">
+					Another more important reason is that it helps you gain user trust.
+					The users can reach into your codebase to fix bugs, add documentation, or implement new features.
+					In this way, they feel more confident in using your
+					software, because they do not need to worry about they
+					encounter a serious bug in the future that they can never
+					fix.
+				</aside>
 			</section>
 			<section data-auto-animate>
-				<h1>Leverage community contribution</h1>
+				<h1>Leverage community contributions</h1>
 				<h2>
 					<ul>
 						<li>Product perfection</li>
@@ -1312,9 +1345,17 @@
 						<li>Key to establish an ecosystem</li>
 					</ul>
 				</h2>
+				<aside class="notes">
+					And user trust is the key to establish an ecosystem based on your software.
+					They will not base their code on your software unless they have enough trust in it.
+				</aside>
 			</section>
-			<section data-auto-animate data-auto-animate-restart="">
+			<section data-auto-animate data-auto-animate-restart>
 				<h1>How to gain community contributors?</h1>
+				<aside class="notes">
+					If it is so important to leverage community contributions,
+					the question now is how to gain community contributors for your software.
+				</aside>
 			</section>
 			<section data-auto-animate>
 				<h1>How to gain community contributors?</h1>
@@ -1329,6 +1370,11 @@
 						</li>
 					</ul>
 				</h2>
+				<aside class="notes">
+					The first step is to gain more users with all the techniques we introduced just now.
+					Because the contributors all came from the users.
+					The larger the user base is, the more contributors you have.
+				</aside>
 			</section>
 			<section data-auto-animate>
 				<h1>How to gain community contributors?</h1>
@@ -1344,16 +1390,143 @@
 						</li>
 					</ul>
 				</h2>
+				<aside class="notes">
+					The second important thing is to make your project contributor-friendly.
+					Otherwise, you will drive the attracted contributors away when they find it hard to contribute to your project.
+				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
 				<h1>The million-dollar metric</h1>
 				<aside class="notes">
+					Here I would like to introduce our million-dollar metric in optimizing contributor experience to Keras.
 					We have spend at least 1 million dollar of engineering resource on it.
 				</aside>
 			</section>
 			<section data-auto-animate>
 				<h1>The million-dollar metric</h1>
 				<h2>Average life span of pull requests</h2>
+				<aside class="notes">
+					It is the average life span of pull requests.
+					How long does it take for a pull request to get merged in your project?
+					Two years ago, we separated Keras codebase from tensorflow and put it into its own GitHub repo just to optimize this metric.
+					Because running the tests for a pull request for TensorFlow takes too long, but it is much shorter for Keras.
+					To avoid running the tests, we moved to a separate repo.
+				</aside>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1>A bad contributing experience</h1>
+				<aside class="notes">
+					Let's see what a bad contributing experience looks like.
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+						<li>Breaks the unit tests</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+						<li>Breaks the unit tests</li>
+						<li>Cannot run these locally</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+						<li>Breaks the unit tests</li>
+						<li>Cannot run these locally</li>
+						<li>Relies on CI to debug</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+						<li>Breaks the unit tests</li>
+						<li>Cannot run these locally</li>
+						<li>Relies on CI to debug</li>
+						<li>Multiple rounds of review to fix</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1>A good contributing experience</h1>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>A good contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Easy to setup the dev env</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>A good contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Easy to setup the dev env</li>
+						<li>Run all the checks locally</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>A good contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Easy to setup the dev env</li>
+						<li>Run all the checks locally</li>
+						<li>Code review focus on important things</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+						<li>Instructions for running tests (single & all)</li>
+						<li>Short CI time</li>
+						<li>Auto-format the code</li>
+					</ul>
+				</h2>
 				<aside class="notes">
 				</aside>
 			</section>
