@@ -22,11 +22,13 @@
 		<div class="slides">
 			<section>
 				<br>
-				<h1>The Interface of Intelligence</h1>
-				<h3>User-first approaches in open-source AI software design</h3>
+				<h1 class="r-fit-text">The Interface of Intelligence</h1>
+				<h3 class="r-fit-text">User-first approaches in open-source AI software design</h3>
 				<br>
 				<br>
-				<h1>Haifeng Jin</h1>
+				<br>
+				<br>
+				<h3>Haifeng Jin</h3>
 				<aside class="notes">
 					The title of this presentation is "The Interface of
 					Intelligence: User-first approaches in open-source AI
@@ -504,7 +506,7 @@
 				</aside>
 			</section>
 			<section>
-				<h1>UX is the key</h1>
+				<h1 class="r-fit-text">UX</h1>
 				<aside class="notes">
 					The short answer is "user experience is the key".
 				</aside>
@@ -772,7 +774,7 @@
 				</aside>
 			</section>
 			<section data-auto-animate>
-				<h1>Keras 3</h1>
+				<h1 class="r-fit-text">Keras 3</h1>
 				<aside class="notes">
 					Before we dive in a few quick updates from the Keras team.
 					Keras 3 has just been released with game-changing new features.
@@ -1392,13 +1394,15 @@
 				</h2>
 				<aside class="notes">
 					The second important thing is to make your project contributor-friendly.
-					Otherwise, you will drive the attracted contributors away when they find it hard to contribute to your project.
+					Otherwise, you will drive the attracted contributors away when they find it hard to contribute to
+					your project.
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
 				<h1>The million-dollar metric</h1>
 				<aside class="notes">
-					Here I would like to introduce our million-dollar metric in optimizing contributor experience to Keras.
+					Here I would like to introduce our million-dollar metric in optimizing contributor experience to
+					Keras.
 					We have spend at least 1 million dollar of engineering resource on it.
 				</aside>
 			</section>
@@ -1408,8 +1412,10 @@
 				<aside class="notes">
 					It is the average life span of pull requests.
 					How long does it take for a pull request to get merged in your project?
-					Two years ago, we separated Keras codebase from tensorflow and put it into its own GitHub repo just to optimize this metric.
-					Because running the tests for a pull request for TensorFlow takes too long, but it is much shorter for Keras.
+					Two years ago, we separated Keras codebase from tensorflow and put it into its own GitHub repo just
+					to optimize this metric.
+					Because running the tests for a pull request for TensorFlow takes too long, but it is much shorter
+					for Keras.
 					To avoid running the tests, we moved to a separate repo.
 				</aside>
 			</section>
@@ -1517,6 +1523,44 @@
 				<aside class="notes">
 				</aside>
 			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1>Contributor-friendly project setup</h1>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+						<li>Instructions for running tests (single & all)</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+						<li>Instructions for running tests (single & all)</li>
+						<li>Short CI time</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
 			<section data-auto-animate>
 				<h1>Contributor-friendly project setup</h1>
 				<h2>
@@ -1529,6 +1573,89 @@
 				</h2>
 				<aside class="notes">
 				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+						<li>Instructions for running tests (single & all)</li>
+						<li>Short CI time</li>
+						<li>Auto-format the code</li>
+						<li>Contributing guide</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<h1>What are the new opportunities</h1>
+				<h1>in open-source AI?</h1>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1 class="r-fit-text">Models</h1>
+				<aside class="notes">
+					Users need models. This is also what strengthens the PyTorch ecosystem.
+					lower skill requirements.
+					wide audience.
+				</aside>
+			</section>
+			<section data-auto-animate>
+				<h1>Models</h1>
+				<h2>
+					<ul>
+						<li>High-quality code</li>
+						<li>Well-aligned APIs</li>
+						<li>Modularized components</li>
+						<li>Minimal dependencies</li>
+					</ul>
+				</h2>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<h1>KerasCV & KerasNLP</h1>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<h1>New concerns on open-source models</h1>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="width: 500px;">
+						<img style="border-radius: 10%;" src="/img/yann-lecun.jpg">
+					</div>
+					<div style="width: 200px;">
+					</div>
+					<div style="width: 800px;">
+						<h2>"Could the SkyNet take-over in Terminator have happened if SkyNet had been open source?"</h2>
+						<br>
+						<h3>--Yann LeCun</h3>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="width: 500px;">
+						<img style="border-radius: 10%;" src="/img/eric-schmidt.jpg">
+					</div>
+					<div style="width: 200px;">
+					</div>
+					<div style="width: 800px;">
+						<h2>"Make sure these things are not misused by evil people."</h2>
+						<br>
+						<h3>--Eric Schmidt</h3>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>"U.S. Treasury Sanctions Notorious Virtual Currency Mixer Tornado Cash"</h1>
+				<h3>--August 8th, 2022, U.S. DEPARTMENT OF THE TREASURY</h3>
 			</section>
 			<section>
 				<h1>Thank you!</h1>
