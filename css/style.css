@@ -9,6 +9,10 @@
 }
 
 /* Layouts */
+.nowrap {
+    white-space: nowrap;
+}
+
 .centered {
     display: flex;
     justify-content: center;
