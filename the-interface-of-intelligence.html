@@ -1348,16 +1348,17 @@
 					</ul>
 				</h2>
 				<aside class="notes">
-					It is because the devil is in the details.
-					There are just too many details to figure out.
-					You need to resources to do these.
-					So you need to ...
+					It is because the devil is in the details. The bug fixes,
+					developing new features and polish documentation There are
+					just too many details to figure out. You need the resources
+					to do these. So you need to ...
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
 				<h1 class="r-fit-text">Community contributions</h1>
 				<aside class="notes">
-					Leverage community contributions
+					Leverage community contributions. We cannot talk about open
+					source without mentioning the community.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1368,9 +1369,10 @@
 					</ul>
 				</h2>
 				<aside class="notes">
-					Here are some reasons why you should leverage community contributions.
-					You will have a lot of contributors to help you polish your software,
-					removing the pain points they saw during their usages.
+					Here are some reasons why you should leverage community
+					contributions. You will have a lot of contributors to help
+					you polish your software, removing the pain points they saw
+					during their usages.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1382,12 +1384,12 @@
 					</ul>
 				</h2>
 				<aside class="notes">
-					Another more important reason is that it helps you gain user trust.
-					The users can reach into your codebase to fix bugs, add documentation, or implement new features.
-					In this way, they feel more confident in using your
-					software, because they do not need to worry about they
-					encounter a serious bug in the future that they can never
-					fix.
+					Another more important reason is that it helps you gain user
+					trust. The users can reach into your codebase to fix bugs,
+					add documentation, or implement new features. In this way,
+					they feel more confident in using your software, because
+					they do not need to worry about they encounter a serious bug
+					in the future that they can never fix.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1400,15 +1402,17 @@
 					</ul>
 				</h2>
 				<aside class="notes">
-					And user trust is the key to establish an ecosystem based on your software.
-					They will not base their code on your software unless they have enough trust in it.
+					And user trust is the key to establish an ecosystem based on
+					your software. They will not base their code on your
+					software unless they have enough trust in it.
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
 				<h1>How to gain community contributors?</h1>
 				<aside class="notes">
 					If it is so important to leverage community contributions,
-					the question now is how to gain community contributors for your software.
+					the question now is how to gain community contributors for
+					your software.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1425,9 +1429,10 @@
 					</ul>
 				</h2>
 				<aside class="notes">
-					The first step is to gain more users with all the techniques we introduced just now.
-					Because the contributors all came from the users.
-					The larger the user base is, the more contributors you have.
+					The first step is to gain more users with all the techniques
+					we introduced just now. Because the contributors all came
+					from the users. The larger the user base is, the more
+					contributors you have.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1445,29 +1450,30 @@
 					</ul>
 				</h2>
 				<aside class="notes">
-					The second important thing is to make your project contributor-friendly.
-					Otherwise, you will drive the attracted contributors away when they find it hard to contribute to
-					your project.
+					The second important thing is to make your project
+					contributor-friendly. Otherwise, you will drive the
+					attracted contributors away when they find it hard to
+					contribute to your project.
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
 				<h2 class="r-fit-text">The $1M metric</h2>
 				<aside class="notes">
-					Here I would like to introduce our million-dollar metric in optimizing contributor experience to
-					Keras.
-					We have spend at least 1 million dollar of engineering resource on it.
+					Here I would like to introduce our million-dollar metric in
+					optimizing contributor experience to Keras. We have spend
+					at least 1 million dollar of engineering resource on it.
 				</aside>
 			</section>
 			<section data-auto-animate>
 				<h2 class="nowrap">The $1M metric</h2>
 				<h1>Average life span of pull requests</h1>
 				<aside class="notes">
-					It is the average life span of pull requests.
-					How long does it take for a pull request to get merged in your project?
-					Two years ago, we separated Keras codebase from tensorflow and put it into its own GitHub repo just
-					to optimize this metric.
-					Because running the tests for a pull request for TensorFlow takes too long, but it is much shorter
-					for Keras.
+					It is the average life span of pull requests. How long does
+					it take for a pull request to get merged in your project?
+					Two years ago, we separated Keras codebase from tensorflow
+					and put it into its own GitHub repo just to optimize this
+					metric. Because running the tests for a pull request for
+					TensorFlow takes too long, but it is much shorter for Keras.
 					To avoid running the tests, we moved to a separate repo.
 				</aside>
 			</section>
@@ -1485,6 +1491,8 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					You may accidentally break the code styles. You did not even
+					notice before the first reviewer pointed it out.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1496,6 +1504,9 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					You may also break some unit tests. No one knew it until all
+					the reviews and code revisions finished. The PR is about to
+					merge and failed an internal CI test.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1508,6 +1519,7 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					What made it worse is that the test cannot run locally.	
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1521,6 +1533,8 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					You can only rely on the CI to run the tests. It means you
+					change your code and ask the reviewer to run it for you.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1535,11 +1549,14 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					This may take multiple rounds to get it fixed.
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
 				<h1>A good contributing experience</h1>
 				<aside class="notes">
+					Let's take a look at what a good contributing experience
+					looks like.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1550,6 +1567,8 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					First, it is easy to setup the development environment.
+					There should be a list of simple steps to follow.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1561,6 +1580,11 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					All the checks should be runnable locally by the
+					contributor. This might be hard if the test is running on a
+					GPU or TPU, but we at least should make sure the code style
+					checks and unit tests can all run locally instead of leaving
+					them to the code reviewers.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1573,11 +1597,16 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					We got all these things checked by the contributor locally.
+					So that the code review only focus on the important things.
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
 				<h1>Contributor-friendly project setup</h1>
 				<aside class="notes">
+					To achieve this good contributing experience, we did the
+					following things to setup our repo to make it friendly to
+					the contributors.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1588,6 +1617,9 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					We support devcontainers. It means you can start
+					contributing with one-click on the GitHub webpage. All the
+					dependencies are installed there for you already.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1599,6 +1631,9 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					We have clear instructions on how to run the unit tests
+					locally for both run a specific single test or the entire
+					test suite.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1611,6 +1646,8 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					We have a rather short CI time by parallelizing the
+					different testing environments.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1624,6 +1661,8 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					The code are mostly auto formatted to avoid 90% of the code
+					style issues before they are committed.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1638,43 +1677,65 @@
 					</ul>
 				</h2>
 				<aside class="notes">
+					A clear contributing guide to walk through the contributing
+					process step by step.
 				</aside>
 			</section>
 			<section>
 				<h1>What are the new opportunities</h1>
 				<h1>in open-source AI?</h1>
 				<aside class="notes">
+					So far I have shared everything about developing an awesome
+					open-source software in AI. Now, the question is what
+					project exactly should you work on?
 				</aside>
 			</section>
 			<section data-auto-animate>
 				<h1 class="r-fit-text">Models</h1>
 				<aside class="notes">
-					Users need models. This is also what strengthens the PyTorch ecosystem.
-					lower skill requirements.
-					wide audience.
+					The short answer is models. Users need models. In the past
+					couple of years, we saw this shift from building your own
+					model to fine-tuning foundational models. It will become
+					even more true in the next few years.
+
+					In an extreme case, you may just publish one fundational
+					model as a stand-alone project by wrapping an open-source
+					model.
+
+					It has a lower requirements for software engineering skills
+					comparing the developing new deep learning frameworks.  You
+					may have wider audience as more and more people are using
+					AI.
 				</aside>
 			</section>
 			<section data-auto-animate>
 				<h1>Models</h1>
 				<h2>
 					<ul>
-						<li>High-quality code</li>
-						<li>Well-aligned APIs</li>
-						<li>Modularized components</li>
-						<li>Minimal dependencies</li>
+						<li class="fragment fade-in">High-quality code</li>
+						<li class="fragment fade-in">Well-aligned APIs</li>
+						<li class="fragment fade-in">Modularized components</li>
+						<li class="fragment fade-in">Minimal dependencies</li>
 					</ul>
 				</h2>
 				<aside class="notes">
+					I believe a good model library should have the following
+					characteristics.
 				</aside>
 			</section>
 			<section>
 				<h1>KerasCV & KerasNLP</h1>
 				<aside class="notes">
+					With these in mind, we developed KerasCV and KerasNLP. You
+					are welcome to check them out. but there are definitely more
+					opportunity out there for you to develop your own library.
 				</aside>
 			</section>
 			<section>
 				<h1>New concerns on open-source models</h1>
 				<aside class="notes">
+					Finally, this trend of open source models also raised some
+					new concerns.
 				</aside>
 			</section>
 			<section>
@@ -1684,7 +1745,7 @@
 					</div>
 					<div style="width: 200px;">
 					</div>
-					<div style="width: 800px;">
+					<div class="fragment fade-in" style="width: 800px;">
 						<h2>"Could the SkyNet take-over in Terminator have happened if SkyNet had been open source?"
 						</h2>
 						<br>
@@ -1692,6 +1753,21 @@
 					</div>
 				</div>
 				<aside class="notes">
+					First, let's see what the open source advocates say. The
+					most famous one is Yann LeCun. This is what he posted on
+					Twitter. "Could the SkyNet take-over in Terminator have
+					happend if SkyNet had been open source?" His point is with
+					open source, we can spot the problems in the models and fix
+					them early before the cause any serious harm.
+
+					To add to that point, this LLM trend is inevitable. Its
+					impact on the society is unpredictable. We are still in an
+					early stage. If we just throw out these models to the open
+					public, and see what problem it is causing, for example, see
+					how people are abusing it and think about how we can reduce
+					the harm, it is at least better than the models got
+					accidentally leaked some how when they got really dangerous,
+					and we are not prepared for it.
 				</aside>
 			</section>
 			<section>
@@ -1701,7 +1777,7 @@
 					</div>
 					<div style="width: 200px;">
 					</div>
-					<div style="width: 800px;">
+					<div class="fragment fade-in" style="width: 800px;">
 						<h2>"Make sure these things are not misused by evil people."</h2>
 						<br>
 						<h3>--Eric Schmidt</h3>
