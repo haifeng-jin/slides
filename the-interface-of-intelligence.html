@@ -881,7 +881,8 @@
 				<h2 class="nowrap">Principle 1</h2>
 				<h1>Design end-to-end workflows</h1>
 				<aside class="notes">
-					Principle number one, design end-to-end workflows. So what does it mean?
+					Principle number one, design end-to-end workflows. So what
+					does it mean?
 				</aside>
 			</section>
 			<section>
@@ -896,9 +897,11 @@
 						pass
 				</code></pre>
 				<aside class="notes">
-					When we think of designing the APIs of a piece of software, you may look like this.
-					Define the class and add the documentations.
-					However, this would not help us understand much about the user experience.
+					When we think of designing the APIs of a piece of software,
+					you may look like this. Define the class and add the
+					documentations. Now, we know all the class names, method
+					names, and the arguments. However, this would not help us
+					understand much about the user experience.
 				</aside>
 			</section>
 			<section>
@@ -916,6 +919,8 @@
 					out the entire user workflow of using the software. Idealy,
 					it should be a tutorial of how to use the software. It
 					provides much more information about the user experience.
+					It may help us spot much more UX problems during the design
+					phase comparing with just write out the class and methdos.
 				</aside>
 			</section>
 			<section>
@@ -933,9 +938,12 @@
 				</code></pre>
 				<aside class="notes">
 					Let's look at another example. This is from KerasTuner.
-					We use this RandomSearch class to select the best model,
-					which is the one with the smallest validation loss.
-					Again, it doesn't provide much info about the user experience.
+					We use this RandomSearch class to select the best model.
+					We have the metrics, and objective in the arguments.
+					by default objective equals validation loss. So, it helps us
+					find the model with the smallest validation loss. Again, it
+					doesn't provide much info about the user experience. So,
+					everything looks OK for now.
 				</aside>
 			</section>
 			<section data-auto-animate data-line-numbers>
@@ -947,11 +955,12 @@
 				)
 				</code></pre>
 				<aside class="notes">
-					However, if we write an end-to-end workflow like this.
-					The user try to define a custom metric.
-					The objective is not so straight-forward to use any more.
-					What's its name now?
-					We can easily spot a user experience problem by writing this workflow.
+					However, if we write an end-to-end workflow like this. It
+					exposes much more problems. The user is trying to define a
+					custom metric. The objective is not so straight-forward to
+					use any more. What should we pass to the objective argument
+					now? We easily spotted a user experience problem by writing
+					this workflow.
 				</aside>
 			</section>
 			<section data-auto-animate data-line-numbers>
@@ -963,9 +972,9 @@
 				)
 				</code></pre>
 				<aside class="notes">
-					In fact, it should be just "val_custom_metric". Obviously,
-					it is not intuitive enough. We want to make it better
-					instead of forcing the user to learn this.
+					Actually, it should be just "val_custom_metric". But,
+					obviously, it is not intuitive enough. We want to make it
+					better instead of forcing the user to learn this.
 				</aside>
 			</section>
 			<section data-auto-animate data-line-numbers>
@@ -981,9 +990,11 @@
 				)
 				</code></pre>
 				<aside class="notes">
-					Another thing is that,
-					if you wrote the design more comprehensively, you will find
-					you even need to learn how to write a keras custom metric.
+					Another thing is that, if you wrote the design more
+					comprehensively, you will find you even need to learn how to
+					write a Keras custom metric. We have strict requirements
+					for the signature of this function. It has to be compatible
+					with Keras.
 				</aside>
 			</section>
 			<section>
@@ -997,18 +1008,18 @@
 				tuner = RandomSearch(MyHyperModel(), max_trials=20)
 				</code></pre>
 				<aside class="notes">
-					So we specially designed a better workflow for custom metrics.
-					You only need to override the `fit` function, compute your
-					custom metric and return it.
-					The UX is much better right now.
+					After discovering this problem. We specially designed a
+					better workflow for custom metrics. You only need to
+					override the `fit` function, compute your custom metric and
+					return it. The UX is much better right now.
 				</aside>
 			</section>
 			<section>
 				<h1>UX <i class="bi bi-arrow-right"></i> Implementation</h1>
 			</section>
 			<aside class="notes">
-				One more thing to remember is we always start from the UX.
-				The designed workflows deside the implementation.
+				One more thing to remember is we should always start from the
+				UX. The designed workflows deside the implementation.
 			</aside>
 			<section>
 				<h2 class="nowrap">Principle 2</h2>
@@ -1032,10 +1043,12 @@
 				model.predict(...)
 				</code></pre>
 				<aside class="notes">
-					One good example is the Keras modeling API, which is pretty intuitive.
-					The model builders already have these concepts in mind, like a model is a stack of layers.
-					It needs a loss function. We can fit it with data or make it predict on data.
-					So basically, no new concepts learned in order to use Keras.
+					One good example is the Keras modeling API, which is pretty
+					intuitive. The model builders already have these concepts
+					in mind, like a model is a stack of layers. It needs a loss
+					function. We can fit it with data or make it predict on
+					data. So basically, no new concepts learned in order to use
+					Keras.
 				</aside>
 			</section>
 			<section>
@@ -1048,11 +1061,10 @@
 							return self.path_b(x)
 				</code></pre>
 				<aside class="notes">
-					Another good example is the PyTorch modeling.
-					The code is executed just like Python code.
-					All tensors are just real tensors with real values.
-					You can depend on the value of a tensor to decide your path
-					with plain Python code.
+					Another good example is the PyTorch modeling. The code is
+					executed just like Python code. All tensors are just real
+					tensors with real values. You can depend on the value of a
+					tensor to decide your path with plain Python code.
 				</aside>
 			</section>
 			<section>
@@ -1068,10 +1080,11 @@
 				</code></pre>
 				<aside class="notes">
 					You can also do this with Keras with TensorFlow or JAX
-					backend, but needs to be written in a different way.
-					All the if conditions need to be written with this ops.cond function.
-					This is less intuitive which is bad. In compensation, it brings
-					significant improvement in training speed.
+					backend, but needs to be written in a different way. All
+					the if conditions need to be written with this ops.cond
+					function. This is less intuitive which is bad. In
+					compensation, it brings significant improvement in training
+					speed. But from a UX perspective, it is bad.
 				</aside>
 			</section>
 			<section>
@@ -1083,10 +1096,11 @@
 				x.cuda()
 				</code></pre>
 				<aside class="notes">
-					Here is the catch of the flexibiliy of PyTorch. You would have to optimize the memory and speed by
-					yourself.
-					It introduced these APIs and new concepts to do so, like the inplace arguments for the ops,
-					The parallel ops API and explicit device placement.
+					Here is the catch of the flexibiliy of PyTorch. You would
+					have to optimize the memory and speed by yourself. It
+					introduced these APIs and new concepts to do so, like the
+					inplace arguments for the ops, The parallel ops API and
+					explicit device placement.
 				</aside>
 			</section>
 			<section>
@@ -1100,23 +1114,31 @@
 				optimizer.step()
 				</code></pre>
 				<aside class="notes">
-					loss.backward computes the gradients.
-					This is introducing a new concept of actually computing the gradients.
-					I don't think the user has to know about it.
+					Another bad example is loss.backward. It computes the
+					gradients. This is introducing a new concept of actually
+					computing the gradients. I don't think the user has to know
+					about it.
 				</aside>
 			</section>
 			<section>
-				<h2>Good example: keras.ops, tensorflow.numpy, jax.numpy</h2>
+				<h2>Good examples:</h2>
+				<h1>keras.ops, tf.numpy, jax.numpy</h1>
 				<aside class="notes">
-					When you have to introduce some cognitive load,
-					just reuse what people already familiar with.
+					Some other good examples are keras.ops, tensorflow.numpy,
+					jax.numpy. They are just reimplementation of the numpy API.
+					When you have to introduce some cognitive load, just reuse
+					what people are already familiar with. We have to provide
+					some low level ops in these frameworks, right? Instead of
+					let people learn a new set of APIs, which may have a hundred
+					functions, we just use the most popular existing API for it.
 				</aside>
 			</section>
 			<section>
 				<h1>Worst case: trick the users</h1>
 				<aside class="notes">
-					The worst thing you can do with user experience is to trick the users.
-					Trick the user to believe your API is something else than what it really is.
+					Here is the worst thing you can do with user experience:
+					Trick the users. Trick the user to believe your API is
+					something else than what it really is.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1127,7 +1149,12 @@
 				# (100, 3, 32, 32) to (100, 3, 34, 36)
 				</code></pre>
 				<aside class="notes">
-					How to pad image tensors in PyTorch?
+					Here are some examples. How can you pad image tensors in
+					PyTorch? The image size here is 32 by 32. We want to pad
+					zeros at the begining and end of each dimension, and make it
+					into 1 plus 32 plus 1 by 2 plus 32 by 2. So the input shape
+					is 100 images, 3 channels, 32 by 32. The output shape is 100
+					images, 3 channels, 34 by 36.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1142,7 +1169,10 @@
 				)
 				</code></pre>
 				<aside class="notes">
-					The intuitive way would be like this.
+					The intuitive way would be like this. 4 tuples of integers,
+					each corresponds to the zeros added to the begining and end
+					of the 4 dimensions of the input tensor. Or we can just omit
+					the leading zeros.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1157,7 +1187,9 @@
 				)
 				</code></pre>
 				<aside class="notes">
-					However, the correct answer is this. You need to reverse the order of the sequence.
+					However, the correct answer is this. You need to pass them
+					as a single tuple. And what more strange is that you need to
+					reverse the order of the sequence.
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
@@ -1174,7 +1206,12 @@
 				# False?
 				</code></pre>
 				<aside class="notes">
-					Will it print True or False?
+					Let's see another really bad example from TensorFlow. This
+					code snippet. Will it print True or False? First, we define
+					the value as true. Then, we define a function to return the
+					value, and decorated it as a tf function. Then, we change
+					the value to False. What is the return value if we call the
+					function, now? Intuitively, it should be false, right?
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1191,16 +1228,18 @@
 				# True!
 				</code></pre>
 				<aside class="notes">
-					It prints False.
+					But, actually, it prints true because the function is
+					compiled and all python variables are treated as constants.
 				</aside>
 			</section>
 			<section>
 				<h2 class="nowrap">Principle 3</h2>
 				<h1>Interaction over documentation</h1>
 				<aside class="notes">
-					Principle number 3, interaction over documentation.
-					No one likes to read long documentations if they can figure
-					it out just by trying out.
+					Principle number 3, interaction over documentation. No one
+					likes to read long documentations if they can figure it out
+					just by trying out the software by themselves. So, APIs
+					should follow the same logic.
 				</aside>
 			</section>
 			<section>
@@ -1212,9 +1251,13 @@
 					x.mul_(y)
 				</code></pre>
 				<aside class="notes">
-					APIs should follow the same logic.
-					From a interactive perspective, these are good,
-					but, of course, they introduced cognitive load.
+					Here is a good example. In PyTorch, all methods with the
+					underscore are inplace ops, while the ones without are not.
+					From a interactive perspective, these are good, because they
+					are easy to follow, and the users do not need to check the
+					docs everytime they want the inplace version of a method.
+					but, of course, they introduced cognitive load. The users
+					need to know what does inplace mean.
 				</aside>
 			</section>
 			<section>
@@ -1227,13 +1270,15 @@
 					layers.GlobalAveragePooling3D()
 				</code></pre>
 				<aside class="notes">
-					With a clear naming convention, the users can easily
-					remember the layer names without checking documentation.
+					Another good example is the Keras layers. They strictly
+					follow the same naming convention. With a clear naming
+					convention, the users can easily remember the layer names
+					without checking documentation.
 				</aside>
 			</section>
 			<section>
 				<h2>Print helpful error messages</h2>
-				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				<pre class="fragment fade-in" data-id="code-animation"><code data-trim data-line-numbers class="language-python">
 					# Bad example:
 					raise ValueError("Tensor shape mismatch.")
 					# Good example:
@@ -1244,13 +1289,19 @@
 					)
 				</code></pre>
 				<aside class="notes">
-					Another important part of interaction between the developer and the software is the error message.
-					We should always try to print helpful error messages.
+					Another important part of interaction between the developer
+					and the software is the error message. We should always do
+					th necessary checks in the code and try to print helpful
+					error messages.
 
-					Let's see these examples.
-					The first one has not much information. Just says tensor shape mismatch.
-					While the second one contains much more useful information for the user to find the bug.
-					It shows what is the expected shape and what is the wrong shape passed to it.
+					Let's see these examples. The first one has not much
+					information. Just says tensor shape mismatch. While the
+					second one contains much more useful information for the
+					user to find the bug. It not only tells you the error is
+					because of tensor shape mismatch, it also shows what is the
+					expected shape and what is the wrong shape passed to it. If
+					you did not mean to pass that shape, you have a better idea
+					of the bug now.
 				</aside>
 			</section>
 			<section data-auto-animate>
@@ -1262,9 +1313,10 @@
 					"AttributeError: module 'math' has no attribute 'sqr'. Did you mean: 'sqrt'?"
 				</code></pre>
 				<aside class="notes">
-					The best error message would be directly point the user to the fix.
-					This is a general Python error message.
-					It guessed what is wrong with the code and directly pointed the user to the fix.
+					The best error message would be directly pointing the user
+					to the fix. This is a general Python error message. It
+					guessed what is wrong with the code and directly pointed the
+					user to the fix.
 				</aside>
 			</section>
 			<section>
@@ -1276,11 +1328,15 @@
 					</div>
 				</div>
 				<aside class="notes">
-					So far our design work is done. However
+					OK. That are the three principles we follow. So far, our
+					design work is done. However,
 				</aside>
 			</section>
 			<section data-auto-animate data-auto-animate-restart>
 				<h1>The devil is in the details</h1>
+				<aside class="notes">
+					The devil is in the details.
+				</aside>
 			</section>
 			<section data-auto-animate>
 				<h1>The devil is in the details</h1>
