@@ -1095,7 +1095,7 @@
 				<h2>Bad example: Keras with JAX or TensorFlow</h2>
 				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
 					class MyModel(keras.Model):
-						def call(self, x):
+						def call(self, inputs):
 							return ops.cond(
 								ops.sum(inputs) > 0,
 								lambda : self.path_a(inputs),
