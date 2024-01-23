@@ -1117,7 +1117,7 @@
 				torch.relu(x, inplace=True)
 				x = torch._foreach_add(x, y)
 				torch._foreach_add_(x, y)
-				x.cuda()
+				x = x.cuda()
 				</code></pre>
 				<aside class="notes">
 					Here is the catch of the flexibiliy of PyTorch. You would
