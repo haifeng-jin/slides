@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>The Interface of Intelligence</title>
+	<link rel="icon" href="/img/favicon.svg">
+
+	<link rel="stylesheet" href="/css/reset.min.css">
+	<link rel="stylesheet" href="/css/reveal.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-icons.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="/css/onedark.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<br>
+				<h1 class="r-fit-text">The Interface of Intelligence</h1>
+				<h3 class="r-fit-text">User-first approaches in open-source AI software design</h3>
+				<br>
+				<br>
+				<br>
+				<br>
+				<h3>Haifeng Jin</h3>
+			</section>
+			<section>
+				<h1>What is open source?</h1>
+			</section>
+			<section>
+				<h1 class="r-fit-text">Access</h1>
+			</section>
+			<section>
+				<h1>Umidigi F2 kernel source code</h1>
+			</section>
+			<section>
+				<h1>"You can request the shareable source code at our office." </h1>
+				<h2>Ben, UMIDIGI</h2>
+			</section>
+			<section>
+				<h1>What is the website for open source?</h1>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="width:30%;">
+						<img src="/img/sourceforge.svg">
+						<h2>SourceForge</h2>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="width:30%;">
+						<img src="/img/github.svg">
+						<h2 style="padding: 50px;">GitHub</h2>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<p class="r-fit-text">Collaboration</p>
+				</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<p>Open Source:</p>
+					<div class="centered">
+						<div style="width: 20%">
+							<p>Access</p>
+						</div>
+						<div style="width: 10%">
+							<p>+</p>
+						</div>
+						<div style="width: 40%">
+							<p class="nowrap">Collaboration</p>
+						</div>
+					</div>
+				</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<div class="centered">
+						<div style="width: 20%">
+							<p>Open</p>
+							<p>Access</p>
+						</div>
+						<div style="width: 10%">
+							<p>+</p>
+						</div>
+						<div style="width: 40%">
+							<p>Open</p>
+							<p>Collaboration</p>
+						</div>
+
+					</div>
+				</h1>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="width: 70%; transform: translate(0, -5%);">
+						<img src="/img/cathedral.png">
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="width: 30%; text-align: right;">
+						<h1>Cathedral</h1>
+					</div>
+					<div class="centered" style="width: 10%; margin: 5%">
+						<div class="fragment custom blur-out"
+							style="background-color: var(--r-main-color); height: 400px; width: 5%;"></div>
+					</div>
+					<div style="width: 30%; text-align: left;">
+						<h1>Bazzar</h1>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width:25%;">
+						<img src="/img/android2.svg">
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width:25%;">
+						<img style="width:70%;" src="/img/android2.svg">
+					</div>
+					<div style="width:25%;">
+						<img style="width:70%;" src="/img/pytorch.svg">
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width:25%;">
+						<img style="width:60%;" src="/img/android2.svg">
+					</div>
+					<div style="width:25%;">
+						<img style="width:60%;" src="/img/pytorch.svg">
+					</div>
+					<div style="width:25%;">
+						<img style="width:60%;" src="/img/keras.svg">
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width:25%;">
+						<img style="width:50%;" src="/img/android2.svg">
+					</div>
+					<div style="width:25%;">
+						<img style="width:50%;" src="/img/pytorch.svg">
+					</div>
+					<div style="width:25%;">
+						<img style="width:50%;" src="/img/keras.svg">
+					</div>
+					<div style="width:25%;">
+						<img style="width:50%;" src="/img/tensorflow.svg">
+					</div>
+				</div>
+			</section>
+			<section>
+				<h1>Why do we open source?</h1>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width:40%;">
+						<img width="100%" src="/img/android2.svg">
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width:40%">
+						<img width="70%" src="/img/android2.svg">
+					</div>
+					<div style="width:40%">
+						<img width="70%" src="/img/google-play.svg">
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate id="android">
+				<div class="centered">
+					<div style="width:40%">
+						<div class="fragment custom move-out-to-left" data-fragment-index="1">
+							<img width="50%" src="/img/android2.svg">
+						</div>
+						<br>
+						<h2>Free code</h2>
+					</div>
+					<div style="width:40%">
+						<div class="fragment custom move-out-to-left" data-fragment-index="1">
+							<img width="50%" src="/img/google-play.svg">
+						</div>
+						<br>
+						<h2>Paid service</h2>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate id="chrome">
+				<div class="centered">
+					<div style="width:40%">
+						<div class="fragment custom move-in-from-right" data-fragment-index="1">
+							<div class="fragment custom move-out-to-left" data-fragment-index="2">
+								<img width="50%" src="/img/chrome.svg">
+							</div>
+						</div>
+						<br>
+						<h2>Free code</h2>
+					</div>
+					<div style="width:40%">
+						<div class="fragment custom move-in-from-right" data-fragment-index="1">
+							<div class="fragment custom move-out-to-left" data-fragment-index="2">
+								<img width="50%" src="/img/google.svg">
+							</div>
+						</div>
+						<br>
+						<h2>Paid service</h2>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate id="tensorflow">
+				<div class="centered">
+					<div style="width:40%">
+						<div class="fragment custom move-in-from-right" data-fragment-index="1">
+							<img width="50%" src="/img/tensorflow.svg">
+						</div>
+						<br>
+						<h2>Free code</h2>
+					</div>
+					<div style="width:40%">
+						<div class="fragment custom move-in-from-right" data-fragment-index="1">
+							<img width="50%" src="/img/google-cloud.svg">
+						</div>
+						<br>
+						<h2>Paid service</h2>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h1>Why open source TensorFlow?</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<ul>
+						<li>Professional branding</li>
+					</ul>
+				</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<ul>
+						<li>Professional branding</li>
+						<li>Keep engineers happy</li>
+					</ul>
+				</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<ul>
+						<li>Professional branding</li>
+						<li>Keep engineers happy</li>
+						<li>Full control over its infra</li>
+					</ul>
+				</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>
+					<ul>
+						<li>Making money</li>
+						<li>Professional branding</li>
+						<li>Keep engineers happy</li>
+						<li>Full control over its infra</li>
+					</ul>
+				</h1>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1>TensorFlow dominated the market</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>TensorFlow dominated the market</h1>
+				<h1>Theano, Caffe2, MXNet went obsolete</h1>
+			</section>
+			<section>
+				<h1>PyTorch took away half of the users</h1>
+			</section>
+			<section>
+				<div class="r-fit-text">
+					<h1>Full of</h1>
+					<h1>opportunities</h1>
+				</div>
+			</section>
+			<section>
+				<h1>How to excell in open source?</h1>
+			</section>
+			<section>
+				<h1 class="r-fit-text">UX</h1>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width: 50%; text-align: right;">
+						<h1>TensorFlow</h1>
+					</div>
+					<div class="centered" style="width: 10%;">
+						<div data-id="separator"
+							style="background-color: var(--r-main-color); height: 150px; width: 5%;"></div>
+					</div>
+					<div style="width: 50%; text-align: left;">
+						<h1>PyTorch</h1>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width: 50%; text-align: right;">
+						<h1>TensorFlow</h1>
+						<h1>Google</h1>
+					</div>
+					<div class="centered" style="width: 10%;">
+						<div data-id="separator"
+							style="background-color: var(--r-main-color); height: 300px; width: 5%;"></div>
+					</div>
+					<div style="width: 50%; text-align: left;">
+						<h1>PyTorch</h1>
+						<h1>Meta</h1>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width: 50%; text-align: right;">
+						<h1>TensorFlow</h1>
+						<h1>Google</h1>
+						<h1>Engineering</h1>
+					</div>
+					<div class="centered" style="width: 10%;">
+						<div data-id="separator"
+							style="background-color: var(--r-main-color); height: 450px; width: 5%;"></div>
+					</div>
+					<div style="width: 50%; text-align: left;">
+						<h1>PyTorch</h1>
+						<h1>Meta</h1>
+						<h1>Product</h1>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<div style="width: 50%; text-align: right;">
+						<h1>TensorFlow</h1>
+						<h1>Google</h1>
+						<h1>Engineering</h1>
+						<h1>Fastest to run</h1>
+					</div>
+					<div class="centered" style="width: 10%;">
+						<div data-id="separator"
+							style="background-color: var(--r-main-color); height: 600px; width: 5%;"></div>
+					</div>
+					<div style="width: 50%; text-align: left;">
+						<h1>PyTorch</h1>
+						<h1>Meta</h1>
+						<h1>Product</h1>
+						<h1>Easiest to use</h1>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<h1>Easiest to use</h1>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<h1>Easiest to use</h1>
+				</div>
+				<div class="centered">
+					<h1>Wins the community</h1>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<h1>Easiest to use</h1>
+				</div>
+				<div class="centered">
+					<h1>Wins the community</h1>
+				</div>
+				<div class="centered">
+					<h1>Propagate to the engineers</h1>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div class="centered">
+					<h1>Easiest to use</h1>
+				</div>
+				<div class="centered">
+					<h1>Wins the community</h1>
+				</div>
+				<div class="centered">
+					<h1>Propagate to the engineers</h1>
+				</div>
+				<div class="centered">
+					<h1>Establish ecosystem</h1>
+				</div>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1 class="r-fit-text">TensorFlow's blunders</h1>
+			</section>
+			<section data-auto-animate>
+				<h1 class="nowrap">TensorFlow's blunders</h1>
+				<h2>
+					<ul>
+						<li>
+							Installation
+						</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>TensorFlow's blunders</h1>
+				<h2>
+					<ul>
+						<li>Installation</li>
+						<li>Backword compatibility</li>
+					</ul>
+				</h2>
+			</section>
+			<section>
+				<h1>Invest heavily in UX</h1>
+			</section>
+			<section id="python-percentage">
+				<div class="centered" style="height: 300px">
+					<div style="position:absolute;">
+						<div class="fragment custom move-out-to-left" data-fragment-index="1">
+							<h1>TensorFlow</h1>
+						</div>
+					</div>
+					<div style="position:absolute;">
+						<div class="fragment custom move-in-from-right" data-fragment-index="1">
+							<div class="fragment custom move-out-to-left" data-fragment-index="2">
+								<h1>PyTorch</h1>
+							</div>
+						</div>
+					</div>
+					<div style="position:absolute;">
+						<div class="fragment move-in-from-right" data-fragment-index="2">
+							<h1>JAX</h1>
+						</div>
+					</div>
+				</div>
+				<div class="centered">
+					<div class="progress-container">
+						<div class="progress-bar" id="progress-bar" style="width: 27%;">
+							<div class="counter" id="counter" style="--percent: 26.91; font-size: 50px;"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h1>Polishing your UX is of high ROI</h1>
+			</section>
+			<section>
+				<h1>How to make software with good UX?</h1>
+			</section>
+			<section data-auto-animate>
+				<h1 class="r-fit-text">Keras 3</h1>
+			</section>
+			<section data-auto-animate>
+				<h1 class="nowrap">Keras 3</h1>
+				<h2>
+					<ul>
+						<li>Support TensorFlow, JAX, PyTorch</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>Keras 3</h1>
+				<h2>
+					<ul>
+						<li>Support TensorFlow, JAX, PyTorch</li>
+						<li>Backward-compatible & future-proof</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>Keras 3</h1>
+				<h2>
+					<ul>
+						<li>Support TensorFlow, JAX, PyTorch</li>
+						<li>Backward-compatible & future-proof</li>
+						<li>Customizable with the NumPy API</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>Keras 3</h1>
+				<h2>
+					<ul>
+						<li>Support TensorFlow, JAX, PyTorch</li>
+						<li>Backward-compatible & future-proof</li>
+						<li>Customizable with the NumPy API</li>
+						<li>Scalable with the distribution API</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1 class="r-fit-text">The 3 principles</h1>
+			</section>
+			<section data-auto-animate>
+				<h1 class="nowrap">The 3 principles</h1>
+				<h2>from Keras</h2>
+			</section>
+			<section>
+				<h2 class="nowrap">Principle 1</h2>
+				<h1>Design end-to-end workflows</h1>
+			</section>
+			<section>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				class Model:
+					def __call__(self, input):
+						"""The forward call of the model.
+
+						Args:
+							input: A tensor. The input to the model.
+						"""
+						pass
+				</code></pre>
+			</section>
+			<section>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				input = keras.Input(shape=(10,))
+				x = layers.Dense(32, activation='relu')(input)
+				output = layers.Dense(10, activation='softmax')(x)
+				model = keras.models.Model(inputs=input, outputs=output)
+				model.compile(
+					optimizer='adam', loss='categorical_crossentropy'
+				)
+				</code></pre>
+			</section>
+			<section>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				class RandomSearch:
+					def __init__(self, ..., metrics, objective="val_loss", ...):
+						"""The initializer.
+
+						Args:
+							metrics: A list of Keras metrics.
+							objective: String or a custom metric function. The
+								name of the metirc we want to minimize.
+						"""
+						pass
+				</code></pre>
+			</section>
+			<section data-auto-animate data-line-numbers>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				tuner = RandomSearch(
+					...,
+					metrics=[custom_metric],
+					objective="val_???",
+				)
+				</code></pre>
+			</section>
+			<section data-auto-animate data-line-numbers>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				tuner = RandomSearch(
+					...,
+					metrics=[custom_metric],
+					objective="val_custom_metric",
+				)
+				</code></pre>
+			</section>
+			<section data-auto-animate data-line-numbers>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				def custom_metric(y_true, y_pred):
+					squared_diff = ops.square(y_true - y_pred)
+					return ops.mean(squared_diff, axis=-1)
+
+				tuner = RandomSearch(
+					...,
+					metrics=[custom_metric],
+					objective="val_custom_metric",
+				)
+				</code></pre>
+			</section>
+			<section>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				class MyHyperModel(HyperModel):
+					def fit(self, trial, model, validation_data):
+						x_val, y_true = validation_data
+						y_pred = model(x_val)
+						return custom_metric(y_true, y_pred)
+
+				tuner = RandomSearch(MyHyperModel(), max_trials=20)
+				</code></pre>
+			</section>
+			<section>
+				<h1>UX <i class="bi bi-arrow-right"></i> Implementation</h1>
+			</section>
+			<section>
+				<h2 class="nowrap">Principle 2</h2>
+				<h1>Minimize cognitive load</h1>
+			</section>
+			<section>
+				<h2>Good example: Keras modeling</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				model = keras.Sequential([
+					layers.Dense(10, activation="relu"),
+					layers.Dense(num_classes, activation="softmax"),
+				])
+				model.compile(loss='categorical_crossentropy')
+				model.fit(...)
+				model.predict(...)
+				</code></pre>
+			</section>
+			<section>
+				<h2>Good example: PyTorch modeling</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					class MyModel(nn.Module):
+						def forward(self, x):
+							if x.sum() > 0:
+								return self.path_a(x)
+							return self.path_b(x)
+				</code></pre>
+			</section>
+			<section>
+				<h2>Bad example: Keras with JAX or TensorFlow</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					class MyModel(keras.Model):
+						def call(self, inputs):
+							return ops.cond(
+								ops.sum(inputs) > 0,
+								lambda : self.path_a(inputs),
+								lambda : self.path_b(inputs),
+							)
+				</code></pre>
+			</section>
+			<section>
+				<h2>Bad example: PyTorch memory and speed optimization</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				torch.relu(x, inplace=True)
+				x = torch._foreach_add(x, y)
+				torch._foreach_add_(x, y)
+				x = x.cuda()
+				</code></pre>
+			</section>
+			<section>
+				<h2>Bad example: PyTorch compute gradients</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers="1-6|5" class="language-python">
+				inputs, labels = batch
+				outputs = model(inputs)
+				loss = torch.nn.functional.cross_entropy(outputs, labels)
+				optimizer.zero_grad()
+				loss.backward()
+				optimizer.step()
+				</code></pre>
+			</section>
+			<section>
+				<h2>Good examples:</h2>
+				<h1>keras.ops, tf.numpy, jax.numpy</h1>
+			</section>
+			<section>
+				<h2>Worst case:</h2>
+				<h1>Trick the users</h1>
+			</section>
+			<section data-auto-animate>
+				<h2>Really bad example: How to pad the images?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				import torch.nn.functional as F
+				# pad the 32x32 images to (1+32+1)x(2+32+2)
+				# (100, 3, 32, 32) to (100, 3, 34, 36)
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h2>Really bad example: How to pad the images?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				import torch.nn.functional as F
+				# pad the 32x32 images to (1+32+1)x(2+32+2)
+				# (100, 3, 32, 32) to (100, 3, 34, 36)
+				out = F.pad(
+					torch.empty(100, 3, 32, 32),
+					pad=((0, 0), (0, 0), (1, 1), (2, 2)),
+				)
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h2>Really bad example: How to pad the images?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				import torch.nn.functional as F
+				# pad the 32x32 images to (1+32+1)x(2+32+2)
+				# (100, 3, 32, 32) to (100, 3, 34, 36)
+				out = F.pad(
+					torch.empty(100, 3, 32, 32),
+					pad=(2, 2, 1, 1),
+				)
+				</code></pre>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h2>Really bad example: What is the output?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				value = True
+
+				@tf.function
+				def get_value():
+					return value
+
+				value = False
+				print(get_value())
+				# False?
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h2>Really bad example: What is the output?</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+				value = True
+
+				@tf.function
+				def get_value():
+					return value
+
+				value = False
+				print(get_value())
+				# True!
+				</code></pre>
+			</section>
+			<section>
+				<h2 class="nowrap">Principle 3</h2>
+				<h1>Interaction over documentation</h1>
+			</section>
+			<section>
+				<h2>Good example: PyTorch inplace ops</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					x = x.add(y)
+					x.add_(y)
+					x = x.mul(y)
+					x.mul_(y)
+				</code></pre>
+			</section>
+			<section>
+				<h2>Good example: Keras layers</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					from keras import layers
+
+					layers.MaxPooling2D()
+					layers.GlobalMaxPooling1D()
+					layers.GlobalAveragePooling3D()
+				</code></pre>
+			</section>
+			<section>
+				<h2>Print helpful error messages</h2>
+				<pre class="fragment fade-in" data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					# Bad example:
+					raise ValueError("Tensor shape mismatch.")
+					# Good example:
+					raise ValueError(
+						"Tensor shape mismatch. "
+						"Expected: (batch, num_features). "
+						f"Received: {x.shape}"
+					)
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h2>Best example: give the instructions directly</h2>
+				<pre data-id="code-animation"><code data-trim data-line-numbers class="language-python">
+					import math
+
+					math.sqr(4)
+					"AttributeError: module 'math' has no attribute 'sqr'. Did you mean: 'sqrt'?"
+				</code></pre>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="text-align: left;">
+						<h2>Principle 1: Design end-to-end workflows</h2>
+						<h2>Principle 2: Minimize cognitive load</h2>
+						<h2>Principle 3: Interaction over documentation</h2>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1>The devil is in the details</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>The devil is in the details</h1>
+				<h2>
+					<ul>
+						<li>Bugs</li>
+						<li>New features</li>
+						<li>Documentations</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1 class="r-fit-text">Community contributions</h1>
+			</section>
+			<section data-auto-animate>
+				<h1 class="nowrap">Community contributions</h1>
+				<h2>
+					<ul>
+						<li>Product excellence</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>Community contributions</h1>
+				<h2>
+					<ul>
+						<li>Product excellence</li>
+						<li>Gain user trust</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>Community contributions</h1>
+				<h2>
+					<ul>
+						<li>Product excellence</li>
+						<li>Gain user trust</li>
+						<li>Key to establish an ecosystem</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1>How to gain community contributors?</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>How to gain community contributors?</h1>
+				<h2>
+					<ul>
+						<li data-id="gain">
+							<span>Gain more users</span>
+							<span class="fragment fade-in">
+								<i class="bi bi-arrow-right"></i>
+								<span>contributors</span>
+							</span>
+						</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>How to gain community contributors?</h1>
+				<h2>
+					<ul>
+						<li data-id="gain">
+							<span>Gain more users</span>
+							<i class="bi bi-arrow-right"></i>
+							<span>contributors</span>
+						</li>
+						<li>
+							Make it contributor-friendly
+						</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h2 class="r-fit-text">The $1M metric</h2>
+			</section>
+			<section data-auto-animate>
+				<h2 class="nowrap">The $1M metric</h2>
+				<h1>Average life span of pull requests</h1>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1>A bad contributing experience</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+						<li>Breaks the unit tests</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+						<li>Breaks the unit tests</li>
+						<li>Cannot run these locally</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+						<li>Breaks the unit tests</li>
+						<li>Cannot run these locally</li>
+						<li>Relies on CI to debug</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>A bad contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Breaks the code style</li>
+						<li>Breaks the unit tests</li>
+						<li>Cannot run these locally</li>
+						<li>Relies on CI to debug</li>
+						<li>Multiple rounds of review to fix</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1>A good contributing experience</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>A good contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Easy to setup the dev env</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>A good contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Easy to setup the dev env</li>
+						<li>Run all the checks locally</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>A good contributing experience</h1>
+				<h2>
+					<ul>
+						<li>Easy to setup the dev env</li>
+						<li>Run all the checks locally</li>
+						<li>Code review focus on important things</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1>Contributor-friendly project setup</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+						<li>Instructions for running tests (single & all)</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+						<li>Instructions for running tests (single & all)</li>
+						<li>Short CI time</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+						<li>Instructions for running tests (single & all)</li>
+						<li>Short CI time</li>
+						<li>Auto-format the code</li>
+					</ul>
+				</h2>
+			</section>
+			<section data-auto-animate>
+				<h1>Contributor-friendly project setup</h1>
+				<h2>
+					<ul>
+						<li>Config devcontainers (GitHub Codespaces)</li>
+						<li>Instructions for running tests (single & all)</li>
+						<li>Short CI time</li>
+						<li>Auto-format the code</li>
+						<li>Contributing guide</li>
+					</ul>
+				</h2>
+			</section>
+			<section>
+				<h1>What are the new opportunities</h1>
+				<h1>in open-source AI?</h1>
+			</section>
+			<section data-auto-animate>
+				<h1 class="r-fit-text">Models</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>Models</h1>
+				<h2>
+					<ul>
+						<li>High-quality code</li>
+						<li class="fragment fade-in">Modularized components</li>
+						<li class="fragment fade-in">Well-aligned APIs</li>
+						<li class="fragment fade-in">Minimal dependencies</li>
+					</ul>
+				</h2>
+			</section>
+			<section>
+				<h1 class="r-fit-text">
+					<div>
+						KerasCV
+					</div>
+					<div>
+						KerasNLP
+					</div>
+				</h1>
+			</section>
+			<section>
+				<h1>New concerns on open-source models</h1>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="width: 500px;">
+						<img style="border-radius: 10%;" src="/img/yann-lecun.jpg">
+					</div>
+					<div style="width: 200px;">
+					</div>
+					<div class="fragment fade-in" style="width: 800px;">
+						<h2>"Could the SkyNet take-over in Terminator have happened if SkyNet had been open source?"
+						</h2>
+						<br>
+						<h3>--Yann LeCun</h3>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="centered">
+					<div style="width: 500px;">
+						<img style="border-radius: 10%;" src="/img/eric-schmidt.jpg">
+					</div>
+					<div style="width: 200px;">
+					</div>
+					<div class="fragment fade-in" style="width: 800px;">
+						<h2>"Make sure these things are not misused by evil people."</h2>
+						<br>
+						<h3>--Eric Schmidt</h3>
+					</div>
+				</div>
+			</section>
+			<section data-auto-animate>
+				<h1 class="r-fit-text">Quick Review</h1>
+			</section>
+			<section data-auto-animate>
+				<h1 class="nowrap">Quick Review</h1>
+				<br>
+				<h3 class="centered">
+					<ul style="width:1000px;">
+						<li>What is open-source?</li>
+						<ul class="fragment fade-in">
+							<li>Open access</li>
+							<li>Open collaboration</li>
+						</ul>
+						<li class="fragment fade-in">Why do we open-source?</li>
+						<ul class="fragment fade-in">
+							<li>Free code</li>
+							<li>Paid service</li>
+						</ul>
+						<li class="fragment fade-in">How to do open-source?</li>
+						<ul class="fragment fade-in">
+							<li>Design end-to-end workflows</li>
+							<li>Reduce cognitive load</li>
+							<li>Interaction over documentation</li>
+						</ul>
+					</ul>
+					<ul>
+						<li class="fragment fade-in">Why community contributions?</li>
+						<ul class="fragment fade-in">
+							<li>Product excellence</li>
+							<li>User trust</li>
+							<li>Establish ecosystem</li>
+						</ul>
+						<li class="fragment fade-in">How to gain contributors?</li>
+						<ul class="fragment fade-in">
+							<li>More users</li>
+							<li>$1m metric: average PR life</li>
+						</ul>
+						<li class="fragment fade-in">What's next?</li>
+						<ul class="fragment fade-in">
+							<li>Models</li>
+						</ul>
+						<li class="fragment fade-in">Should we opens-source LLMs?</li>
+					</ul>
+				</h3>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1 class="r-fit-text">The next episode</h1>
+			</section>
+			<section data-auto-animate>
+				<h1 class="nowrap">The next episode</h1>
+				<h2>How do deep learning frameworks work?</h2>
+				<h2 class="fragment fade-in">from Python to GPUs</h2>
+				<h2 class="fragment fade-in">What are deep learning compilers?</h2>
+				<h2 class="fragment fade-in">How are TVM, XLA, Triton all about?</h2>
+				<h2 class="fragment fade-in">Why TPUs are faster?</h2>
+				<h2 class="fragment fade-in">What are new challenges posed by LLMs?</h2>
+			</section>
+			<section data-auto-animate data-auto-animate-restart>
+				<h1 class="r-fit-text">Thank you!</h1>
+			</section>
+			<section data-auto-animate>
+				<h1 class="nowrap">Thank you!</h1>
+				<h1><br></h1>
+				<div class="centered">
+					<div style="text-align: left;">
+						<h2>
+							<i class="bi-envelope-fill" style="margin-right:10px;"></i> <span>haifeng.jin@pm.me</span>
+						</h2>
+						<h2>
+							<i class="bi-medium" style="margin-right:10px;"></i> <span>Haifeng Jin</span>
+						</h2>
+					</div>
+				</div>
+			</section>
+			<div class="my-slide-number"> 1 </div>
+		</div>
+	</div>
+
+	<script src="/js/reveal.min.js"></script>
+	<script src="/js/notes.min.js"></script>
+	<script src="/js/highlight.min.js"></script>
+	<script src="/the-interface-of-intelligence/slides.js"></script>
+</body>
+
+</html>

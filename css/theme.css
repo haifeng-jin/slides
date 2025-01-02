@@ -3,8 +3,19 @@
  *
  * By Hakim El Hattab, http://hakim.se
  */
-@import url(./ubuntu-mono.css);
-@import url(./nord.css);
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
 
 section.has-light-background,
 section.has-light-background h1,
@@ -20,14 +31,16 @@ section.has-light-background h6 {
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: var(--nord0);
-  --r-main-font: 'Ubuntu Mono', monospace;
-  --r-main-font-size: 42px;
-  --r-main-color: var(--nord6);
+  --dark-color: #1a1b1f;
+  --light-color: #e5e4e0;
+  --r-background-color: var(--dark-color);
+  --r-main-font: 'JetBrains Mono', monospace;
+  --r-main-font-size: 36px;
+  --r-main-color: var(--light-color);
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: 'Ubuntu Mono', monospace;
-  --r-heading-color: var(--nord6);
+  --r-heading-font: 'JetBrains Mono', monospace;
+  --r-heading-color: var(--light-color);
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: none;
@@ -38,8 +51,8 @@ section.has-light-background h6 {
   --r-heading2-size: 1.6em;
   --r-heading3-size: 1.3em;
   --r-heading4-size: 1em;
-  --r-code-font: 'Ubuntu Mono', monospace;
-  --r-link-color: var(--nord7);
+  --r-code-font: 'JetBrains Mono', monospace;
+  --r-link-color: var(--light-color);
   --r-link-color-dark: #068de9;
   --r-link-color-hover: #8dcffc;
   --r-selection-background-color: rgba(66, 175, 250, 0.75);
