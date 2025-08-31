@@ -41,42 +41,38 @@
             </section>
             <section data-auto-animate>
                 <div class="centered" style="height: 100vh;">
-                    <div style="width: 20%; display: flex; align-items: center; justify-content: center;">
-                        <div
-                            style="position: relative; width: 100%; height: 250px; display: flex; align-items: center; justify-content: center;">
-                            <div
-                                style="position: absolute; top: 0; left: 0; width: 100%; bottom: 0; margin: auto; height: fit-content;">
-                                <div class="fragment custom move-out-to-up" data-fragment-index="1">
-                                    <img src="img/openai.svg" class="color-img">
-                                    <div class="centered">
-                                        <h2>ChatGPT</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fragment custom move-in-from-bottom" data-fragment-index="1"
-                                style="position: absolute; top: 0; left: 0; width: 100%; bottom: 0; margin: auto; height: fit-content;">
-                                <div class="fragment custom move-out-to-up" data-fragment-index="3">
-                                    <img src="img/ollama.svg" class="color-img">
-                                    <div class="centered">
-                                        <h2>Llama</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fragment custom move-in-from-bottom" data-fragment-index="3"
-                                style="position: absolute; top: 0; left: 0; width: 100%; bottom: 0; margin: auto; height: fit-content;">
-                                <div class="fragment custom move-out-to-up" data-fragment-index="5">
-                                    <img src="img/qwen.svg" class="color-img">
-                                    <div class="centered">
-                                        <h2>Qwen</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fragment custom move-in-from-bottom" data-fragment-index="5"
-                                style="position: absolute; top: 0; left: 0; width: 100%; bottom: 0; margin: auto; height: fit-content;">
-                                <img src="img/deepseek.svg" class="color-img">
+                    <div class="centered" style="position: relative; width: 20%;">
+                        <div style="position: absolute; width: 100%;">
+                            <div class="fragment custom move-out-to-up" data-fragment-index="1">
+                                <img src="img/openai.svg" class="color-img">
                                 <div class="centered">
-                                    <h2>DeepSeek</h2>
+                                    <h2>ChatGPT</h2>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="fragment custom move-in-from-bottom" data-fragment-index="1"
+                            style="position: absolute; width: 100%;">
+                            <div class="fragment custom move-out-to-up" data-fragment-index="3">
+                                <img src="img/ollama.svg" class="color-img">
+                                <div class="centered">
+                                    <h2>Llama</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fragment custom move-in-from-bottom" data-fragment-index="3"
+                            style="position: absolute; width: 100%;">
+                            <div class="fragment custom move-out-to-up" data-fragment-index="5">
+                                <img src="img/qwen.svg" class="color-img">
+                                <div class="centered">
+                                    <h2>Qwen</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fragment custom move-in-from-bottom" data-fragment-index="5"
+                            style="position: absolute; width: 100%;">
+                            <img src="img/deepseek.svg" class="color-img">
+                            <div class="centered">
+                                <h2>DeepSeek</h2>
                             </div>
                         </div>
                     </div>
@@ -85,26 +81,25 @@
                             style="background-color: var(--r-main-color); height: 100%; width: 5%;"></div>
                     </div>
                     <div class="centered" style="width: 70%; height: 250px; position: relative;">
-                        <div
-                            style="position: absolute; top: 0; left: 0; width: 100%; bottom: 0; margin: auto; height: fit-content;">
+                        <div style="position: absolute; width: 100%;">
                             <div class="fragment custom move-out-to-up" data-fragment-index="2">
                                 <h2 class="r-fit-text">Let's pretrain!</h2>
                             </div>
                         </div>
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="2"
-                            style="position: absolute; top: 0; left: 0; width: 100%; bottom: 0; margin: auto; height: fit-content;">
+                            style="position: absolute; width: 100%;">
                             <div class="fragment custom move-out-to-up" data-fragment-index="4">
                                 <h2 class="r-fit-text">Let's fine-tune!</h2>
                             </div>
                         </div>
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="4"
-                            style="position: absolute; top: 0; left: 0; width: 100%; bottom: 0; margin: auto; height: fit-content;">
+                            style="position: absolute; width: 100%;">
                             <div class="fragment custom move-out-to-up" data-fragment-index="6">
                                 <h2 class="r-fit-text">Let's just serve!</h2>
                             </div>
                         </div>
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="6"
-                            style="position: absolute; top: 0; left: 0; width: 100%; bottom: 0; margin: auto; height: fit-content;">
+                            style="position: absolute; width: 100%;">
                             <h2 class="r-fit-text">Let's buy tokens!</h2>
                         </div>
                     </div>
@@ -121,6 +116,181 @@
                 </div>
             </section>
 
+            <section>
+                <h2 class="r-fit-text" style="font-weight: normal;">
+                    Intelligence Bandwidth =
+                    <span style="display: inline-block; vertical-align: middle; text-align: center;">
+                        <span style="display: block; border-bottom: 2px solid; padding: 0 0.3em;">
+                            Useful Information
+                        </span>
+                        <span style="display: block; margin-top: 0.1em;">
+                            Time
+                        </span>
+                    </span>
+                </h2>
+            </section>
+            <style>
+                .blink-fade {
+                    animation: blinkFade 1.2s infinite;
+                }
+
+                @keyframes blinkFade {
+                    0% {
+                        opacity: 1;
+                    }
+
+                    50% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                .img-overlay-container {
+                    position: relative;
+                    display: inline-block;
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                }
+
+                .img-overlay-container img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+
+                .img-overlay-container svg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                }
+            </style>
+            <section>
+                <div class="centered">
+                    <div class="img-overlay-container">
+                        <img class="r-fit-text invert-img" src="img/data_only.svg" alt="Intelligence">
+                        <div class="fragment fade-in" data-fragment-index="1">
+                            <div class="fragment fade-out" data-fragment-index="2">
+                                <svg viewBox="0 0 1920 1080">
+                                    <circle class="blink-fade" cx="1600" cy="760" r="100" fill="none"
+                                        stroke="var(--r-main-color)" stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="fragment fade-in" data-fragment-index="2">
+                            <svg viewBox="0 0 1920 1080">
+                                <rect class="blink-fade" x="450" y="900" width="1400" height="80" fill="none"
+                                    stroke="var(--r-main-color)" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <p class="r-fit-text">Good metrics reveal growth patterns.</p>
+            </section>
+            <section data-auto-animate>
+                <div class="centered" style="height: 100vh;">
+                    <div class="centered" style="position: relative; width: 40%;">
+                        <div style="position: absolute; width: 100%;">
+                            <div class="fragment custom move-out-to-up" data-fragment-index="2">
+                                <h2 style="font-size: 2.5em; text-align: right;">Feature Width</h2>
+                            </div>
+                        </div>
+                        <div class="fragment custom move-in-from-bottom" data-fragment-index="2"
+                            style="position: absolute; width: 100%;">
+                            <div class="fragment custom move-out-to-up" data-fragment-index="4">
+                                <h2 style="font-size: 2.5em; text-align: right;">Network Bandwidth</h2>
+                            </div>
+                        </div>
+                        <div class="fragment custom move-in-from-bottom" data-fragment-index="4"
+                            style="position: absolute; width: 100%;">
+                            <div class="fragment custom move-out-to-up" data-fragment-index="6">
+                                <h2 style="font-size: 2.5em; text-align: right;">Compute Performance (FLOPS)</h2>
+                            </div>
+                        </div>
+                        <div class="fragment custom move-in-from-bottom" data-fragment-index="6"
+                            style="position: absolute; width: 100%;">
+                            <h2 style="font-size: 2.5em; text-align: right;">Intelligence Bandwidth (KB/s)</h2>
+                        </div>
+                    </div>
+                    <div class="centered"
+                        style="width: 10%; height: 500px; display: flex; align-items: center; justify-content: center;">
+                        <div style="font-size: 2em; font-weight: bold;">-></div>
+                    </div>
+                    <div class="centered" style="width: 40%; height: 250px; position: relative;">
+                        <div style="position: absolute; width: 100%;">
+                            <div class="fragment custom move-out-to-up" data-fragment-index="2">
+                                <h2 style="font-size: 2.5em; text-align: left;">Moore's Law</h2>
+                            </div>
+                        </div>
+                        <div class="fragment custom move-in-from-bottom" data-fragment-index="2"
+                            style="position: absolute; width: 100%;">
+                            <div class="fragment custom move-out-to-up" data-fragment-index="4">
+                                <h2 style="font-size: 2.5em; text-align: left;">Nielsen's Law</h2>
+                            </div>
+                        </div>
+                        <div class="fragment custom move-in-from-bottom" data-fragment-index="4"
+                            style="position: absolute; width: 100%;">
+                            <div class="fragment custom move-out-to-up" data-fragment-index="6">
+                                <h2 style="font-size: 2.5em; text-align: left;">Huang's Law</h2>
+                            </div>
+                        </div>
+                        <div class="fragment custom move-in-from-bottom" data-fragment-index="6"
+                            style="position: absolute; width: 100%;">
+                            <h2 style="font-size: 2.5em; text-align: left;">[???]'s Law</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section>
+                <div class="centered">
+                    <div class="img-overlay-container">
+                        <img class="r-fit-text invert-img" src="img/data_only.svg" alt="Intelligence">
+                        <svg viewBox="0 0 1920 1080">
+                            <polyline class="blink-fade" fill="none" stroke="var(--r-main-color)" stroke-width="3"
+                                stroke-dasharray="12,7" points="
+                                    240,910
+                                    364, 899
+                                    488, 889
+                                    612, 876
+                                    736, 860
+                                    860, 840
+                                    984, 817
+                                    1108, 787
+                                    1232, 752
+                                    1356, 708
+                                    1480, 656
+                                    1605,590
+                                " />
+                        </svg>
+                    </div>
+                </div>
+            </section>
+            <section data-auto-animate>
+                <h2 style="font-size: 300px;">Jin's Law</h2>
+            </section>
+            <section data-auto-animate>
+                <h2 style="color: #777">Jin's Law</h2>
+                <h1 class="">The peak AI output rate (KB/s) <br> doubles every year.</h1>
+            </section>
+            <section data-auto-animate data-auto-animate-restart>
+                <h2 style="font-size: 250px;">Limitations</h2>
+            </section>
+            <section data-auto-animate>
+                <h2 style="font-size: 2em; color: #777">Limitations</h2>
+                <ul style="text-align: left; font-size: 2em; line-height: 1.5em;">
+                    <li>The measurement of usefulness</li>
+                    <li class="fragment">The accuracy of the doubling period</li>
+                    <li class="fragment">The growth could plateau</li>
+                </ul>
+            </section>
             <section data-auto-animate data-auto-animate-restart>
                 <h1 class="r-fit-text">Thank you!</h1>
             </section>
@@ -130,7 +300,8 @@
                 <div class="centered">
                     <div style="text-align: left;">
                         <h2>
-                            <i class="bi-envelope-fill" style="margin-right:10px;"></i> <span>haifeng.jin@pm.me</span>
+                            <i class="bi-envelope-fill" style="margin-right:10px;"></i>
+                            <span>haifeng.jin@pm.me</span>
                         </h2>
                         <h2>
                             <i class="bi-pen" style="margin-right:10px;"></i> <span>haifengjin.com</span>
