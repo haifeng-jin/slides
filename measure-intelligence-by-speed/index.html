@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Measure Intelligence by Speed</title>
+    <link rel="icon" href="/img/favicon.ico">
+
+    <link rel="stylesheet" href="/css/reset.min.css">
+    <link rel="stylesheet" href="/css/reveal.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/css/onedark.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <br>
+                <h1 class="r-fit-text">Measure Intelligence by Speed</h1>
+                <h3 class="r-fit-text">A metric to track the exponential growth of AI</h3>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3>Haifeng Jin</h3>
+            </section>
+
+            <section>
+                <h2>The Problem with AI Benchmarks</h2>
+                <ul>
+                    <li class="fragment">Traditional benchmarks focus on <strong>quality</strong> and
+                        <strong>accuracy</strong>.
+                    </li>
+                    <li class="fragment">They largely overlook processing <strong>speed</strong>.</li>
+                    <li class="fragment">However, many real-world applications are time-sensitive, like autonomous
+                        driving or customer service.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Existing Speed Metrics Aren't Enough</h2>
+                <p>Metrics like Time to First Token (TTFT) and Tokens Per Second (TPS) have major limitations:</p>
+                <ul>
+                    <li class="fragment"><strong>Token-centric:</strong> They measure token output, not the usefulness
+                        of the information.</li>
+                    <li class="fragment"><strong>Not multi-modal:</strong> They are ill-suited for a future with images,
+                        audio, and video.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>A New Metric: Intelligence Bandwidth</h2>
+                <p><strong>Definition:</strong> The amount of <strong>useful information</strong> an AI can produce per
+                    unit of <strong>time</strong>.</p>
+                <br>
+                <h2 class="fragment">$$ B = \frac{I}{t} $$</h2>
+                <p class="fragment">Where $B$ is intelligence bandwidth, $I$ is useful information, and $t$ is time.</p>
+            </section>
+
+            <section>
+                <h2>How to Measure "Useful Information"?</h2>
+                <p>This paper proposes three ways to approximate it:</p>
+                <ol>
+                    <li class="fragment"><strong>Benchmark Score / Time:</strong> How much useful work (score) is done
+                        per second.</li>
+                    <li class="fragment"><strong>Information Theory:</strong> The information content (in bits) of the
+                        output per second.</li>
+                    <li class="fragment"><strong>Raw Output Bits / Time:</strong> Simple, modality-agnostic, and used
+                        for the paper's experiments.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Impact on Human-AI Interaction</h2>
+                <p>Just as network bandwidth enabled richer media on the internet (text → images → video), intelligence
+                    bandwidth will transform human-AI interaction.</p>
+                <p class="fragment">Real-time interaction in a modality becomes feasible when AI generation speed
+                    surpasses human perception speed.</p>
+            </section>
+
+            <section>
+                <h2>We're Already There for Text</h2>
+                <ul>
+                    <li>Human reading speed: ~238 words per minute.</li>
+                    <li class="fragment">State-of-the-art AI speed: ~14,000 words per minute.</li>
+                </ul>
+                <p class="fragment">What's next?</p>
+            </section>
+
+            <section>
+                <h2>Experimental Data: A Clear Trend</h2>
+                <p>Intelligence Bandwidth (KB/s) of major AI models over time.</p>
+                <img src="/assets/img/intelligence.svg"
+                    alt="A graph showing the intelligence bandwidth of AI models over time, with a clear exponential growth curve for image generators."
+                    style="width: 80%; border-radius: 10px;">
+            </section>
+
+            <section>
+                <h2>Observation: Exponential Growth!</h2>
+                <p>The experimental data reveals a distinct exponential growth trend, particularly for image generators.
+                </p>
+                <p class="fragment">This observation allows us to formulate a predictive law, similar to Moore's Law for
+                    transistors.</p>
+            </section>
+
+            <section>
+                <h2>Introducing: Jin's Law</h2>
+                <p class="r-fit-text">The intelligence bandwidth of the best publicly available AI model <strong>doubles
+                        approximately every year</strong>.</p>
+                <br>
+                <p class="fragment">$$ B(t) = B_0 \cdot 2^{(t-t_0)/T} $$</p>
+                <p class="fragment">Where the doubling period $T = 1$ year.</p>
+            </section>
+
+            <section>
+                <h2>Predictions from Jin's Law</h2>
+                <ol>
+                    <li class="fragment"><strong>Images in text conversations (Near-term):</strong> With image
+                        generation latency dropping below text response times, images will soon be integrated as
+                        illustrations in chat.</li>
+                    <li class="fragment"><strong>Real-time video interaction (3 Years):</strong> An 8x speed increase
+                        would make real-time video generation feasible. At the current doubling rate, this is about 3
+                        years away.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Conclusion & Key Takeaways</h2>
+                <ul>
+                    <li class="fragment"><strong>Intelligence Bandwidth</strong> is a new metric to measure AI
+                        processing speed.</li>
+                    <li class="fragment"><strong>Jin's Law</strong> predicts this metric doubles annually, forecasting
+                        future capabilities.</li>
+                    <li class="fragment">We need a paradigm shift: Evaluate dynamic, served AI systems, not just static
+                        models.</li>
+                    <li class="fragment"><strong>Main takeaway:</strong> Evaluate AI for a task using the same criteria
+                        as for a human—considering both quality and speed.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="r-fit-text">Thank You!</h2>
+                <br>
+                <h3>Questions?</h3>
+            </section>
+            <div class="my-slide-number"> 1 </div>
+        </div>
+    </div>
+
+    <script src="/js/reveal.min.js"></script>
+    <script src="/js/notes.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script src="/js/math.min.js"></script>
+    <script src="/measure-intelligence-by-speed/slides.js"></script>
+</body>
+
+</html>
