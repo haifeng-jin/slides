@@ -377,3 +377,10 @@ section.has-light-background h6 {
   }
 }
 
+.color-img {
+  width: 100%;
+  /* This works best if the SVG uses fill="currentColor" */
+  color: var(--r-main-color);
+  /* Fallback for general SVGs: make image white, then tint */
+  filter: brightness(0) saturate(100%) invert(92%) sepia(6%) saturate(0%) hue-rotate(183deg) brightness(104%) contrast(97%);
+}

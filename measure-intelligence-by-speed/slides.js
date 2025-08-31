@@ -24,6 +24,9 @@ Reveal.initialize({
     // Transition speed
     transitionSpeed: 'default', // default/fast/slow
 
+    // linear navigation mode: using left, right arrows to go through the vertical slides.
+    navigationMode: 'linear',
+
     // Learn about plugins: https://revealjs.com/plugins/
     plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX]
 });
