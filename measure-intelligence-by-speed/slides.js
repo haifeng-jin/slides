@@ -3,6 +3,7 @@
 // - https://revealjs.com/config/
 Reveal.initialize({
     hash: true,
+    center: false,
 
     // Set presentation resolution
     width: 1920,
