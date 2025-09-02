@@ -42,33 +42,39 @@
 .fragment.move-in-from-right {
     transform: translate(var(--r-h-translate), 0);
     visibility: hidden;
+    opacity: 0;
 }
 
 .fragment.move-in-from-right.visible {
     transform: translate(0, 0);
     visibility: visible;
+    opacity: 1;
     transition: var(--r-transition-time) var(--r-ease);
 }
 
 .fragment.move-in-from-left {
     transform: translate(calc(var(--r-h-translate) * -1), 0);
     visibility: hidden;
+    opacity: 0;
 }
 
 .fragment.move-in-from-left.visible {
     transform: translate(0, 0);
     visibility: visible;
+    opacity: 1;
     transition: var(--r-transition-time) var(--r-ease);
 }
 
 .fragment.move-in-from-bottom {
     transform: translate(0, var(--r-v-translate));
     visibility: hidden;
+    opacity: 0;
 }
 
 .fragment.move-in-from-bottom.visible {
     transform: translate(0, 0);
     visibility: visible;
+    opacity: 1;
     transition: var(--r-transition-time) var(--r-ease);
 }
 
@@ -82,18 +88,21 @@
 .fragment.move-out-to-left.visible {
     transform: translate(calc(var(--r-h-translate) * -1), 0);
     visibility: hidden;
+    opacity: 0;
     transition: var(--r-transition-time) var(--r-ease);
 }
 
 .fragment.move-out-to-right.visible {
     transform: translate(var(--r-h-translate), 0);
     visibility: hidden;
+    opacity: 0;
     transition: var(--r-transition-time) var(--r-ease);
 }
 
 .fragment.move-out-to-up.visible {
     transform: translate(0, calc(var(--r-v-translate)* -1));
     visibility: hidden;
+    opacity: 0;
     transition: var(--r-transition-time) var(--r-ease);
 }
 
@@ -115,7 +124,7 @@
 /* Components */
 .progress-container {
     width: 50%;
-    background-color: #4C566A;
+    background-color: #777;
     height: 60px;
     border-radius: 15px;
 }
