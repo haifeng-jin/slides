@@ -12,11 +12,53 @@
     <link rel="stylesheet" href="/css/reveal.min.css">
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fragment.css">
 
     <link rel="stylesheet" href="/css/onedark.css">
 </head>
 
 <body>
+    <style>
+        .blink-fade {
+            animation: blinkFade 1.2s infinite;
+        }
+
+        @keyframes blinkFade {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .img-overlay-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .img-overlay-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .img-overlay-container svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
     <div class="reveal">
         <div class="slides">
             <section>
@@ -411,47 +453,6 @@
                     Just like we take exams. have a time limit. measure useful information.
                 </aside>
             </section>
-            <style>
-                .blink-fade {
-                    animation: blinkFade 1.2s infinite;
-                }
-
-                @keyframes blinkFade {
-                    0% {
-                        opacity: 1;
-                    }
-
-                    50% {
-                        opacity: 0;
-                    }
-
-                    100% {
-                        opacity: 1;
-                    }
-                }
-
-                .img-overlay-container {
-                    position: relative;
-                    display: inline-block;
-                    width: 100%;
-                    aspect-ratio: 16 / 9;
-                }
-
-                .img-overlay-container img {
-                    display: block;
-                    width: 100%;
-                    height: auto;
-                }
-
-                .img-overlay-container svg {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    pointer-events: none;
-                }
-            </style>
             <section>
                 <div class="centered" style="height: 1080px;">
                     <div class="img-overlay-container">

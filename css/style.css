@@ -1,13 +1,5 @@
 @import url(./theme.css);
 
-:root {
-    /* For fragment animation */
-    --r-h-translate: 1920px;
-    --r-v-translate: 1080px;
-    --r-v-fade-translate: 80px;
-    --r-transition-time: 0.8s;
-    --r-ease: cubic-bezier(0.260, 0.860, 0.440, 0.985);
-}
 
 /* Layouts */
 .nowrap {
@@ -25,98 +17,22 @@
     will-change: transform;
 }
 
-/* Custom fragment animations */
-.fragment.fade-in-up {
-    transform: translate(0, var(--r-v-fade-translate));
-    visibility: hidden;
-    opacity: 0;
+.color-img {
+    width: 100%;
+    /* This works best if the SVG uses fill="currentColor" */
+    color: var(--r-main-color);
+    /* Fallback for general SVGs: make image white, then tint */
+    filter: brightness(0) saturate(100%) invert(92%) sepia(6%) saturate(0%) hue-rotate(183deg) brightness(104%) contrast(97%);
 }
 
-.fragment.fade-in-up.visible {
-    transform: translate(0, 0);
-    opacity: 1;
-    visibility: visible;
-    transition: var(--r-transition-time) var(--r-ease);
+.invert-img {
+    width: 100%;
+    color: var(--r-main-color);
+    filter: invert(1) hue-rotate(180deg);
 }
 
-.fragment.move-in-from-right {
-    transform: translate(var(--r-h-translate), 0);
-    visibility: hidden;
-    opacity: 0;
-}
-
-.fragment.move-in-from-right.visible {
-    transform: translate(0, 0);
-    visibility: visible;
-    opacity: 1;
-    transition: var(--r-transition-time) var(--r-ease);
-}
-
-.fragment.move-in-from-left {
-    transform: translate(calc(var(--r-h-translate) * -1), 0);
-    visibility: hidden;
-    opacity: 0;
-}
-
-.fragment.move-in-from-left.visible {
-    transform: translate(0, 0);
-    visibility: visible;
-    opacity: 1;
-    transition: var(--r-transition-time) var(--r-ease);
-}
-
-.fragment.move-in-from-bottom {
-    transform: translate(0, var(--r-v-translate));
-    visibility: hidden;
-    opacity: 0;
-}
-
-.fragment.move-in-from-bottom.visible {
-    transform: translate(0, 0);
-    visibility: visible;
-    opacity: 1;
-    transition: var(--r-transition-time) var(--r-ease);
-}
-
-.fragment.fade-out-up.visible {
-    transform: translate(0, calc(var(--r-v-fade-translate) * -1));
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--r-transition-time) var(--r-ease);
-}
-
-.fragment.move-out-to-left.visible {
-    transform: translate(calc(var(--r-h-translate) * -1), 0);
-    visibility: hidden;
-    opacity: 0;
-    transition: var(--r-transition-time) var(--r-ease);
-}
-
-.fragment.move-out-to-right.visible {
-    transform: translate(var(--r-h-translate), 0);
-    visibility: hidden;
-    opacity: 0;
-    transition: var(--r-transition-time) var(--r-ease);
-}
-
-.fragment.move-out-to-up.visible {
-    transform: translate(0, calc(var(--r-v-translate)* -1));
-    visibility: hidden;
-    opacity: 0;
-    transition: var(--r-transition-time) var(--r-ease);
-}
-
-.fragment.blur-out.visible {
-    /* For blur to work with Safari */
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-filter: blur(20px);
-    -moz-filter: blur(20px);
-    -ms-filter: blur(20px);
-
-    filter: blur(20px);
+.my-slide-number {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
 }
