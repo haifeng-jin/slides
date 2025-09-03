@@ -18,6 +18,70 @@
 </head>
 
 <body>
+	<style>
+		/* Components */
+		.progress-container {
+			width: 50%;
+			background-color: #777;
+			height: 60px;
+			border-radius: 15px;
+		}
+
+		.progress-bar {
+			height: 100%;
+			background-color: var(--r-main-color);
+			transition: var(--r-transition-time) ease-out;
+			border-radius: 15px 0 0 15px;
+			padding-right: 15px;
+
+			/* For the number counter inside */
+			color: var(--r-background-color);
+			display: flex;
+			justify-content: right;
+			align-items: center;
+		}
+
+		.my-slide-number {
+			position: absolute;
+			right: 30px;
+			bottom: 30px;
+		}
+
+		@property --percent {
+			syntax: "<number>";
+			initial-value: 0;
+			inherits: false;
+		}
+
+		@property --temp {
+			syntax: "<number>";
+			initial-value: 0;
+			inherits: false;
+		}
+
+		@property --v1 {
+			syntax: "<integer>";
+			initial-value: 0;
+			inherits: false;
+		}
+
+		@property --v2 {
+			syntax: "<integer>";
+			initial-value: 0;
+			inherits: false;
+		}
+
+		.counter {
+			transition: --percent var(--r-transition-time) ease-out;
+			--v1: max(var(--percent) - 0.5, 0);
+			--v2: max((var(--percent) - var(--v1)) * 10 - 0.5, 0);
+			counter-reset: v1 var(--v1) v2 var(--v2);
+		}
+
+		.counter::before {
+			content: counter(v1) "." counter(v2) "%";
+		}
+	</style>
 	<div class="reveal">
 		<div class="slides">
 			<section>
@@ -1143,7 +1207,92 @@
 	<script src="/js/reveal.min.js"></script>
 	<script src="/js/notes.min.js"></script>
 	<script src="/js/highlight.min.js"></script>
-	<script src="./slides.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Set presentation resolution
+			width: 1920,
+			height: 1080,
+
+			// Display presentation control arrows
+			controls: false,
+
+			// Display slide number to false
+			// Add my own element under <slides>
+			slideNumber: false,
+
+			// Display a presentation progress bar
+			progress: false,
+
+			// Transition style
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Transition speed
+			transitionSpeed: 'default', // default/fast/slow
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealHighlight, RevealNotes]
+		});
+
+		var current_slide = 0;
+
+		Reveal.on('slidechanged', event => {
+			// Changing slide number.
+			current_slide = event.currentSlide;
+			var element = document.getElementsByClassName('my-slide-number')[0];
+			element.innerHTML = Reveal.getIndices(event.currentSlide).h + 1;
+		});
+
+		var progress_indices = {
+			"tensorflow": 0,
+			"chrome": 0,
+			"android": 0,
+			"python-percentage": 0,
+		};
+		var progress_values = [26.91, 48.41, 92.61];
+
+		Reveal.on('fragmentshown', event => {
+			progress_index = ++progress_indices[current_slide.id];
+			if (current_slide.id == "chrome" && progress_index == 2) {
+				setTimeout(Reveal.next, 300);
+				setTimeout(Reveal.next, 300);
+			}
+			if (current_slide.id == "android" && progress_index == 1) {
+				setTimeout(Reveal.next, 300);
+				setTimeout(Reveal.next, 300);
+			}
+			if (current_slide.id == "python-percentage") {
+				value = progress_values[progress_index]
+				document.getElementById("progress-bar").style.width = value + "%";
+				document.getElementById("counter").style.setProperty("--percent", value);
+			}
+		});
+
+		Reveal.on('fragmenthidden', event => {
+			progress_index = --progress_indices[current_slide.id];
+			if (progress_index < 0) {
+				progress_index = progress_indices[current_slide.id] = 0;
+			}
+
+			if (current_slide.id == "chrome" && progress_index == 0) {
+				setTimeout(Reveal.prev, 300);
+				setTimeout(Reveal.prev, 300);
+			}
+			if (current_slide.id == "tensorflow" && progress_index == 0) {
+				setTimeout(Reveal.prev, 300);
+				setTimeout(Reveal.prev, 300);
+			}
+			if (current_slide.id == "python-percentage") {
+				value = progress_values[progress_index]
+				document.getElementById("progress-bar").style.width = value + "%";
+				document.getElementById("counter").style.setProperty("--percent", value);
+			}
+		});
+	</script>
 </body>
 
 </html>
