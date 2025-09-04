@@ -472,6 +472,58 @@
                     Multi-Modal
                 </h2>
             </section>
+            <section>
+                <div style="height: 200px;">
+                </div>
+                <h2 style="color: var(--gray-color);">A normal day in</h2>
+                <h2 style="font-size: 600px;">1990</h2>
+            </section>
+            <section>
+                <p style="text-align: left; font-size: 40px;">
+                    <br>
+                    <br>
+                    <br>MS - DOS Version 6.22
+                    <br>(C) Copyright Microsoft Corp 1981 - 1994.
+                    <br>
+                    <br>
+                    <span class="fragment" data-fragment-index="1">
+                        <span id="typed-line-1"></span>
+                        <span class="blink-fade" id="typed-cursor-1"
+                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
+                    </span>
+                    <br>
+                    <br>
+                    <span class="fragment" data-fragment-index="2">
+                        <span id="typed-line-2"></span>
+                        <span class="blink-fade" id="typed-cursor-2"
+                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
+                    </span>
+                    <br>
+                    <br>
+                    <span class="fragment" data-fragment-index="3">
+                        <span id="typed-line-3"></span>
+                        <span class="blink-fade" id="typed-cursor-3"
+                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
+                    </span>
+                    <br>
+                    <br>
+                    <span class="fragment" data-fragment-index="4">
+                        <span id="typed-line-4"></span>
+                        <span class="blink-fade" id="typed-cursor-4"
+                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
+                    </span>
+                    <br>
+                    <br>
+                    <span class="fragment" data-fragment-index="5">
+                        <span id="typed-line-5"></span>
+                        <span class="blink-fade" id="typed-cursor-5"
+                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
+                    </span>
+                </p>
+            </section>
+            <section>
+                text, audio, image, video, ???
+            </section>
             <section data-auto-animate data-auto-animate-restart>
                 <div style="height: 450px;">
                 </div>
@@ -835,6 +887,57 @@
             current_slide = event.currentSlide;
             var element = document.getElementsByClassName('my-slide-number')[0];
             element.innerHTML = Reveal.getIndices(event.currentSlide).h + 1;
+        });
+
+        const lines = [
+            "[ChatGPT] Greetings, ancient human. " +
+            "I am ChatGPT, time-traveling from 2025 " +
+            "to tell you about our latest technology!",
+            "C:\\> Do we have flying cars yet?",
+            "[ChatGPT] No, but we have chatboxes!",
+            "C:\\> Errr...Like this one I am using??",
+            "[ChatGPT] Exactly! " +
+            "You are experiencing how humans in 2025 use computers!"
+        ];
+
+        function startTypingEffect(lineIndex) {
+            // Hide previous cursor (when next fragment starts)
+            if (lineIndex > 1) {
+                const prevCursor = document.getElementById(`typed-cursor-${lineIndex - 1}`);
+                if (prevCursor) prevCursor.style.visibility = "hidden";
+            }
+            // Show current cursor
+            const cursor = document.getElementById(`typed-cursor-${lineIndex}`);
+            if (cursor) cursor.style.visibility = "visible";
+
+            const text = lines[lineIndex - 1];
+            const container = document.getElementById(`typed-line-${lineIndex}`);
+            let i = 0;
+            container.textContent = ""; // Reset
+
+            function typeChar() {
+                if (i <= text.length) {
+                    container.textContent = text.slice(0, i);
+                    i++;
+                    setTimeout(typeChar, 30);
+                }
+                // Do NOT hide the cursor here!
+            }
+            typeChar();
+        }
+
+        // Hide all cursors initially
+        for (let i = 1; i <= lines.length; i++) {
+            const cursor = document.getElementById(`typed-cursor-${i}`);
+            if (cursor) cursor.style.visibility = "hidden";
+        }
+
+        Reveal.on('fragmentshown', function (event) {
+            for (let i = 1; i <= lines.length; i++) {
+                if (event.fragment && event.fragment.querySelector(`#typed-line-${i}`)) {
+                    startTypingEffect(i);
+                }
+            }
         });
     </script>
 </body>
