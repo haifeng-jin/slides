@@ -13,12 +13,16 @@
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/fragment.css">
-
+    <link rel="stylesheet" href="/css/theme.css">
     <link rel="stylesheet" href="/css/onedark.css">
 </head>
 
 <body>
     <style>
+        .katex-display {
+            margin: 50px;
+        }
+
         .blink-fade {
             animation: blinkFade 1.2s infinite;
         }
@@ -79,7 +83,7 @@
             </section>
             <section data-auto-animate>
                 <div style="height: 100px"></div>
-                <h2 style="text-align:center; color:#777">Interview</h2>
+                <h2 style="text-align:center; color: var(--gray-color);">Interview</h2>
                 <div class="centered" style="position: relative;height: 800px;">
                     <!-- Left person and stopwatch -->
                     <div style="display: inline-block; position: relative; width:30%;">
@@ -229,17 +233,44 @@
                     </table>
                 </div>
             </section>
-            <section>
-                why speed matters?
-                customer service & autonomous driving
+            <section data-auto-animate>
+                <div style="height: 450px;">
+                </div>
+                <h2 class="centered" style="font-size: 160px;">
+                    Why does it matter?
+                </h2>
+            </section>
+            <section data-auto-animate>
+                <div style="height: 100px;">
+                </div>
+                <h2 class="centered" style="color: var(--gray-color);">
+                    Why does it matter?
+                </h2>
+                <div style="height: 50px;">
+                </div>
+                <div class="centered"
+                    style="display: flex; justify-content: center; align-items: flex-start; gap: 28vw;">
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <i class="bi bi-telephone-fill" style="font-size: 400px;"></i>
+                        <div style="margin-top: 1em; font-size: 50px;">Customer Service</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <i class="bi bi-car-front-fill" style="font-size: 400px;"></i>
+                        <div style="margin-top: 1em; font-size: 50px;">Autonomous Driving</div>
+                    </div>
+                </div>
             </section>
             <section>
-                Why was it ignored?
+                <div style="height: 450px;">
+                </div>
+                <h2 class="centered" style="font-size: 160px;">
+                    Why was it ignored?
+                </h2>
             </section>
             <section>
                 <div style="height: 200px;">
                 </div>
-                <h2 style="color: #777;">2012</h2>
+                <h2 style="color: var(--gray-color);">2012</h2>
                 <h2 class="r-fit-text">AlexNet</h2>
                 <aside class="notes">
                     AI was less capable, cares more about what it can do.
@@ -364,7 +395,7 @@
             <section data-auto-animate>
                 <div style="height: 100px;">
                 </div>
-                <h2 style="color: #777">Speed Metric for AI</h2>
+                <h2 style="color: var(--gray-color);">Speed Metric for AI</h2>
                 <div style="font-size: 188px;">
                     <div style="position: relative; display: inline-block;">
                         <div class="fragment custom move-out-to-left" data-fragment-index="1">
@@ -380,24 +411,84 @@
                 </div>
             </section>
             <section>
-                token == task?
+                <div style="height: 450px;">
+                </div>
+                <div class="centered">
+                    <h2 class="r-fit-text">
+                        Tokens &prop; Usefulness <span class="fragment">?</span>
+                    </h2>
+                </div>
             </section>
-            <section>
-                test-time scaling
-                smaller model with more tokens = larger model with less tokens
-                Implications: 1. benchmarks no longer measures intelligence.
+            <section data-auto-animate>
+                <div style="height: 450px;">
+                </div>
+                <h2 style="font-size: 180px;">
+                    Test-Time Scaling
+                </h2>
             </section>
-            <section>
-                2. token != task
+            <section data-auto-animate>
+                <div style="height: 200px;">
+                </div>
+                <h2 style="color: var(--gray-color)">
+                    Test-Time Scaling
+                </h2>
+                <div style="height: 100px;">
+                </div>
+                <h1>
+                    smaller model with more tokens<br>==<br>larger model with less tokens
+                </h1>
             </section>
-            <section>
-                Another problem is the multi-modal.
+            <section data-auto-animate data-auto-animate-restart>
+                <div style="height: 450px;">
+                </div>
+                <h2 style="font-size: 180px;">
+                    Implications
+                </h2>
+            </section>
+            <section data-auto-animate>
+                <div style="height: 200px;">
+                </div>
+                <h2 style="color: var(--gray-color);">
+                    Implications
+                </h2>
+                <div style="height: 100px;">
+                </div>
+                <h1>
+                    Benchmarks Are Invalid.
+                </h1>
+                <div style="height: 100px;">
+                </div>
+                <h1 class="fragment fade-in">
+                    Tokens != Usefulness
+                </h1>
             </section>
             <section>
                 <div style="height: 200px;"></div>
+                <h2 style="color: var(--gray-color)">
+                    Another Problem with TPS:
+                </h2>
+                <div style="height: 100px;"></div>
+                <h2 style="font-size: 280px;">
+                    Multi-Modal
+                </h2>
+            </section>
+            <section data-auto-animate data-auto-animate-restart>
+                <div style="height: 450px;">
+                </div>
+                <h2 style="font-size: 120px;">
+                    Human-Computer Interaction
+                </h2>
+            </section>
+            <section data-auto-animate>
+                <div style="height: 100px;">
+                </div>
+                <h2 style="color: var(--gray-color);">
+                    Human-Computer Interaction
+                </h2>
+                <div style="height: 50px;"></div>
                 <div class="centered">
                     <div style="width:30%;">
-                        <img style="border-radius: 10%;" src="img/2020.jpg">
+                        <img class="fragment" style="border-radius: 10%;" src="img/2020.jpg">
                         <div class="centered">
                             <h2>2020</h2>
                         </div>
@@ -405,12 +496,16 @@
                     <div style="width:20%;">
                     </div>
                     <div style="width:30%;">
-                        <img style="border-radius: 10%;" src="img/2025.jpg">
+                        <img class="fragment" style="border-radius: 10%;" src="img/2025.jpg">
                         <div class="centered">
                             <h2>2025</h2>
                         </div>
                     </div>
                 </div>
+                <aside class="notes">
+                    This is definitely not the future we want.
+                    We want to interact with AI in a more natural way.
+                </aside>
             </section>
 
             <!-- <section>
@@ -426,8 +521,23 @@
             </section>
             <section data-auto-animate>
                 <div style="height: 100px;"></div>
-                <h2 style="color:#777">A New Metric</h2>
-                <div class="r-fit-text">Intelligence<br>Bandwidth</div>
+                <h2 style="color: var(--gray-color);">A New Metric</h2>
+                <div style="height: 50px;"></div>
+                <div class="r-fit-text fragment custom fade-out" data-fragment-index="3">
+                    <div class="fragment custom fade-in-up" data-fragment-index="1">
+                        Measures Usefulness
+                    </div>
+                    <div style="height: 100px;"></div>
+                    <div class="fragment custom fade-in-up" data-fragment-index="2">
+                        Cross-Modality
+                    </div>
+                </div>
+            </section>
+            <section data-auto-animate>
+                <div style="height: 100px;"></div>
+                <h2 style="color: var(--gray-color);">A New Metric</h2>
+                <div class="r-fit-text">
+                    Intelligence<br>Bandwidth</div>
             </section>
             <section>
                 <div style="height: 400px;"></div>
@@ -451,6 +561,64 @@
                 </div>
                 <aside class="notes">
                     Just like we take exams. have a time limit. measure useful information.
+                </aside>
+            </section>
+            <section data-auto-animate data-auto-animate-restart>
+                <div style="height: 400px;"></div>
+                <h2 style="font-size: 225px;">Disambiguation</h2>
+            </section>
+            <section data-auto-animate>
+                <div style="height: 200px;"></div>
+                <h2 style="color: var(--gray-color)">Disambiguation</h2>
+                <div style="height: 100px;"></div>
+                <h1>Time: Wall Time&nbsp;</h1>
+                <div style="height: 100px;"></div>
+                <h1 class="fragment">Usefulness: 3 Approximations</h1>
+            </section>
+            <section>
+                <div style="height: 100px;"></div>
+                <h2 style="color: var(--gray-color)">Method 1:</h2>
+                <h1>Weighted Average Over Time</h1>
+                <div style="height: 50px;"></div>
+                <h1>
+                    $$
+                    B = \frac{\sum\limits_{i=1}^{n} w_i s_i}{\sum\limits_{i=1}^{n} w_i \cdot t}
+                    $$
+                </h1>
+                <aside class="notes">
+                    Hardest to implement, but most accurate.
+                </aside>
+            </section>
+            <section>
+                <div style="height: 100px;"></div>
+                <h2 style="color: var(--gray-color)">Method 2:</h2>
+                <h1>The Information Theory Approach</h1>
+                <div style="height: 50px;"></div>
+                <h1>
+                    $$
+                    B=\frac{I'(X)}{t}
+                    $$
+                </h1>
+                <h1>
+                    $$
+                    I'(X) = -\sum_{i=1}^{n} \log_2 P(x_i | x_1, x_2, \dots, x_{i-1})
+                    $$
+                </h1>
+                <aside class="notes">
+                    Easier to implement, but less accurate.
+                </aside>
+            </section>
+            <section>
+                <div style="height: 100px;"></div>
+                <h2 style="color: var(--gray-color)">Method 3:</h2>
+                <div style="height: 100px;"></div>
+                <h1>Raw Output Bits</h1>
+                <div style="height: 100px;"></div>
+                <h1>
+                    KiloBytes per Second (KB/s)
+                </h1>
+                <aside class="notes">
+                    Easiest to implement, but least accurate.
                 </aside>
             </section>
             <section>
@@ -571,7 +739,7 @@
             </section>
             <section data-auto-animate>
                 <div style="height: 350px;"></div>
-                <h2 style="color: #777">Jin's Law</h2>
+                <h2 style="color: var(--gray-color);">Jin's Law</h2>
                 <h1>The peak AI output rate (KB/s) <br> doubles every year.</h1>
             </section>
             <section data-auto-animate data-auto-animate-restart>
@@ -580,7 +748,7 @@
             </section>
             <section data-auto-animate>
                 <div style="height: 250px;"></div>
-                <h2 style="color: #777">Limitations</h2>
+                <h2 style="color: var(--gray-color);">Limitations</h2>
                 <ul style="text-align: left; font-size: 2em; line-height: 1.5em;">
                     <li>The measurement of usefulness</li>
                     <li class="fragment">The accuracy of the doubling period</li>
@@ -593,7 +761,7 @@
             </section>
             <section data-auto-animate>
                 <div style="height: 300px;"></div>
-                <h2 style="color:#777">Takeaway</h2>
+                <h2 style="color: var(--gray-color);">Takeaway</h2>
                 <h1>Processing speed is <br> an essential component of <br>intelligence.</h1>
                 <!-- add a new graph of hardware, compiler, framework, model, data -->
             </section>

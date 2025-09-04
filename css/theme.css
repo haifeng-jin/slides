@@ -33,6 +33,7 @@ section.has-light-background h6 {
 :root {
   --dark-color: #1a1b1f;
   --light-color: #e5e4e0;
+  --gray-color: #777;
   --r-background-color: var(--dark-color);
   --r-main-font: 'JetBrains Mono', monospace;
   --r-main-font-size: 36px;
