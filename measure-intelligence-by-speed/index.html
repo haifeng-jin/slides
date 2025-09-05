@@ -15,9 +15,11 @@
     <link rel="stylesheet" href="/css/fragment.css">
     <link rel="stylesheet" href="/css/theme.css">
     <link rel="stylesheet" href="/css/onedark.css">
-</head>
 
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">:w
+
     <style>
         .katex-display {
             margin: 50px;
@@ -25,6 +27,7 @@
 
         .blink-fade {
             animation: blinkFade 1.2s infinite;
+            background: #b6ffb6 !important;
         }
 
         @keyframes blinkFade {
@@ -62,7 +65,81 @@
             height: 100%;
             pointer-events: none;
         }
+
+        /* CRT effect styles */
+        .crt-effect {
+            position: relative;
+            display: block;
+            max-width: 1500px;
+            height: 850px;
+            margin: 0 auto;
+            background: #111;
+            color: #b6ffb6;
+            filter: contrast(1.2) brightness(1.1) saturate(1.2);
+            text-shadow: 0 0 2px #b6ffb6, 0 0 8px #0f0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 0 32px #0f0a;
+            padding: 0em 2em 1.5em 2em;
+            animation: flicker 0.5s infinite alternate;
+            /* Add flickering animation */
+            font-family: "VT323", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* Scan lines effect */
+        .crt-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 5px,
+                    rgba(0, 255, 0, 0.06) 5px,
+                    rgba(0, 255, 0, 0.06) 10px);
+            animation: scanlines 0.1s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.9;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scanlines {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 1ch;
+            vertical-align: middle;
+            background: #b6ffb6;
+            animation: blinkFade 1.2s infinite;
+        }
     </style>
+</head>
+
+<body>
     <div class="reveal">
         <div class="slides">
             <section>
@@ -473,53 +550,38 @@
                 </h2>
             </section>
             <section>
-                <div style="height: 200px;">
+                <div style="height: 100px;">
                 </div>
                 <h2 style="color: var(--gray-color);">A normal day in</h2>
                 <h2 style="font-size: 600px;">1990</h2>
             </section>
             <section>
-                <p style="text-align: left; font-size: 40px;">
-                    <br>
-                    <br>
-                    <br>MS - DOS Version 6.22
-                    <br>(C) Copyright Microsoft Corp 1981 - 1994.
-                    <br>
-                    <br>
-                    <span class="fragment" data-fragment-index="1">
-                        <span id="typed-line-1"></span>
-                        <span class="blink-fade" id="typed-cursor-1"
-                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
-                    </span>
-                    <br>
-                    <br>
-                    <span class="fragment" data-fragment-index="2">
-                        <span id="typed-line-2"></span>
-                        <span class="blink-fade" id="typed-cursor-2"
-                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
-                    </span>
-                    <br>
-                    <br>
-                    <span class="fragment" data-fragment-index="3">
-                        <span id="typed-line-3"></span>
-                        <span class="blink-fade" id="typed-cursor-3"
-                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
-                    </span>
-                    <br>
-                    <br>
-                    <span class="fragment" data-fragment-index="4">
-                        <span id="typed-line-4"></span>
-                        <span class="blink-fade" id="typed-cursor-4"
-                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
-                    </span>
-                    <br>
-                    <br>
-                    <span class="fragment" data-fragment-index="5">
-                        <span id="typed-line-5"></span>
-                        <span class="blink-fade" id="typed-cursor-5"
-                            style="display:inline-block; width:1ch; background:var(--r-main-color); vertical-align:middle;">&nbsp;</span>
-                    </span>
-                </p>
+                <br>
+                <div class="crt-effect">
+                    <p
+                        style="text-align: left; font-size: 60px; position: relative; z-index: 10; margin: 0; line-height: 0.8;">
+
+                        <br>MS - DOS Version 6.22
+                        <br>(C) Copyright Microsoft Corp 1981 - 1990.
+                        <br>
+                        <br>
+                        <span class="fragment" data-fragment-index="1">
+                            <span id="typed-line-1"></span>
+                        </span>
+                        <span class="fragment" data-fragment-index="2">
+                            <span id="typed-line-2"></span>
+                        </span>
+                        <span class="fragment" data-fragment-index="3">
+                            <span id="typed-line-3"></span>
+                        </span>
+                        <span class="fragment" data-fragment-index="4">
+                            <span id="typed-line-4"></span>
+                        </span>
+                        <span class="fragment" data-fragment-index="5">
+                            <span id="typed-line-5"></span>
+                        </span>
+                    </p>
+                </div>
             </section>
             <section>
                 text, audio, image, video, ???
@@ -890,47 +952,44 @@
         });
 
         const lines = [
-            "[ChatGPT] Greetings, ancient human. " +
-            "I am ChatGPT, time-traveling from 2025 " +
-            "to tell you about our latest technology!",
-            "C:\\> Do we have flying cars yet?",
-            "[ChatGPT] No, but we have chatboxes!",
-            "C:\\> Errr...Like this one I am using??",
-            "[ChatGPT] Exactly! " +
-            "You are experiencing how humans in 2025 use computers!"
+            "[ChatGPT] Greetings, ancient human. I am ChatGPT,\ntime-traveling from 2025 to tell you\nabout our latest technology!\n\nC:\\>",
+            "Tell me about the future! Do we have flying cars yet?",
+            "\n\n[ChatGPT] No, but we have chatboxes!\nThat's how people use computers in 2025.\n\nC:\\>",
+            "Errr...Like what I am doing now??",
+            "\n\n[ChatGPT] Exactly!"
         ];
 
         function startTypingEffect(lineIndex) {
             // Hide previous cursor (when next fragment starts)
             if (lineIndex > 1) {
                 const prevCursor = document.getElementById(`typed-cursor-${lineIndex - 1}`);
-                if (prevCursor) prevCursor.style.visibility = "hidden";
+                if (prevCursor) prevCursor.remove();
             }
             // Show current cursor
-            const cursor = document.getElementById(`typed-cursor-${lineIndex}`);
-            if (cursor) cursor.style.visibility = "visible";
+            const container = document.getElementById(`typed-line-${lineIndex}`);
+            const cursor = document.createElement('span');
+            cursor.id = `typed-cursor-${lineIndex}`;
+            cursor.className = 'cursor';
+            cursor.innerHTML = '&nbsp;';
+            container.appendChild(cursor);
 
             const text = lines[lineIndex - 1];
-            const container = document.getElementById(`typed-line-${lineIndex}`);
             let i = 0;
-            container.textContent = ""; // Reset
+            container.innerHTML = ""; // Reset, but will re-add cursor
 
             function typeChar() {
                 if (i <= text.length) {
-                    container.textContent = text.slice(0, i);
+                    const currentText = text.slice(0, i);
+                    container.innerHTML = currentText.replace(/\n/g, '<br>');
+                    container.appendChild(cursor); // Re-append cursor after text
                     i++;
                     setTimeout(typeChar, 30);
                 }
-                // Do NOT hide the cursor here!
             }
             typeChar();
         }
 
-        // Hide all cursors initially
-        for (let i = 1; i <= lines.length; i++) {
-            const cursor = document.getElementById(`typed-cursor-${i}`);
-            if (cursor) cursor.style.visibility = "hidden";
-        }
+        // No initial cursor setup needed since none exist
 
         Reveal.on('fragmentshown', function (event) {
             for (let i = 1; i <= lines.length; i++) {
