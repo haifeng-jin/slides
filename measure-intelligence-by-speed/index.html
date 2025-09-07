@@ -338,10 +338,10 @@
                 </div>
             </section>
             <section>
-                <div style="height: 450px;">
+                <div style="height: 300px;">
                 </div>
-                <h2 class="centered" style="font-size: 160px;">
-                    Why was it ignored?
+                <h2 class="centered" style="font-size: 400px;">
+                    Why now?
                 </h2>
             </section>
             <section>
@@ -437,34 +437,62 @@
             </section>
             <section>
                 <div class="centered" style="height:1080px;">
-                    <h2 class="r-fit-text">Buy tokens!</h2>
+                    <h2 class="r-fit-text">Buy Tokens!</h2>
                 </div>
             </section>
             <section>
                 <div class="centered" style="height:1080px;">
-                    <h2 class="r-fit-text">A Mental Shift</h2>
+                    <h2 class="r-fit-text">More Capable</h2>
                 </div>
+                <aside class="notes">
+                    We saw a few trends we observed.
+                    Models were not good enough. So people care more about what
+                    they can do than how fast they can run.
+                </aside>
             </section>
             <section>
-                <div class="centered" style="height: 1080px;">
-                    <div style="width: 40%;">
-                        <p style="font-size: 5em; text-align: right;">Static<br>Model</p>
+                <div class="centered" style="height:1080px;">
+                    <h2 class="r-fit-text">More General</h2>
+                </div>
+                <aside class="notes">
+                    Models became more capable.
+                    We use the same transformer architecture from medical diagnosis to recommendation systems.
+                    It is the time now to have a unified speed metric.
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div style="height: 450px;">
+                </div>
+                <h2 style="font-size: 200px;">A Mental Shift</h2>
+            </section>
+            <section data-auto-animate>
+                <div style="height: 350px;">
+                </div>
+                <h2 style="color: var(--gray-color)">A Mental Shift</h2>
+                <div class="centered">
+                    <div style="width: 35%;">
+                        <p style="font-size: 5em; text-align: right;">Model</p>
                     </div>
                     <div class="centered" style="width: 20%; ">
                         <p style="font-size: 5em; font-weight: bold;">-></p>
                     </div>
-                    <div style="width: 40%;">
-                        <p style="font-size: 5em; text-align: left;">Served<br>Model</p>
+                    <div style="width: 45%;">
+                        <p style="font-size: 5em; text-align: left;">Service</p>
                     </div>
                 </div>
                 <aside class="notes">
-                    It is no longer about measuring the capability of a static model,
-                    but about measuring the capability of an AI service.
+                    It is no longer about measuring the capability of a static model.
+                    A static model's speed depends on the serving infrastructure.
+                    If everyone serves at a different speed of the same model,
+                    it is hard to have unified speed metric.
+
+                    but now, we are using well-encapsulated AI services.
                     Speed is an integral part of the service.
+                    We will have to consider the time dimension when we evaluate AI.
                     To measure the service, we definitely need a good speed metric.
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-auto-animate-restart>
                 <div style="height: 450px;">
                 </div>
                 <h2 style="font-size: 150px;">Speed Metric for AI</h2>
@@ -504,7 +532,7 @@
                 </h2>
             </section>
             <section data-auto-animate>
-                <div style="height: 200px;">
+                <div style="height: 250px;">
                 </div>
                 <h2 style="color: var(--gray-color)">
                     Test-Time Scaling
@@ -513,20 +541,20 @@
                 </div>
                 <div class="centered">
                     <div style="width: 40%; text-align: right;">
-                        <h1>smaller model<br>more tokens</h1>
+                        <h1>Smaller Model<br>More Tokens</h1>
                     </div>
                     <div style="width: 20%; text-align: center;">
                         <h1>==</h1>
                     </div>
                     <div style="width: 40%; text-align: left;">
-                        <h1>larger model<br>less tokens</h1>
+                        <h1>Larger Model<br>Less Tokens</h1>
                     </div>
                 </div>
             </section>
             <section data-auto-animate data-auto-animate-restart>
-                <div style="height: 450px;">
+                <div style="height: 350px;">
                 </div>
-                <h2 style="font-size: 180px;">
+                <h2 style="font-size: 250px;">
                     Implications
                 </h2>
             </section>
@@ -671,13 +699,16 @@
                 <div style="height: 50px;"></div>
                 <div class="r-fit-text">
                     <div class="fragment custom fade-in-up" data-fragment-index="1">
-                        Measures Usefulness
+                        Task Speed
                     </div>
                     <div style="height: 100px;"></div>
                     <div class="fragment custom fade-in-up" data-fragment-index="2">
                         Cross-Modality
                     </div>
                 </div>
+                <aside class="notes">
+                    It needs to be a strong indicator of how fast the AI can complete a task.
+                </aside>
             </section>
             <section>
                 <div style="height: 100px;"></div>
@@ -774,14 +805,22 @@
                         <div class="fragment fade-in" data-fragment-index="1">
                             <div class="fragment fade-out" data-fragment-index="2">
                                 <svg viewBox="0 0 1920 1080">
-                                    <circle class="blink-fade" cx="1600" cy="760" r="100" fill="none"
+                                    <rect class="blink-fade" x="450" y="900" width="1400" height="80" fill="none"
                                         stroke="var(--r-main-color)" stroke-width="2" />
                                 </svg>
                             </div>
                         </div>
                         <div class="fragment fade-in" data-fragment-index="2">
+                            <div class="fragment fade-out" data-fragment-index="3">
+                                <svg viewBox="0 0 1920 1080">
+                                    <circle class="blink-fade" cx="1570" cy="230" r="100" fill="none"
+                                        stroke="var(--r-main-color)" stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="fragment fade-in" data-fragment-index="3">
                             <svg viewBox="0 0 1920 1080">
-                                <rect class="blink-fade" x="450" y="900" width="1400" height="80" fill="none"
+                                <circle class="blink-fade" cx="1600" cy="760" r="100" fill="none"
                                     stroke="var(--r-main-color)" stroke-width="2" />
                             </svg>
                         </div>
@@ -888,37 +927,69 @@
                 <h2 style="color: var(--gray-color);">Jin's Law</h2>
                 <h1>The peak AI output rate (KB/s) <br> doubles every year.</h1>
             </section>
-            <section>
-                human ai interaction
-                self paced vs fixed-speed
+            <section data-auto-animate data-auto-animate-restart>
+                <div style="height: 450px;"></div>
+                <h2 style="font-size: 150px;">Human AI Interaction</h2>
+            </section>
+            <section data-auto-animate>
+                <div style="height: 200px;"></div>
+                <h2 style="color: var(--gray-color);">Human AI Interaction</h2>
+                <div style="height: 100px;"></div>
+                <div class="centered" style="display: flex; align-items: center; justify-content: center; gap: 5vw;">
+                    <div style="flex: 1; text-align: center;">
+                        <h2>Self-Paced</h2>
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4em;">
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <i class="bi bi-file-text" style="font-size: 200px;"></i>
+                                <div style="margin-top: 1em; font-size: 30px;">Text</div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <i class="bi bi-image" style="font-size: 200px;"></i>
+                                <div style="margin-top: 1em; font-size: 30px;">Image</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 10px; height: 400px; background-color: var(--r-main-color);"></div>
+                    <div style="flex: 1; text-align: center;">
+                        <h2>Fixed Speed</h2>
+                        <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap:
+                        4em;">
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <i class="bi bi-volume-up" style="font-size: 200px;"></i>
+                                <div style="margin-top: 1em; font-size: 30px;">Audio</div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <i class="bi bi-camera-video" style="font-size: 200px;"></i>
+                                <div style="margin-top: 1em; font-size: 30px;">Video</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section data-auto-animate data-auto-animate-restart>
-                <div style="height: 450px;">
+                <div style="height: 350px;">
                 </div>
-                <h2 style="font-size: 180px;">
+                <h2 style="font-size: 250px;">
                     Applications
                 </h2>
             </section>
             <section data-auto-animate>
-                <div style="height: 200px;">
+                <div style="height: 350px;">
                 </div>
                 <h2 style="color: var(--gray-color);">
                     Applications
                 </h2>
-                <div style="height: 200px;">
-                </div>
                 <h1>
                     Mix images in text responses<br>in 1 year
                 </h1>
             </section>
             <section>
-                <div style="height: 200px;">
+                <div style="height: 350px;">
                 </div>
                 <h2 style="color: var(--gray-color);">
                     Applications
                 </h2>
-                <div style="height: 100px;">
-                </div>
                 <h1>
                     Real-time video interactions<br>in 3 years
                 </h1>
@@ -934,10 +1005,8 @@
                 <h2 style="font-size: 290px;">Limitations</h2>
             </section>
             <section data-auto-animate>
-                <div style="height: 250px;"></div>
+                <div style="height: 350px;"></div>
                 <h2 style="color: var(--gray-color);">Limitations</h2>
-                <div style="height: 100px;">
-                </div>
                 <ul style="text-align: left; font-size: 2em; line-height: 1.5em;">
                     <li>The measurement of usefulness</li>
                     <li class="fragment">The accuracy of the doubling period</li>
@@ -945,25 +1014,55 @@
                 </ul>
             </section>
             <section data-auto-animate data-auto-animate-restart>
-                <div style="height: 300px;"></div>
+                <div style="height: 350px;"></div>
                 <h2 style="font-size: 400px;">Takeaway</h2>
             </section>
             <section data-auto-animate>
-                <div style="height: 300px;"></div>
+                <div style="height: 350px;"></div>
                 <h2 style="color: var(--gray-color);">Takeaway</h2>
                 <h1>Processing speed is <br> an essential component of <br>intelligence.</h1>
-                <!-- add a new graph of hardware, compiler, framework, model, data -->
             </section>
             <section>
-                <div class="centered" style="font-size:400px;">
-                    <i class="bi-robot" style="width:30%"></i>
-                    <p>vs</p>
-                    <i class="bi-person-fill" style="width:30%"></i>
-                </div>
-            </section>
+                <div class="centered"
+                    style="height: 1080px; display: flex; align-items: center; justify-content: center;">
+                    <!-- Left side -->
+                    <div style="flex: 1; text-align: right; padding-right: 20px; margin-left:-200px;" class="fragment"
+                        data-fragment-index="1">
+                        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 20px;">
+                            <h2 style="font-size: 2.5em; margin: 0;">Training Recipe</h2>
+                            <br>
+                            <h2 style="font-size: 2.5em; margin: 0;">Model</h2>
+                            <br>
+                            <h2 style="font-size: 2.5em; margin: 0;">Data</h2>
+                        </div>
+                    </div>
 
-            <section>
-                add a new graph of hardware, compiler, framework, model, data
+                    <!-- Center -->
+                    <div style="flex: 0 0 auto; text-align: center; padding: 0 40px;">
+                        <h1 style="font-size: 8em; margin: 0;">
+                            <span class="fragment" data-fragment-index="1"
+                                style="transform: scale(1, 1); display: inline-block; margin-right: -100px; color: var(--gray-color);">}</span>
+                            <span>AI</span>
+                            <span class="fragment" data-fragment-index="2"
+                                style="transform: scale(1, 1); display: inline-block; margin-left: -100px; color: var(--gray-color);">{</span>
+                        </h1>
+                    </div>
+
+                    <!-- Right side -->
+                    <div style="flex: 1; text-align: left; padding-left: 20px;" class="fragment"
+                        data-fragment-index="2">
+                        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+                            <h2 style="font-size: 2.5em; margin: 0;">Framework</h2>
+                            <br>
+                            <h2 style="font-size: 2.5em; margin: 0;">Kernels & Compiler</h2>
+                            <br>
+                            <h2 style="font-size: 2.5em; margin: 0;">Hardware</h2>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    everyone is contributing to the intelligence.
+                </aside>
             </section>
             <section data-auto-animate data-auto-animate-restart>
                 <div style="height: 300px;"></div>
