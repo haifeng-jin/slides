@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>Measure Intelligence by Speed</title>
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="../favicon.ico">
 
-    <link rel="stylesheet" href="/css/reset.min.css">
-    <link rel="stylesheet" href="/css/reveal.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-icons.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/fragment.css">
-    <link rel="stylesheet" href="/css/theme.css">
-    <link rel="stylesheet" href="/css/onedark.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.min.css">
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/fragment.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/onedark.css">
 
     <style>
         .katex-display {
@@ -152,9 +148,18 @@
                 <br>
                 <br>
                 <h3>Haifeng Jin</h3>
+                <aside class="notes">
+                    Hey, welcome to my talk on measuring intelligence by speed—a new way to track AI's exponential
+                    growth. This idea hit me from nowhere, and I instantly found it interesting enough to be published.
+                    So, I did this research independently. And I am thrilled to share it with you today. Let's get right
+                    to it!
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Interview</h2>
+                <aside class="notes">
+                    Picture a job interview
+                </aside>
             </section>
             <section>
                 <div class="centered" style="position: relative;height: 800px;">
@@ -206,9 +211,22 @@
                         </div>
                     </div>
                 </div>
+                <aside class="notes">
+                    While we have two candidates. The interviewer gave each of them 45 minutes to solve the same tough
+                    coding
+                    problem. The
+                    first candidate finishes 100% of the problem on time. While the second only gets 50% done. Normally,
+                    we'd just fail the second one and pick the first.
+                    This time, However, something strange happened. The interviewer said "let's double
+                    the time for the second candidate. And see what they can do." Then, the candidate finished 100% in
+                    the end. And, the interviewer assigned the same score to both candidates.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Is this fair?</h2>
+                <aside class="notes">
+                    Is this fair? Of course, not. But, this is exactly how we're evaluating AI models today.
+                </aside>
             </section>
             <section>
                 <div class="centered">
@@ -303,11 +321,23 @@
                         </tbody>
                     </table>
                 </div>
+                <aside class="notes">
+                    Here's a table released in the blog post announcing Gemini 2.5 Pro showing its superiority over
+                    other models on various benchmarks.
+                    Each column represents a different AI model, and each row is a benchmark test.
+                    We see scores, but no info on time or tokens used. We are just looking at the final grades, and
+                    ignoring
+                    the exam duration.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">
                     Why does it matter?
                 </h2>
+                <aside class="notes">
+                    Why care about time? If AI gets the job done, isn't that enough? Well, it's usually not the case in
+                    real-world applications.
+                </aside>
             </section>
             <section>
                 <div class="centered"
@@ -321,18 +351,33 @@
                         <div style="margin-top: 1em; font-size: 50px;">Autonomous Driving</div>
                     </div>
                 </div>
+                <aside class="notes">
+                    In real-world apps like customer service or self-driving cars, timing is critical. In customer
+                    service, you can't keep users waiting forever, and missing a
+                    deadline in autonomous driving? It could be disastrous.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">
                     Why now?
                 </h2>
+                <aside class="notes">
+                    It is natural to have the question of why we did not care about it earlier if it is so important?
+                    Why now is the right time to propose this?
+                    To answer this question, we need to have a quick review of the history of Generative AI in the past
+                    few years.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">2012</h2>
                 <h2 class="r-fit-text">AlexNet</h2>
                 <aside class="notes">
-                    AI was less capable, cares more about what it can do.
-                    It was more task specific. So no general metrics were needed.
+                    So, in 2012, now we are on slide number nine. So,
+                    in 2012, we have. AlexNet, which almost solved the ImageNet dataset completely. From that
+                    time on, people start to realize that deep learning is really useful, and they
+                    start to develop a various different neural architectures for their different
+                    problems. And deep learning did a pretty good job.
+
                 </aside>
             </section>
             <section>
@@ -401,31 +446,64 @@
                         </div>
                     </div>
                 </div>
+                <aside class="notes">
+                    And then came the ChatGPT moment. This large language model blew everyone away—we suddenly saw AI
+                    handling all sorts of problems, not just one niche task. People thought, "Hey, let's pre-train our
+                    own models instead of relying on third-party services." But that was pricey, so when Llama dropped
+                    as an open-source model, folks could download it, fine-tune it themselves, and skip the massive
+                    pre-training costs. Soon, other capable open-source models like Qwen popped up, and we realized we
+                    didn't even need to fine-tune them. Just serve 'em as-is and use prompt engineering to get the
+                    behavior we wanted.
+
+                    Then DeepSeek hit the scene—a game-changer in LLM history. It slashed training costs and token
+                    prices, forcing Google Gemini and OpenAI's GPT models to drop their rates to stay competitive in the
+                    market.
+                    Tokens got super cheap, so users ditched the hassle of running their own servers. Why bother with a
+                    team of engineers, expensive hardware, and all that maintenance overhead when you can just buy
+                    tokens via APIs? Way more efficient. Both financially and operationally.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">What did we learn?</h2>
+                <aside class="notes">
+                    So, what did we learn from this brief history?
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Buy Tokens!</h2>
+                <aside class="notes">
+                    First, buy tokens! It is more cost effective.
+                    Do not develop your own models or serving infra.
+                    This is exactly the major cloud providers like Google Cloud wants you to do.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">More Capable</h2>
                 <aside class="notes">
-                    We saw a few trends we observed.
-                    Models were not good enough. So people care more about what
-                    they can do than how fast they can run.
+                    Second, AI got way more capable.
+                    Before ChatGPT, AI were still struggling to pass the turing test.
+                    If it cannot even do the tasks, it was really not the right time to care about speed.
+
+                    Now, they can do the tasks pretty well. So, probably it is a good time to think about speed.
+                    However, the speed could still be measured task-by-task instead of using a unified metric.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">More General</h2>
                 <aside class="notes">
-                    Models became more capable.
-                    We use the same transformer architecture from medical diagnosis to recommendation systems.
-                    It is the time now to have a unified speed metric.
+                    Then, models also got way more general.
+                    Before ChatGPT, models were
+                    task-specific. Now, the same model can handle tons of stuff.
+                    from recommendation systems all the way to medical imaging.
+                    So, Now, it might be a good time to design a unified speed metric that can describe the speed of AI.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">A Mental Shift</h2>
+                <aside class="notes">
+                    The most important lesson we learned here is that
+                    A mental shift is needed.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color)">A Mental Shift</h2>
@@ -441,19 +519,22 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    It is no longer about measuring the capability of a static model.
-                    A static model's speed depends on the serving infrastructure.
-                    If everyone serves at a different speed of the same model,
-                    it is hard to have unified speed metric.
+                    A shift from using models to using services.
+                    By model, I mean the neural architectures and their parameters. Something that purely static and can
+                    be written on a piece of paper.
+                    By service, I mean running the models on GPUs and put it behind the APIs.
+                    The users call the APIs to get the tokens.
 
-                    but now, we are using well-encapsulated AI services.
-                    Speed is an integral part of the service.
-                    We will have to consider the time dimension when we evaluate AI.
-                    To measure the service, we definitely need a good speed metric.
+                    Now, since we are shifting from using models to using services, we also need to shift our evaluation
+                    metrics from evaluating models to evaluating services.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Speed Metric for AI</h2>
+                <aside class="notes">
+                    So, we do have some speed metrics for AI today.
+                    Let's take a look.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">Speed Metric for AI</h2>
@@ -470,6 +551,13 @@
                     <p>per</p>
                     <p>Second</p>
                 </div>
+                <aside class="notes">
+                    The most popular speed metric for AI today is tokens per second, or TPS.
+                    Basically, it's about how many tokens can AI spits out per second.
+                    But this metric is a little bit indirect.
+                    What the users really care about is tasks per second, or time per task.
+                    So how do we measure that?
+                </aside>
             </section>
             <section>
                 <div class="centered">
@@ -477,11 +565,19 @@
                         High TPS == Fast <span class="fragment">?</span>
                     </h2>
                 </div>
+                <aside class="notes">
+                    Intuitively, we might think that high TPS means fast task completion. But is that really true?
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">
                     Test-Time Scaling
                 </h2>
+                <aside class="notes">
+                    Check out test-time scaling paper, which is a quite popular one from ICLR 2024.
+                    It shows that when you increase the length of the chain of thought, just let the model think a
+                    little bit more, it becomes more intelligent.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color)">
@@ -498,11 +594,19 @@
                         <h1>Larger Model<br>Less Tokens</h1>
                     </div>
                 </div>
+                <aside class="notes">
+                    You can also ready it in another way.
+                    Extend the thinking time, and smaller models handle complex tasks just as well.
+                    So, Smaller models with more tokens can do the same as larger models with fewer tokens.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">
                     Implications
                 </h2>
+                <aside class="notes">
+                    There are a couple of important implications of this.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">
@@ -515,9 +619,13 @@
                     High TPS != Fast
                 </h1>
                 <aside class="notes">
-                    No matter how many tokens per second it can output, if it does not solve the problem, there is no
-                    value. You use TPS is like measuring a persons intelligence by how fast they can randomly type on a
-                    keyboard.
+                    First, benchmark datasets are invalid. They no longer measure intelligence levels without
+                    considering the number of tokens used.
+                    A larger model is obviously more intelligent than a smaller model, they still can have the same
+                    score on the benchmarks.
+
+                    Second, high TPS does not mean fast task completion. You know how fast it can spit out tokens, but
+                    you do not know how many tokens you need to finish a task.
                 </aside>
             </section>
             <section>
@@ -527,10 +635,16 @@
                 <h2 class="r-fit-text">
                     Multi-Modal
                 </h2>
+                <aside class="notes">
+                    Another issue: TPS doesn't work for multimodal AI.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">A normal day in</h2>
                 <h2 class="r-fit-text">1990</h2>
+                <aside class="notes">
+                    Imagine a normal day in the year of 1990: John, a software engineer, boots up his MS-DOS PC.
+                </aside>
             </section>
             <section>
                 <br>
@@ -559,11 +673,23 @@
                         </span>
                     </p>
                 </div>
+                <aside class="notes">
+                    Suddenly, ChatGPT from 2025
+                    appears: 'Greetings, ancient human! I'm here to share our latest tech.'
+                    John gets excited and asks about the future—flying cars? ChatGPT says no, but we have chatbots!
+                    That's how we use computers in 2025. John is confused: 'Like what I'm doing now?' ChatGPT:
+                    'Exactly!'
+                    Thanks to ChatGPT, the way we interact with computers today is largely the same as 35 years ago,
+                    which is purely text-based.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">
                     Human-Computer Interaction
                 </h2>
+                <aside class="notes">
+                    This story really forces us to rethink about human-computer interaction in the AI era.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">
@@ -586,8 +712,9 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    This is definitely not the future we want.
-                    We want to interact with AI in a more natural way.
+                    Think about the human computer interaction in 2020, we have TikTok,
+                    live streams. Everything was multimedia. However, in 2025, AI pushed us back to the text mode.
+                    That's not the future we want.
                 </aside>
             </section>
             <section>
@@ -617,9 +744,16 @@
                         <div style="margin-top: 1em; font-size: 30px;">???</div>
                     </div>
                 </div>
+                <aside class="notes">
+                    The future of AI is multimodal: text, audio, images, video, and beyond. It could be real-time gaming
+                    with AI-generated visuals, or VR worlds generated by AI with high accuracy.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">A New Metric</h2>
+                <aside class="notes">
+                    That's why we need a new speed metric. Tokens per second is not helping us reach that future.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">A New Metric</h2>
@@ -635,12 +769,18 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    It needs to be a strong indicator of how fast the AI can complete a task.
+                    A quick summary.
+                    New metric needs two things: measure task speed, not token speed, and work across modalities—text,
+                    images, videos.
                 </aside>
             </section>
             <section>
                 <div class="r-fit-text">
                     Intelligence<br>Bandwidth</div>
+                <aside class="notes">
+                    I am honored to introduce
+                    Intelligence Bandwidth, a new metric we use to measure the speed of AI.
+                </aside>
             </section>
             <section>
                 <div class="centered" style="font-size: 80px;">
@@ -662,17 +802,28 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Just like we take exams. have a time limit. measure useful information.
+                    It is measured as useful information output by AI per unit time.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Disambiguation</h2>
+                <aside class="notes">
+                    Of course, there are some ambiguities here.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color)">Disambiguation</h2>
                 <h1>Time: Wall Time&nbsp;</h1>
                 <div style="height: 100px;"></div>
                 <h1 class="fragment">Usefulness: 3 Approximations</h1>
+                <aside class="notes">
+                    We use wall time, not CPU time. We are using AI to interact with the real world, so we care about
+                    elapsed time in the real world not about how the compute happend behind the APIs.
+                    Second ambiguity: measuring usefulness. This seems to be a pretty subjective measure. It is
+                    challenging to measure the exact amount of useful
+                    information in the AI output, We propose 3
+                    simple approximations.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color)">Method 1:</h2>
@@ -684,7 +835,19 @@
                     $$
                 </h1>
                 <aside class="notes">
-                    Hardest to implement, but most accurate.
+                    Method 1: Weighted average over time.
+                    This looks exactly like how we compute our GPA.
+                    B is the intelligence bandwidth.
+                    w is the weight of each benchmark, s is the score AI achieved on each benchmark,
+                    The only difference is that we divide the GPA by total time elapsed during the exams, which is the t
+                    here.
+
+                    Here are the pros and cons.
+                    It is the most accurate way to measure usefulness. These benchmarks are designed to let AI produce
+                    useful information. Anything that is not useful, for example, a wrong answer, or their long chain of
+                    thought, is not counted.
+                    However, it is challenging to measure. You have to spend a lot of money and have all the
+                    benchmarks available to measure them.
                 </aside>
             </section>
             <section>
@@ -702,7 +865,22 @@
                     $$
                 </h1>
                 <aside class="notes">
-                    Easier to implement, but less accurate.
+                    The second method is an Information theory approach. It measures total amount of information in
+                    output.
+                    B is the intelligence bandwidth.
+                    X is the output
+                    I'(X) is the total information in the output.
+                    t is the time.
+
+                    For example, if it is a language model, I'(X) can be computed like this using conditional
+                    probability.
+                    Given all the previous tokens, x1 to x(i-1), how likely is the next token x(i) would be.
+                    And we use the log to compute the information in bits just like how we compute the entropy.
+
+                    The problem of this method is it is not easy to measure.
+                    For example, to commpute P, you need to have access to the probability vector output by the language
+                    model. You can not get it from the APIs.
+                    Another problem is that it assumes all the output is useful, which is not always true.
                 </aside>
             </section>
             <section>
@@ -714,7 +892,19 @@
                     KiloBytes per Second (KB/s)
                 </h1>
                 <aside class="notes">
-                    Easiest to implement, but least accurate.
+                    The third method is the simplest. It measures raw output in KB/s.
+                    It is super simple to measure and works across modalities.
+                    The problem is also obvious, output from AI may not always be useful.
+                    However, we can fix that by constraining it to the most high speed-quality AI services, like ChatGPT
+                    and Gemini. And trust them, their outputs are mostly useful.
+
+                    A quick summary. Method 1 is the most accurate, but the hardest to measure.
+                    So, if you are an application builder, you may want to choose method 1 to evaluate the models you
+                    are using.
+
+                    However, because Method 3 is super simple to measure, it can give you a first pass across all the
+                    models to get a smaller subset for further evaluation. I used it to put all the models on a single
+                    plot.
                 </aside>
             </section>
             <section>
@@ -745,6 +935,18 @@
                         </div>
                     </div>
                 </div>
+                <aside class="notes">
+                    It looks like this.
+                    The x-axis is time, and the y-axis is intelligence bandwidth in KB/s.
+                    The models includes text, image, and video generation models.
+
+                    There are a few observations we can make here.
+
+                    1. Text models are mostly in the 0 to 3 KB/s range.
+                    2. Gemini 2.5's flash image generation is an outlier with a very high KB/s.
+                    3. Video generation models, like Veo, are lower than expected, probably due to serving technology
+                    limitations.
+                </aside>
             </section>
             <section>
                 <div class="centered" style="height: 1080px;">
@@ -811,7 +1013,28 @@
                         </div>
                     </div>
                 </div>
+                <aside class="notes">
+                    And a good metric does not just end there.
+                    Good metrics discovers new growth patterns.
 
+                    For example, feature width led to Moore's Law,
+                    The density of integrated circuits doubles every two years.
+
+                    Another example, compute
+                    performance led to Huang's Law.
+                    The performance is measured in FLOPS, which doubles less than every two years.
+
+                    Another example, network bandwidth led to Nielsen's Law.
+                    The bandwidth available to high-end users grows by approximately 50% annually.
+
+                    Why are these laws useful?
+                    You can actually use them to predict future trends.
+                    For example, with Nielsen's Law, you can predict the emergence of twitter, pinterest, tiktok, and
+                    YouTube. cause higher bandwidth enabled users to consume multimedia content.
+
+                    So, what about intelligence bandwidth? Is there a new growth pattern waiting to be discovered about
+                    AI?
+                </aside>
             </section>
             <section>
                 <div class="centered">
@@ -836,16 +1059,35 @@
                         </svg>
                     </div>
                 </div>
+                <aside class="notes">
+                    By fitting a line through the top models, we see exponential growth in KB/s for top models.
+                    Excluding the speed-quality tradeoff of Gemini 2.5 Flash, the line fits between Imagen 3 and
+                    Imagen 4, which are the best image generators with highest fidelity. This is a rather conservative
+                    estimate.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Jin's Law</h2>
+                <aside class="notes">
+                    I name this exponential growth as Jin's Law
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">Jin's Law</h2>
                 <h1>The peak AI output rate (KB/s) <br> doubles every year.</h1>
+                <aside class="notes">
+                    It says: Peak AI output rate in KB/s doubles every year. We measure only the best public APIs
+                    to ensure useful output. We select the modality with the highest intelligence bandwidth. Now, it is
+                    image generation. One day, video might take the lead.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Human AI Interaction</h2>
+                <aside class="notes">
+                    Jin's Law helps predict human-AI interaction shifts.
+                    Before we get into the actual predictions.
+                    Let's quickly review a few basics in human-AI interaction.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">Human AI Interaction</h2>
@@ -881,11 +1123,37 @@
                         </div>
                     </div>
                 </div>
+                <aside class="notes">
+                    There are two main types of human-AI interaction:
+                    Self-paced and fixed-speed.
+                    The self-paced includes text and images, where users go at their own speed.
+                    The fixed-speed includes audio and video, where the users follows the playback speed.
+                    For self-paced ones, AI's output speed needs to exceeds human reading speed to enable real-time
+                    interaction.
+
+                    Text, For example, we as humans can read at about 200 to 300 words per minute.
+                    while AI can generate 14,000 words per minute, which is way faster than human reading speed.
+                    So, it allows us to do real-time text-based interactions with AI.
+
+                    For fixed-speed ones, AI's output speed needs to match the playback speed for real-time interaction.
+                    Audio, for example, as long as it can generate 1s of audio in 1s, we can real-time audio
+                    interactions with AI.
+                    Today, the best model can generate 100 seconds of audio in 1 second.
+                    So, we can already do audio interactions with AI.
+
+                    For images, and videos, we are not there yet.
+                    Now, I will show you how to apply Jin's Law to predict when we can do real-time interactions with
+                    images
+                    and videos.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">
                     Applications
                 </h2>
+                <aside class="notes">
+                    Now we come to the applications of Jin's Law.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">
@@ -894,6 +1162,12 @@
                 <h1>
                     Mix images in text responses<br>in 1 year
                 </h1>
+                <aside class="notes">
+                    TBD
+                    Example 1: Mixing images in text responses in 1 year. Gemini 2.5 Flash generates images in 4
+                    seconds. If it doubles the speed to 2 seconds, it would be fast
+                    enough for inline illustrations, like explaining matrix multiplication visually.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">
@@ -908,9 +1182,21 @@
                     generated in
                     8s = $\frac{64}{2^3}$
                 </h2>
+                <aside class="notes">
+                    TBD
+                    Example 2: Real-time video interactions in 3 years. Current video gen takes 60s for 8s video.
+                    Doubling KB/s
+                    yearly means 8x faster in 3 years (2^3), enabling real-time gen.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Limitations</h2>
+                <aside class="notes">
+                    TBD
+                    Limitations: Approximations are rough—improve them! Doubling period uncertain due to limited data.
+                    Growth
+                    might plateau like Moore's Law, due to market bubbles or energy limits.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">Limitations</h2>
@@ -921,13 +1207,34 @@
                         <h1 class="fragment">3. The growth plateau</h1>
                     </div>
                 </div>
+                <aside class="notes">
+                    TBD
+                    There are three main limitations of Jin's Law.
+                    First, the approximations. The three methods to approximate usefulness are all pretty rough. We
+                    should
+                    improve them.
+                    Second, the doubling period. We only have a few data points, so the doubling period of one year is
+                    pretty
+                    uncertain.
+                    Third, the growth plateau. Just like Moore's Law, the growth might plateau due to market bubbles or
+                    energy limits.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Takeaway</h2>
+                <aside class="notes">
+                    Despite all the limitations, we still have one important takeaway.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">Takeaway</h2>
                 <h1>Processing speed is <br> an essential component of <br>intelligence.</h1>
+                <aside class="notes">
+                    TBD
+                    Takeaway: Processing speed is key to intelligence. When replacing humans, evaluate AI like
+                    humans—including
+                    speed. Speed boosts from frameworks, kernels, GPUs all count toward AI intelligence.
+                </aside>
             </section>
             <section>
                 <div class="centered"
@@ -968,7 +1275,10 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    everyone is contributing to the intelligence.
+                    TBD
+                    Ask yourself: Am I boosting AI intelligence today? If you're working on efficiency, frameworks, or
+                    real apps
+                    that speed things up, yes!
                 </aside>
             </section>
             <section>
@@ -984,15 +1294,23 @@
                         </h2>
                     </div>
                 </div>
+                <aside class="notes">
+                    Thanks everyone for listening. You can reach me at haifeng.jin@pm.me.
+                    Also, I publish articles on my personal blog at haifengjin.com.
+                    There are some very interesting ones like, why doesn't google sell TPUs, why does Meta open-source
+                    llama, why does Google open-source tensorflow, and build a mini version of PyTorch from scratch with
+                    only 800 lines of code.
+                    Welcome to check it out.
+                </aside>
             </section>
             <div class="my-slide-number"> 1 </div>
         </div>
     </div>
 
-    <script src="/js/reveal.min.js"></script>
-    <script src="/js/notes.min.js"></script>
-    <script src="/js/highlight.min.js"></script>
-    <script src="/js/math.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+    <script src="../js/notes.min.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/math.min.js"></script>
     <script>
         // More info about initialization & config:
         // - https://revealjs.com/initialization/
