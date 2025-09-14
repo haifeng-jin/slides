@@ -897,7 +897,18 @@
                     The problem is also obvious, output from AI may not always be useful.
                     However, we can fix that by constraining it to the most high speed-quality AI services, like ChatGPT
                     and Gemini. And trust them, their outputs are mostly useful.
-
+                </aside>
+            </section>
+            <section>
+                <h2 style="color: var(--gray-color);">Summary</h2>
+                <div class="centered">
+                    <div style="text-align: left;">
+                        <h1>1. Weighted average over time</h1>
+                        <h1 class="fragment">2. The information theory approach</h1>
+                        <h1 class="fragment">3. Raw output bits (KB/s)</h1>
+                    </div>
+                </div>
+                <aside class="notes">
                     A quick summary. Method 1 is the most accurate, but the hardest to measure.
                     So, if you are an application builder, you may want to choose method 1 to evaluate the models you
                     are using.
@@ -1018,7 +1029,9 @@
                     Good metrics discovers new growth patterns.
 
                     For example, feature width led to Moore's Law,
-                    The density of integrated circuits doubles every two years.
+                    The number of transistors on a chip doubles every two years.
+                    It is actually based on the density of transistors, which is directly related to the metric of
+                    feature width.
 
                     Another example, compute
                     performance led to Huang's Law.
@@ -1153,6 +1166,7 @@
                 </h2>
                 <aside class="notes">
                     Now we come to the applications of Jin's Law.
+                    Let's try to apply Jin's Law to make some predictions about Human AI interactions.
                 </aside>
             </section>
             <section>
@@ -1163,10 +1177,21 @@
                     Mix images in text responses<br>in 1 year
                 </h1>
                 <aside class="notes">
-                    TBD
-                    Example 1: Mixing images in text responses in 1 year. Gemini 2.5 Flash generates images in 4
-                    seconds. If it doubles the speed to 2 seconds, it would be fast
-                    enough for inline illustrations, like explaining matrix multiplication visually.
+                    The first prediction we can make is mixing images in text responses in 1 year.
+                    First, why do we even need this?
+                    For example, it would be very helpful to explain how matrix multiplication visually instead of
+                    purely using text.
+
+                    Then, why can we do it in 1 year?
+                    Gemini 2.5 Flash generates images in 4 seconds.
+                    Based on Jin's Law, the intelligence bandwidth would double in a year.
+                    If it is reduced to 2 seconds, it would be fast
+                    enough to generate an image in the middle of a text response.
+
+                    As we discussed just now, for text and image, the user would go with their own pace.
+                    Even the user would skim through quickly in the text
+                    response, 2 seconds is good enough to produce the image
+                    before the user reaches that part.
                 </aside>
             </section>
             <section>
@@ -1183,19 +1208,27 @@
                     8s = $\frac{64}{2^3}$
                 </h2>
                 <aside class="notes">
-                    TBD
-                    Example 2: Real-time video interactions in 3 years. Current video gen takes 60s for 8s video.
-                    Doubling KB/s
-                    yearly means 8x faster in 3 years (2^3), enabling real-time gen.
+                    The second prediction is real-time video interactions in 3 years.
+
+                    Again, as we discussed just now, videos are fixed-speed interactions.
+                    So as long as we can generate 1s of video in 1s, we can do real-time video interactions with AI.
+
+                    Current video gen takes 60s for 8s video. It is 8 times slower than real-time.
+                    Doubling KB/s yearly, means we need 3 years to achieve a 8, which is 2 to the power of 3, times
+                    speed boost.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Limitations</h2>
                 <aside class="notes">
-                    TBD
-                    Limitations: Approximations are rough—improve them! Doubling period uncertain due to limited data.
-                    Growth
-                    might plateau like Moore's Law, due to market bubbles or energy limits.
+                    Now, let's talk about the limitations of this work I presented.
+                    I did all of these independently from my day job.
+                    I have no pressure to publish it on a top conference, so I can be 100% honest about the limitations.
+                    This is also my style of doing my presentations.
+
+                    Fun fact: When you really do not have the pressure to get the paper accepted, it will be rejected.
+                    This paper is rejected by arXiv. This is the first time I know that a paper can be rejected by
+                    arXiv.
                 </aside>
             </section>
             <section>
@@ -1208,32 +1241,44 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    TBD
-                    There are three main limitations of Jin's Law.
-                    First, the approximations. The three methods to approximate usefulness are all pretty rough. We
-                    should
-                    improve them.
-                    Second, the doubling period. We only have a few data points, so the doubling period of one year is
-                    pretty
-                    uncertain.
-                    Third, the growth plateau. Just like Moore's Law, the growth might plateau due to market bubbles or
-                    energy limits.
+                    There are three main limitations of this work.
+                    First, the approximations. The three methods to approximate usefulness we have proposed are all
+                    pretty straight-forward. They can definitely be improved. We are just here to point out the problem
+                    and provide a basic solution to kickstart the discussion.
+
+                    Second, the doubling period of intelligence bandwidth, which is 1 year, as we stated in Jin's Law,
+                    still has some uncertainty. We made this prediciton based on a limited number of samples we can
+                    possibly collect as we are still in a primitive stage of GenAI. As we collect more data, we may have
+                    a more accurate estimation of the doubling period.
+
+                    Third, the growth of intelligence bandwidth may plateau someday in the future. Just like many people
+                    saying that it is the end of Moore's Law, Jin's Law would not last forever either.
+                    The number one risk to the exponential growth is the AI bubbles. We saw a lot of hundreds million
+                    packages from Meta to poach talent from
+                    other big tech companies. This is not sustainable. If the bubble bursts, the growth of AI would slow
+                    down.
+
+                    The second risk to the exponential growth is the energy supply. We are building data centers that
+                    consumes more energy than we can produce. You all heard of the stargate project from OpenAI.
+                    Projects like this are all over the country.
+                    And, 20% of them will be delayed to connect to the power grid due to the shortage of power supply.
+                    So, there are risks that the exponential growth may not be sustainable.
+
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Takeaway</h2>
                 <aside class="notes">
-                    Despite all the limitations, we still have one important takeaway.
+                    Despite all the limitations, here is the important takeaway.
                 </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">Takeaway</h2>
                 <h1>Processing speed is <br> an essential component of <br>intelligence.</h1>
                 <aside class="notes">
-                    TBD
-                    Takeaway: Processing speed is key to intelligence. When replacing humans, evaluate AI like
-                    humans—including
-                    speed. Speed boosts from frameworks, kernels, GPUs all count toward AI intelligence.
+                    When replacing humans, when we try to let AI do human jobs,
+                    we need to evaluate AI like we evaluate humans.
+                    For humans, processing speed is an essential component of our intelligence.
                 </aside>
             </section>
             <section>
@@ -1275,10 +1320,26 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    TBD
-                    Ask yourself: Am I boosting AI intelligence today? If you're working on efficiency, frameworks, or
-                    real apps
-                    that speed things up, yes!
+                    I would like to conclude my presentation with this slide.
+                    So, if speed is an essential component of intelligence. What are the important things we should
+                    focus on to improve it?
+
+                    We used to think that the training recipe, the model architecture, and the data are the most
+                    important things to
+                    improve AI intelligence levels.
+                    But now, we know that the frameworks, the kernels and compilers, and the hardware are equally
+                    important.
+                    because they all contribute to the processing speed of AI.
+
+                    And it is not even limited to that.
+                    Even if you are building an AI based application, if you make AI runs faster for a specific task you
+                    care about, you are contributing to the intelligence level of AI.
+
+                    If you ever ask yourself: Am I part of this rapid AI innovation? Am I contributing to the overall
+                    intelligence level of AI today?
+
+                    With everything we have discussed today,
+                    The answer should be: yes!
                 </aside>
             </section>
             <section>
