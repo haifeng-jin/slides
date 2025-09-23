@@ -481,11 +481,13 @@
                 <h2 class="r-fit-text">More Capable</h2>
                 <aside class="notes">
                     Second, AI got way more capable.
-                    Before ChatGPT, AI were still struggling to pass the turing test.
+                    Before ChatGPU or deep learning, AI were still struggling to pass the turing test.
                     If it cannot even do the tasks, it was really not the right time to care about speed.
 
-                    Now, they can do the tasks pretty well. So, probably it is a good time to think about speed.
-                    However, the speed could still be measured task-by-task instead of using a unified metric.
+                    Now, they can do the tasks pretty well. So, we can try to build some applications, probably it is a
+                    good time to think about speed.
+                    However, the speed could still be measured task-by-task instead of using a unified metric. mainly
+                    because the models and tasks were so different from one another.
                 </aside>
             </section>
             <section>
@@ -494,7 +496,7 @@
                     Then, models also got way more general.
                     Before ChatGPT, models were
                     task-specific. Now, the same model can handle tons of stuff.
-                    from recommendation systems all the way to medical imaging.
+                    from recommendation systems all the way to medical imaging. They all use the same model.
                     So, Now, it might be a good time to design a unified speed metric that can describe the speed of AI.
                 </aside>
             </section>
@@ -527,6 +529,8 @@
 
                     Now, since we are shifting from using models to using services, we also need to shift our evaluation
                     metrics from evaluating models to evaluating services.
+                    First, we care about the tasks the service can do, not the models/system/hardware behind it.
+                    Second, speed is an integral part of a service.
                 </aside>
             </section>
             <section>
@@ -556,6 +560,8 @@
                     Basically, it's about how many tokens can AI spits out per second.
                     But this metric is a little bit indirect.
                     What the users really care about is tasks per second, or time per task.
+                    When they ask how many tokens do I get per second, they really want to know how fast can I get my
+                    tasks done.
                     So how do we measure that?
                 </aside>
             </section>
@@ -625,7 +631,8 @@
                     score on the benchmarks.
 
                     Second, high TPS does not mean fast task completion. You know how fast it can spit out tokens, but
-                    you do not know how many tokens you need to finish a task.
+                    you do not know how many tokens you need to finish a task. A smaller model use 100k tokens, but a
+                    larger model may only use 1k tokens.
                 </aside>
             </section>
             <section>
@@ -976,13 +983,13 @@
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="2"
                             style="position: absolute; width: 100%;">
                             <div class="fragment custom move-out-to-up" data-fragment-index="4">
-                                <h2 style="font-size: 2.5em; text-align: right;">Network Bandwidth</h2>
+                                <h2 style="font-size: 2.5em; text-align: right;">Compute Performance (FLOPS)</h2>
                             </div>
                         </div>
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="4"
                             style="position: absolute; width: 100%;">
                             <div class="fragment custom move-out-to-up" data-fragment-index="6">
-                                <h2 style="font-size: 2.5em; text-align: right;">Compute Performance (FLOPS)</h2>
+                                <h2 style="font-size: 2.5em; text-align: right;">Network Bandwidth</h2>
                             </div>
                         </div>
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="6"
@@ -1009,13 +1016,13 @@
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="2"
                             style="position: absolute; width: 100%;">
                             <div class="fragment custom move-out-to-up" data-fragment-index="4">
-                                <h2 style="font-size: 2.5em; text-align: left;">Nielsen's Law</h2>
+                                <h2 style="font-size: 2.5em; text-align: left;">Huang's Law</h2>
                             </div>
                         </div>
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="4"
                             style="position: absolute; width: 100%;">
                             <div class="fragment custom move-out-to-up" data-fragment-index="6">
-                                <h2 style="font-size: 2.5em; text-align: left;">Huang's Law</h2>
+                                <h2 style="font-size: 2.5em; text-align: left;">Nielsen's Law</h2>
                             </div>
                         </div>
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="6"
