@@ -151,7 +151,8 @@
                 <aside class="notes">
                     Hey, welcome to my talk on measuring intelligence by speed—a new way to track AI's exponential
                     growth. This idea hit me from nowhere, and I instantly found it interesting enough to be published.
-                    So, I did this research independently. And I am thrilled to share it with you today. Let's get right
+                    So, I did this research independently. So here it is. And I am thrilled to share it with you today.
+                    Let's get right
                     to it!
                 </aside>
             </section>
@@ -215,11 +216,14 @@
                     While we have two candidates. The interviewer gave each of them 45 minutes to solve the same tough
                     coding
                     problem. The
-                    first candidate finishes 100% of the problem on time. While the second only gets 50% done. Normally,
-                    we'd just fail the second one and pick the first.
-                    This time, However, something strange happened. The interviewer said "let's double
-                    the time for the second candidate. And see what they can do." Then, the candidate finished 100% in
-                    the end. And, the interviewer assigned the same score to both candidates.
+                    first candidate finishes 100% of the problem on time. While the second one struggled a little bit
+                    and only finished 50% of them problem. Normally,
+                    up to this point, we'd just fail the second candidate.
+                    However, the interviewer said "let's double
+                    the time for the second candidate." Then, the second candidate used another 45 minutes to finish
+                    100% of the problem.
+                    In the end, the interviewer said. "Since both of you finished 100% of the problem, I will assign
+                    both of you with the same score."
                 </aside>
             </section>
             <section>
@@ -322,12 +326,13 @@
                     </table>
                 </div>
                 <aside class="notes">
-                    Here's a table released in the blog post announcing Gemini 2.5 Pro showing its superiority over
+                    Let's take a look at this example.
+                    The first column are all the benchmark datasets.
+                    The other columns are different AI models.
+                    It is released in the blog post announcing Gemini 2.5 Pro showing its superiority over
                     other models on various benchmarks.
-                    Each column represents a different AI model, and each row is a benchmark test.
-                    We see scores, but no info on time or tokens used. We are just looking at the final grades, and
-                    ignoring
-                    the exam duration.
+                    We saw the job interview scores, but there is no way to tell how long it took them to finish the
+                    problems.
                 </aside>
             </section>
             <section>
@@ -335,8 +340,9 @@
                     Why does it matter?
                 </h2>
                 <aside class="notes">
-                    Why care about time? If AI gets the job done, isn't that enough? Well, it's usually not the case in
-                    real-world applications.
+                    Why care about time? As long as AI can get the job done, why do we even care about how long it took
+                    them? Well, it's usually not the case in real-world
+                    applications.
                 </aside>
             </section>
             <section>
@@ -352,9 +358,10 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    In real-world apps like customer service or self-driving cars, timing is critical. In customer
-                    service, you can't keep users waiting forever, and missing a
-                    deadline in autonomous driving? It could be disastrous.
+                    For example, customer service and autonomous driving.
+                    You don't want your user to wait forever on the phone.
+                    Or your car to think for a minute on whether to step on the brake or not in an emergency.
+                    So, in real-world applications, speed is critical.
                 </aside>
             </section>
             <section>
@@ -362,9 +369,10 @@
                     Why now?
                 </h2>
                 <aside class="notes">
-                    It is natural to have the question of why we did not care about it earlier if it is so important?
-                    Why now is the right time to propose this?
-                    To answer this question, we need to have a quick review of the history of Generative AI in the past
+                    Then, the question is why now?
+                    If processing speed is so important, why didn't we care about it earlier?
+                    Why do we suddenly start to care about it now?
+                    To answer this question, we need to have a quick review of how we got here in the past
                     few years.
                 </aside>
             </section>
@@ -372,11 +380,9 @@
                 <h2 style="color: var(--gray-color);">2012</h2>
                 <h2 class="r-fit-text">AlexNet</h2>
                 <aside class="notes">
-                    So, in 2012, now we are on slide number nine. So,
-                    in 2012, we have. AlexNet, which almost solved the ImageNet dataset completely. From that
-                    time on, people start to realize that deep learning is really useful, and they
-                    start to develop a various different neural architectures for their different
-                    problems. And deep learning did a pretty good job.
+                    So, in 2012. a model called AlexNet almost solved the ImageNet dataset completely. Then, people
+                    start to realize that deep learning is really powerful and can solve a lot of problems.
+                    Then, everyone start to design their own neural architectures for their own problems.
 
                 </aside>
             </section>
@@ -447,20 +453,24 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    And then came the ChatGPT moment. This large language model blew everyone away—we suddenly saw AI
-                    handling all sorts of problems, not just one niche task. People thought, "Hey, let's pre-train our
-                    own models instead of relying on third-party services." But that was pricey, so when Llama dropped
-                    as an open-source model, folks could download it, fine-tune it themselves, and skip the massive
-                    pre-training costs. Soon, other capable open-source models like Qwen popped up, and we realized we
-                    didn't even need to fine-tune them. Just serve 'em as-is and use prompt engineering to get the
-                    behavior we wanted.
+                    And then came the ChatGPT moment. A single model that can do all sorts of tasks.
+                    And people, say, let's pretrain our own large language models so that we do not need to pay OpenAI.
 
-                    Then DeepSeek hit the scene—a game-changer in LLM history. It slashed training costs and token
-                    prices, forcing Google Gemini and OpenAI's GPT models to drop their rates to stay competitive in the
-                    market.
-                    Tokens got super cheap, so users ditched the hassle of running their own servers. Why bother with a
-                    team of engineers, expensive hardware, and all that maintenance overhead when you can just buy
-                    tokens via APIs? Way more efficient. Both financially and operationally.
+                    And then, Llama was released to the public as an open-source model,
+                    And people start to think, let's just fine-tune it. We don't have to train
+                    our own models. It's too expensive.
+
+                    Then, the models became more and more capable, the Qwen models was one of those.
+                    These model can solve a lot of problems out of the box without any fine-tuning.
+                    People, start to say, let's just drop our training infra completely, and just serve the model as-is.
+
+                    Then came the DeepSeek moment. Its per-token price was extremely low.
+                    It forced its competitors like Google and OpenAI to lower their token prices to stay competitive.
+                    People say, Let's just buy tokens.
+                    Maintaining a team of engineers for our serving infra is too expensive.
+
+                    Every time I look at my paycheck, I was like I am too expensive. Why don't you just fire me and buy
+                    tokens instead?
                 </aside>
             </section>
             <section>
@@ -472,39 +482,39 @@
             <section>
                 <h2 class="r-fit-text">Buy Tokens!</h2>
                 <aside class="notes">
-                    First, buy tokens! It is more cost effective.
-                    Do not develop your own models or serving infra.
-                    This is exactly the major cloud providers like Google Cloud wants you to do.
+                    First, buy tokens!
+                    Do not do anything by yourself. Just buy tokens.
+                    This is exactly what Google and OpenAI wants you to think.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">More Capable</h2>
                 <aside class="notes">
-                    Second, AI got way more capable.
-                    Before ChatGPU or deep learning, AI were still struggling to pass the turing test.
-                    If it cannot even do the tasks, it was really not the right time to care about speed.
+                    Second, models became more capable.
+                    Before deep learning, AI were not as capable.
+                    If it cannot even do the tasks, why do we care about its speed.
 
-                    Now, they can do the tasks pretty well. So, we can try to build some applications, probably it is a
-                    good time to think about speed.
-                    However, the speed could still be measured task-by-task instead of using a unified metric. mainly
-                    because the models and tasks were so different from one another.
+                    When it became more capable, people start to use it to build applications.
+                    Then, people start to care about its speed.
+                    However, we may still not need a unified speed metric because
+                    the models and tasks were so different from one another.
+                    Even we needed speed, we were just measuring them case by case.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">More General</h2>
                 <aside class="notes">
-                    Then, models also got way more general.
-                    Before ChatGPT, models were
-                    task-specific. Now, the same model can handle tons of stuff.
-                    from recommendation systems all the way to medical imaging. They all use the same model.
-                    So, Now, it might be a good time to design a unified speed metric that can describe the speed of AI.
+                    Then, models also became more general.
+                    We have converged on the transformer architecture. And ChatGPT passed the turing test.
+                    We use the same model for everything, all the way from recommender systems to reading medical
+                    images.
+                    So, Now, it might be a good time to design a unified speed metric to measure the speed of AI.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">A Mental Shift</h2>
                 <aside class="notes">
-                    The most important lesson we learned here is that
-                    A mental shift is needed.
+                    Most importantly, we saw a mental shift.
                 </aside>
             </section>
             <section>
@@ -524,13 +534,26 @@
                     A shift from using models to using services.
                     By model, I mean the neural architectures and their parameters. Something that purely static and can
                     be written on a piece of paper.
-                    By service, I mean running the models on GPUs and put it behind the APIs.
-                    The users call the APIs to get the tokens.
+                    By service, I mean running the models on GPUs to produce tokens and put it behind the APIs.
 
-                    Now, since we are shifting from using models to using services, we also need to shift our evaluation
-                    metrics from evaluating models to evaluating services.
-                    First, we care about the tasks the service can do, not the models/system/hardware behind it.
-                    Second, speed is an integral part of a service.
+                    We used to interact with models directly, we pretrain them, fine-tune them, and serve them.
+                    but now, we only use a well-encapsulated service to get tokens, we no longer know the hardware,
+                    framework, and the models behind it.
+                    For example, GPT5 dynamically routes to different models based on the query. We don't even know what
+                    models is used.
+
+                    Now, the user pattern shifted from using models to using services, the evaluation should shift as
+                    well.
+                    To properly evaluate the services, speed is an integral part of a service.
+                </aside>
+            </section>
+            <section>
+                <h2 class="r-fit-text">
+                    Why now?
+                </h2>
+                <aside class="notes">
+                    Let's come back to the question of why now. Because we only start to see this shift from models to
+                    services now. So, it is a good time now to have a unified speed metric for AI.
                 </aside>
             </section>
             <section>
