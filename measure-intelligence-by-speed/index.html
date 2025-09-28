@@ -870,19 +870,21 @@
                     $$
                 </h1>
                 <aside class="notes">
-                    Method 1: Weighted average over time.
-                    This looks exactly like how we compute our GPA.
+                    The first approximation is: Weighted average over time.
+                    It is pretty similar to how we calculate GPA.
+                    In this equation,
                     B is the intelligence bandwidth.
-                    w is the weight of each benchmark, s is the score AI achieved on each benchmark,
-                    The only difference is that we divide the GPA by total time elapsed during the exams, which is the t
-                    here.
+                    We run it through n benchmarks, each benchmark has a weight w. and the score achieved is s.
+                    We take a weighted average of all the benchmarks and divide it by the total time elapsed during the
+                    exams, which is the t here.
+                    Very straight-forward approach.
+                    What are the pros and cons of this approach?
 
-                    Here are the pros and cons.
-                    It is the most accurate way to measure usefulness. These benchmarks are designed to let AI produce
-                    useful information. Anything that is not useful, for example, a wrong answer, or their long chain of
-                    thought, is not counted.
-                    However, it is challenging to measure. You have to spend a lot of money and have all the
-                    benchmarks available to measure them.
+                    It accurately captures the usefulness.
+                    We are only scoring the final result. Any other tokens, like the long chain of thought, does not
+                    contribute to the scores at all.
+                    the main problem of this approach is that it is pretty hard to do.
+                    You have to have all the benchmark datasets at hand and the money to pay for all the API calls.
                 </aside>
             </section>
             <section>
@@ -900,22 +902,29 @@
                     $$
                 </h1>
                 <aside class="notes">
-                    The second method is an Information theory approach. It measures total amount of information in
-                    output.
+                    Method 2: the information theory approach.
+                    We use information theory to measure the amount of information.
+                    In this equation,
                     B is the intelligence bandwidth.
-                    X is the output
-                    I'(X) is the total information in the output.
-                    t is the time.
+                    X is the output by AI.
+                    I'(X) is the total amount of information in the output.
+                    t is the time elapsed.
 
-                    For example, if it is a language model, I'(X) can be computed like this using conditional
-                    probability.
-                    Given all the previous tokens, x1 to x(i-1), how likely is the next token x(i) would be.
-                    And we use the log to compute the information in bits just like how we compute the entropy.
+                    If it is a large language model, I'(X) can be computed like this.
+                    We take all the conditional probabilities P, like given all the previous tokens, how likely it is
+                    for the
+                    next token to be x_i.
+                    We take a log of that and sum it up for all the tokens.
+                    This is basically, how we compute the entropy in information theory.
 
-                    The problem of this method is it is not easy to measure.
-                    For example, to commpute P, you need to have access to the probability vector output by the language
-                    model. You can not get it from the APIs.
-                    Another problem is that it assumes all the output is useful, which is not always true.
+                    So, what are the pros and cons?
+                    The concepts borrowed from information theory is well-established.
+                    I guess this is the only advantage of this method.
+
+                    The problem of is that it is also not easy to measure.
+                    For example, you will have to have access to the probability vector output by the language
+                    model. You can not easily get it from the APIs.
+                    It does not capture the usefulness either.
                 </aside>
             </section>
             <section>
