@@ -579,23 +579,24 @@
                     <p>Second</p>
                 </div>
                 <aside class="notes">
-                    The most popular speed metric for AI today is tokens per second, or TPS.
-                    Basically, it's about how many tokens can AI spits out per second.
+                    The most popular speed metric for AI today is tokens per second, or TPS for short.
+                    Basically, it's about how many tokens can AI spits out every second.
                     But this metric is a little bit indirect.
-                    What the users really care about is tasks per second, or time per task.
-                    When they ask how many tokens do I get per second, they really want to know how fast can I get my
-                    tasks done.
-                    So how do we measure that?
+                    What the users really care about is tasks per second.
+                    So, how long does it take for AI to finish my task?
+                    Does tokens per second measure that?
                 </aside>
             </section>
             <section>
                 <div class="centered">
                     <h2 class="r-fit-text">
-                        High TPS == Fast <span class="fragment">?</span>
+                        More TPS == Faster <span class="fragment">?</span>
                     </h2>
                 </div>
                 <aside class="notes">
-                    Intuitively, we might think that high TPS means fast task completion. But is that really true?
+                    Intuitively, if an AI service produces more tokens per second, it means it will finish my task
+                    faster, right?
+                    But is that really true?
                 </aside>
             </section>
             <section>
@@ -603,9 +604,11 @@
                     Test-Time Scaling
                 </h2>
                 <aside class="notes">
-                    Check out test-time scaling paper, which is a quite popular one from ICLR 2024.
-                    It shows that when you increase the length of the chain of thought, just let the model think a
-                    little bit more, it becomes more intelligent.
+                    There is a paper known as test-time scaling, which is one of the most popular papers published on
+                    ICLR last year.
+                    It shows that when you increase the length of the chain of thought, just let a reasoning model think
+                    for
+                    a little bit longer with more tokens, it becomes more intelligent.
                 </aside>
             </section>
             <section>
@@ -624,9 +627,8 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    You can also ready it in another way.
-                    Extend the thinking time, and smaller models handle complex tasks just as well.
-                    So, Smaller models with more tokens can do the same as larger models with fewer tokens.
+                    You can also read it in another way.
+                    A smaller model with more tokens can do the same as a larger model with fewer tokens.
                 </aside>
             </section>
             <section>
@@ -634,7 +636,7 @@
                     Implications
                 </h2>
                 <aside class="notes">
-                    There are a couple of important implications of this.
+                    So what are the implications of this?
                 </aside>
             </section>
             <section>
@@ -642,20 +644,22 @@
                     Implications
                 </h2>
                 <h1>
-                    Benchmarks Are Invalid.
+                    &nbsp;&nbsp;&nbsp;Benchmarks != intelligence
                 </h1>
                 <h1 class="fragment fade-in">
-                    High TPS != Fast
+                    Tokens != Tasks
                 </h1>
                 <aside class="notes">
-                    First, benchmark datasets are invalid. They no longer measure intelligence levels without
-                    considering the number of tokens used.
-                    A larger model is obviously more intelligent than a smaller model, they still can have the same
-                    score on the benchmarks.
+                    The first is, benchmark datasets can no longer measure intelligence.
+                    A less intelligent model can finish a task with 20 steps.
+                    A more intelligent model can finish the same task with 3 efficient steps.
+                    They are obviously at different intelligence levels, but they can do the same tasks with no problem.
+                    So, benchmarks can no longer measure intelligence.
 
-                    Second, high TPS does not mean fast task completion. You know how fast it can spit out tokens, but
-                    you do not know how many tokens you need to finish a task. A smaller model use 100k tokens, but a
-                    larger model may only use 1k tokens.
+                    The second implication is, it basically decoupled the number of tokens with the number of tasks.
+                    To do the same task, different models may use different number of tokens.
+                    So, how long does this AI service take to finish my task?
+                    The tokens per second metric can no longer answer that.
                 </aside>
             </section>
             <section>
@@ -666,14 +670,16 @@
                     Multi-Modal
                 </h2>
                 <aside class="notes">
-                    Another issue: TPS doesn't work for multimodal AI.
+                    Another important problem with the metric of tokens per second is that it does not work with
+                    multi-modal.
                 </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">A normal day in</h2>
                 <h2 class="r-fit-text">1990</h2>
                 <aside class="notes">
-                    Imagine a normal day in the year of 1990: John, a software engineer, boots up his MS-DOS PC.
+                    Imagine a normal day in the year of 1990, John, a programmer at the time, booted up his PC with the
+                    MS-DOS operating system installed.
                 </aside>
             </section>
             <section>
@@ -704,11 +710,9 @@
                     </p>
                 </div>
                 <aside class="notes">
-                    Suddenly, ChatGPT from 2025
-                    appears: 'Greetings, ancient human! I'm here to share our latest tech.'
-                    John gets excited and asks about the future—flying cars? ChatGPT says no, but we have chatbots!
-                    That's how we use computers in 2025. John is confused: 'Like what I'm doing now?' ChatGPT:
-                    'Exactly!'
+                    ChatGPT suddenly appeared and said: ...
+                    John was very excited: ...
+                    ...
                     Thanks to ChatGPT, the way we interact with computers today is largely the same as 35 years ago,
                     which is purely text-based.
                 </aside>
@@ -718,7 +722,7 @@
                     Human-Computer Interaction
                 </h2>
                 <aside class="notes">
-                    This story really forces us to rethink about human-computer interaction in the AI era.
+                    It forces us to rethink about human-computer interaction in the age of AI.
                 </aside>
             </section>
             <section>
@@ -742,9 +746,9 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Think about the human computer interaction in 2020, we have TikTok,
-                    live streams. Everything was multimedia. However, in 2025, AI pushed us back to the text mode.
-                    That's not the future we want.
+                    In 2020, we watch short videos and live streams. Everything was multi-media.
+                    But, in 2025, we are just using a chatbox with text only.
+                    That is absolutely not the future we want.
                 </aside>
             </section>
             <section>
@@ -775,14 +779,15 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    The future of AI is multimodal: text, audio, images, video, and beyond. It could be real-time gaming
-                    with AI-generated visuals, or VR worlds generated by AI with high accuracy.
+                    The future of AI is multimodal: text, audio, images, video, and whatever modality following that.
+                    It could be real-time gaming like Genie 3. Or VR/AR graphics generated in real-time by AI.
+                    Our speed metric, tokens per second, is obviously not prepared for that future.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">A New Metric</h2>
                 <aside class="notes">
-                    That's why we need a new speed metric. Tokens per second is not helping us reach that future.
+                    To summarize, we need a new speed metric.
                 </aside>
             </section>
             <section>
@@ -799,17 +804,17 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    A quick summary.
-                    New metric needs two things: measure task speed, not token speed, and work across modalities—text,
-                    images, videos.
+                    The new metric should tell us more about task speed, like how long does it take for AI to finish my
+                    task instead of just spitting out tokens. And, it should work across multiple modalities, and not
+                    just limited to text.
                 </aside>
             </section>
             <section>
                 <div class="r-fit-text">
                     Intelligence<br>Bandwidth</div>
                 <aside class="notes">
-                    I am honored to introduce
-                    Intelligence Bandwidth, a new metric we use to measure the speed of AI.
+                    It is my great honor to introduce you a new speed metric for AI,
+                    Intelligence Bandwidth.
                 </aside>
             </section>
             <section>
@@ -832,13 +837,13 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    It is measured as useful information output by AI per unit time.
+                    It is measured as the amount of useful information produced by AI per unit time.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Disambiguation</h2>
                 <aside class="notes">
-                    Of course, there are some ambiguities here.
+                    Of course, there are some ambiguities here. So let's do a Disambiguation.
                 </aside>
             </section>
             <section>
@@ -847,12 +852,12 @@
                 <div style="height: 100px;"></div>
                 <h1 class="fragment">Usefulness: 3 Approximations</h1>
                 <aside class="notes">
-                    We use wall time, not CPU time. We are using AI to interact with the real world, so we care about
-                    elapsed time in the real world not about how the compute happend behind the APIs.
-                    Second ambiguity: measuring usefulness. This seems to be a pretty subjective measure. It is
-                    challenging to measure the exact amount of useful
-                    information in the AI output, We propose 3
-                    simple approximations.
+                    First, the time we are talking about here is wall time.
+                    because what we care about is how long it takes for AI to finish a real-world task instead of how
+                    the compute happends behind the APIs.
+                    Second, how do we measure the amount of useful information produced by AI.
+                    This is pretty subjective to define and pretty challenging to accurately measure it.
+                    So, we propose 3 approximations to measure it.
                 </aside>
             </section>
             <section>
