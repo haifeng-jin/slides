@@ -921,7 +921,7 @@
                     The concepts borrowed from information theory is well-established.
                     I guess this is the only advantage of this method.
 
-                    The problem of is that it is also not easy to measure.
+                    The problem of it is that it is also not easy to measure.
                     For example, you will have to have access to the probability vector output by the language
                     model. You can not easily get it from the APIs.
                     It does not capture the usefulness either.
@@ -936,11 +936,15 @@
                     KiloBytes per Second (KB/s)
                 </h1>
                 <aside class="notes">
-                    The third method is the simplest. It measures raw output in KB/s.
-                    It is super simple to measure and works across modalities.
-                    The problem is also obvious, output from AI may not always be useful.
-                    However, we can fix that by constraining it to the most high speed-quality AI services, like ChatGPT
-                    and Gemini. And trust them, their outputs are mostly useful.
+                    Method 3: Raw output bits measured in KiloBytes per second.
+                    No matter it is text, image, or video, they can be measured in number of bytes,
+                    and divided by the time for the AI model to produce them.
+                    It is super simple and extremely easy to measure.
+                    While the problem is also obvious.
+                    It is not measuring usefulness, but only the raw output bits.
+
+                    So, it is only applicable to the best models like ChatGPT and Gemini.
+                    And, we have to trust their outputs to be mostly useful.
                 </aside>
             </section>
             <section>
@@ -953,13 +957,15 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    A quick summary. Method 1 is the most accurate, but the hardest to measure.
-                    So, if you are an application builder, you may want to choose method 1 to evaluate the models you
-                    are using.
+                    To summarize,
+                    ...
 
-                    However, because Method 3 is super simple to measure, it can give you a first pass across all the
-                    models to get a smaller subset for further evaluation. I used it to put all the models on a single
-                    plot.
+                    They are ranked from the most accurate to the least accurate.
+                    And also from the hardest to the easiest to measure.
+
+                    With Method 3, we can actually project all the models onto the same axis.
+                    No matter they are generating text, image, or video. They can all be measured in KB/s.
+                    Let's take a look at the results.
                 </aside>
             </section>
             <section>
@@ -991,16 +997,22 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    It looks like this.
-                    The x-axis is time, and the y-axis is intelligence bandwidth in KB/s.
-                    The models includes text, image, and video generation models.
+                    The x-axis is time, like when the model is released to the public.
+                    The y-axis is intelligence bandwidth in KB/s.
+                    Each dot is a model.
+
+                    I collected the most popular models from 2023 to 2025, including text, image, and video generation
+                    models.
 
                     There are a few observations we can make here.
 
-                    1. Text models are mostly in the 0 to 3 KB/s range.
-                    2. Gemini 2.5's flash image generation is an outlier with a very high KB/s.
-                    3. Video generation models, like Veo, are lower than expected, probably due to serving technology
-                    limitations.
+                    1. Text models are pretty low in KB/s. They are mostly ranging from 0 KB/s to 3 KB/s.
+                    which is as expected I assume.
+                    2. The Gemini 2.5 flash image generator is an outlier. Much higher than other image generators.
+                    The 3rd one is the most interesting one. Video generation models, like Veo3, are lower than
+                    most of the image generators today. I believe it is mostly because of the serving technology is not
+                    well-optimized.
+                    Because video generation is rather new comparing to other modalities like text and image generation.
                 </aside>
             </section>
             <section>
@@ -1014,7 +1026,7 @@
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="1"
                             style="position: absolute; width: 100%;">
                             <div class="fragment custom move-out-to-up" data-fragment-index="2">
-                                <h2 style="font-size: 2.5em; text-align: right;">Feature Width</h2>
+                                <h2 style="font-size: 2.5em; text-align: right;">Number of Transistors</h2>
                             </div>
                         </div>
                         <div class="fragment custom move-in-from-bottom" data-fragment-index="2"
@@ -1069,27 +1081,26 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    And a good metric does not just end there.
-                    Good metrics discovers new growth patterns.
+                    And we are not just stopping there. Some experimental results and observations.
+                    A good metric should help us discover new growth pattern.
 
-                    For example, feature width led to Moore's Law,
+                    For example, the number of transistors as a simple metric helped us discovered Moore's Law,
+                    which is saying that,
                     The number of transistors on a chip doubles every two years.
-                    It is actually based on the density of transistors, which is directly related to the metric of
-                    feature width.
 
-                    Another example, compute
-                    performance led to Huang's Law.
-                    The performance is measured in FLOPS, which doubles less than every two years.
+                    The compute performance of AI, measured in floating point operations per second led to Huang's Law,
+                    proposed by jensen huang, the CEO of nvidia.
+                    saying that, the growth of flops is faster than the moore's law.
 
-                    Another example, network bandwidth led to Nielsen's Law.
-                    The bandwidth available to high-end users grows by approximately 50% annually.
+                    Network bandwidth led to Nielsen's Law.
+                    The internet bandwidth we use increases 50% every year.
 
-                    Why are these laws useful?
-                    You can actually use them to predict future trends.
-                    For example, with Nielsen's Law, you can predict the emergence of twitter, pinterest, tiktok, and
-                    YouTube. cause higher bandwidth enabled users to consume multimedia content.
+                    Are these laws useful?
+                    Of course they are.
+                    For example, this Nielsen's law can predict the emergence of YouTube by predicting when the internet
+                    bandwidth would high enough for the users to download videos easily.
 
-                    So, what about intelligence bandwidth? Is there a new growth pattern waiting to be discovered about
+                    So, what about intelligence bandwidth? Is there a new growth pattern we can discover about
                     AI?
                 </aside>
             </section>
@@ -1117,33 +1128,35 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    By fitting a line through the top models, we see exponential growth in KB/s for top models.
-                    Excluding the speed-quality tradeoff of Gemini 2.5 Flash, the line fits between Imagen 3 and
-                    Imagen 4, which are the best image generators with highest fidelity. This is a rather conservative
-                    estimate.
+                    If you look closely, you can clearly see there is a exponential growth pattern here.
+                    To be more conservative, I had to kick out the Gemini 2.5 Flash image generator,
+                    which is more of a trade-off between serving speed, usability, and quality.
+                    For the highest quality models, we can draw the line like this.
+                    With this discovery, it is my great honor to introduce you ...
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Jin's Law</h2>
                 <aside class="notes">
-                    I name this exponential growth as Jin's Law
+                    Jin's Law. Named after my last name.
                 </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">Jin's Law</h2>
                 <h1>The peak AI output rate (KB/s) <br> doubles every year.</h1>
                 <aside class="notes">
-                    It says: Peak AI output rate in KB/s doubles every year. We measure only the best public APIs
-                    to ensure useful output. We select the modality with the highest intelligence bandwidth. Now, it is
-                    image generation. One day, video might take the lead.
+                    Peak AI output rate in KB/s doubles every year.
+                    To be clear, we only measure the best models available to the public and the best modalities.
+                    Now, image generation is the highest.
+                    For example, if video generation becomes even higher, we will just measure the video generator.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Human AI Interaction</h2>
                 <aside class="notes">
-                    Jin's Law helps predict human-AI interaction shifts.
-                    Before we get into the actual predictions.
-                    Let's quickly review a few basics in human-AI interaction.
+                    Jin's Law can help us make some pretty important predictions.
+                    especially about human-AI interactions.
+                    Let's first review some basics about human-AI interactions.
                 </aside>
             </section>
             <section>
@@ -1183,8 +1196,9 @@
                 <aside class="notes">
                     There are two main types of human-AI interaction:
                     Self-paced and fixed-speed.
-                    The self-paced includes text and images, where users go at their own speed.
-                    The fixed-speed includes audio and video, where the users follows the playback speed.
+                    Text and images are self-paced, where the users would go at their own speed.
+                    Audio and video are fixed-speed, where they will just let it play at the fixed playback speed.
+
                     For self-paced ones, AI's output speed needs to exceeds human reading speed to enable real-time
                     interaction.
 
@@ -1199,48 +1213,41 @@
                     So, we can already do audio interactions with AI.
 
                     For images, and videos, we are not there yet.
-                    Now, I will show you how to apply Jin's Law to predict when we can do real-time interactions with
-                    images
-                    and videos.
+                    But, we can use Jin's Law to predict when it will happend.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">
-                    Applications
+                    Predictions
                 </h2>
                 <aside class="notes">
-                    Now we come to the applications of Jin's Law.
-                    Let's try to apply Jin's Law to make some predictions about Human AI interactions.
+                    So, here are the predictions.
                 </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">
-                    Applications
+                    Predictions
                 </h2>
                 <h1>
-                    Mix images in text responses<br>in 1 year
+                    Images in text responses<br>in 1 year
                 </h1>
                 <aside class="notes">
-                    The first prediction we can make is mixing images in text responses in 1 year.
-                    First, why do we even need this?
-                    For example, it would be very helpful to explain how matrix multiplication visually instead of
-                    purely using text.
+                    First, mixing images in text responses in 1 year.
+                    Why do we even need this?
+                    If you ask AI how does matrix multiplication work,
+                    it is easier to explain it visually.
+                    with images and texts in between.
 
-                    Then, why can we do it in 1 year?
-                    Gemini 2.5 Flash generates images in 4 seconds.
+                    Why can we do it in 1 year?
+                    Today, it takes Gemini 4 seconds to generate an image.
                     Based on Jin's Law, the intelligence bandwidth would double in a year.
                     If it is reduced to 2 seconds, it would be fast
                     enough to generate an image in the middle of a text response.
-
-                    As we discussed just now, for text and image, the user would go with their own pace.
-                    Even the user would skim through quickly in the text
-                    response, 2 seconds is good enough to produce the image
-                    before the user reaches that part.
                 </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">
-                    Applications
+                    Predictions
                 </h2>
                 <h1>
                     Real-time video interactions<br>in 3 years
@@ -1252,14 +1259,12 @@
                     8s = $\frac{64}{2^3}$
                 </h2>
                 <aside class="notes">
-                    The second prediction is real-time video interactions in 3 years.
+                    The second prediction is that we will have real-time video interactions in 3 years.
 
-                    Again, as we discussed just now, videos are fixed-speed interactions.
-                    So as long as we can generate 1s of video in 1s, we can do real-time video interactions with AI.
+                    Now, in 2025, we can generate 8 seconds of video in about 60 seconds.
+                    If we double the speed every year, in 2028, we can generate 8 seconds of video in 8 seconds.
 
-                    Current video gen takes 60s for 8s video. It is 8 times slower than real-time.
-                    Doubling KB/s yearly, means we need 3 years to achieve a 8, which is 2 to the power of 3, times
-                    speed boost.
+                    Then, we can have real-time video interactions with AI.
                 </aside>
             </section>
             <section>
@@ -1268,11 +1273,6 @@
                     Now, let's talk about the limitations of this work I presented.
                     I did all of these independently from my day job.
                     I have no pressure to publish it on a top conference, so I can be 100% honest about the limitations.
-                    This is also my style of doing my presentations.
-
-                    Fun fact: When you really do not have the pressure to get the paper accepted, it will be rejected.
-                    This paper is rejected by arXiv. This is the first time I know that a paper can be rejected by
-                    arXiv.
                 </aside>
             </section>
             <section>
@@ -1288,26 +1288,38 @@
                     There are three main limitations of this work.
                     First, the approximations. The three methods to approximate usefulness we have proposed are all
                     pretty straight-forward. They can definitely be improved. We are just here to point out the problem
-                    and provide a basic solution to kickstart the discussion.
+                    and provide a basic solution to kickstart the discussions. They are nowhere near perfect.
 
-                    Second, the doubling period of intelligence bandwidth, which is 1 year, as we stated in Jin's Law,
-                    still has some uncertainty. We made this prediciton based on a limited number of samples we can
-                    possibly collect as we are still in a primitive stage of GenAI. As we collect more data, we may have
+                    Second, the doubling period. Currently, we estimated intelligence bandwidth doubles every 1
+                    year.
+                    but this estimation is based on a limited number of samples we can
+                    possibly collect from the past 3 years. As we collect more data, we may have
                     a more accurate estimation of the doubling period.
 
                     Third, the growth of intelligence bandwidth may plateau someday in the future. Just like many people
-                    saying that it is the end of Moore's Law, Jin's Law would not last forever either.
-                    The number one risk to the exponential growth is the AI bubbles. We saw a lot of hundreds million
+                    saying that it is the end of Moore's Law, there will be an end of Jin's Law. It would not last
+                    forever either. There are mainly 2 risks.
+                </aside>
+            </section>
+            <section>
+                <h2 style="color: var(--gray-color);">Risks to exponential growth</h2>
+                <div class="centered">
+                    <div style="text-align: left;">
+                        <h1>1. AI bubbles</h1>
+                        <h1 class="fragment">2. Energy supply</h1>
+                    </div>
+                </div>
+                <aside class="notes">
+                    The number one risk to the exponential growth is the AI bubbles. We saw some hundreds million
                     packages from Meta to poach talent from
                     other big tech companies. This is not sustainable. If the bubble bursts, the growth of AI would slow
-                    down.
+                    down. Thank everyone for rejecting the 100 million packages to stay with Google.
 
                     The second risk to the exponential growth is the energy supply. We are building data centers that
                     consumes more energy than we can produce. You all heard of the stargate project from OpenAI.
                     Projects like this are all over the country.
                     And, 20% of them will be delayed to connect to the power grid due to the shortage of power supply.
                     So, there are risks that the exponential growth may not be sustainable.
-
                 </aside>
             </section>
             <section>
@@ -1320,17 +1332,15 @@
                 <h2 style="color: var(--gray-color);">Takeaway</h2>
                 <h1>Processing speed is <br> an essential component of <br>intelligence.</h1>
                 <aside class="notes">
-                    When replacing humans, when we try to let AI do human jobs,
-                    we need to evaluate AI like we evaluate humans.
-                    For humans, processing speed is an essential component of our intelligence.
+                    ...
+                    If you want to use AI to do humnan jobs, you need to evaluate them like evaluating humans.
                 </aside>
             </section>
             <section>
                 <div class="centered"
                     style="height: 1080px; display: flex; align-items: center; justify-content: center;">
                     <!-- Left side -->
-                    <div style="flex: 1; text-align: right; padding-right: 20px; margin-left:-120px;" class="fragment"
-                        data-fragment-index="1">
+                    <div style="flex: 1; text-align: right; padding-right: 20px; margin-left:-120px;">
                         <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 20px;">
                             <h2 style="font-size: 2.5em; margin: 0;">Training Recipe</h2>
                             <br>
@@ -1343,17 +1353,17 @@
                     <!-- Center -->
                     <div style="flex: 0 0 auto; text-align: center; padding: 0 40px;">
                         <h1 style="font-size: 8em; margin: 0;">
-                            <span class="fragment" data-fragment-index="1"
+                            <span
                                 style="transform: scale(1, 1); display: inline-block; margin-right: -100px; color: var(--gray-color);">}</span>
                             <span>AI</span>
-                            <span class="fragment" data-fragment-index="2"
+                            <span class="fragment" data-fragment-index="1"
                                 style="transform: scale(1, 1); display: inline-block; margin-left: -100px; color: var(--gray-color);">{</span>
                         </h1>
                     </div>
 
                     <!-- Right side -->
                     <div style="flex: 1; text-align: left; padding-left: 20px;" class="fragment"
-                        data-fragment-index="2">
+                        data-fragment-index="1">
                         <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
                             <h2 style="font-size: 2.5em; margin: 0;">Framework</h2>
                             <br>
@@ -1365,8 +1375,6 @@
                 </div>
                 <aside class="notes">
                     I would like to conclude my presentation with this slide.
-                    So, if speed is an essential component of intelligence. What are the important things we should
-                    focus on to improve it?
 
                     We used to think that the training recipe, the model architecture, and the data are the most
                     important things to
@@ -1375,13 +1383,10 @@
                     important.
                     because they all contribute to the processing speed of AI.
 
-                    And it is not even limited to that.
-                    Even if you are building an AI based application, if you make AI runs faster for a specific task you
-                    care about, you are contributing to the intelligence level of AI.
+                    Even if you are just making AI more efficient for a specific application.
+                    You are improving its intelligence.
 
-                    If you ever ask yourself: Am I part of this rapid AI innovation? Am I contributing to the overall
-                    intelligence level of AI today?
-
+                    So, if you ever ask yourself: am I helping improve the intelligence of AI?
                     With everything we have discussed today,
                     The answer should be: yes!
                 </aside>
