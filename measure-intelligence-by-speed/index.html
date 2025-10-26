@@ -714,6 +714,146 @@
                 </aside>
             </section>
             <section>
+                <h2 class="r-fit-text">A New Metric</h2>
+                <aside class="notes">
+                    To summarize, we need a new speed metric.
+                </aside>
+            </section>
+            <section>
+                <div class="r-fit-text">
+                    Intelligence<br>Goodput</div>
+                <aside class="notes">
+                    It is my great honor to introduce you a new speed metric for AI,
+                    Intelligence Bandwidth.
+                </aside>
+            </section>
+            <section>
+                <div class="centered" style="font-size: 80px;">
+                    <div style="width:35%">
+                        Intelligence<br>Goodput
+                    </div>
+                    <div style="width: 10%;">
+                        =
+                    </div>
+                    <div style="width: 55%;">
+                        <span style="display: inline-block; vertical-align: middle; text-align: center;">
+                            <span style="display: block; border-bottom: 2px solid; padding: 0 0.3em;">
+                                Intelligence
+                            </span>
+                            <span style="display: block; margin-top: 0.1em;">
+                                Time
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <aside class="notes">
+                    It is measured as the amount of intelligence produced by AI per unit time.
+                </aside>
+            </section>
+            <section>
+                <h2 class="r-fit-text">Disambiguation</h2>
+                <aside class="notes">
+                    Of course, there are some ambiguities here. So let's do a Disambiguation.
+                </aside>
+            </section>
+            <section>
+                <h2 style="color: var(--gray-color)">Disambiguation</h2>
+                <h1>Time: Wall Time&nbsp;</h1>
+                <div style="height: 100px;"></div>
+                <h1 class="fragment">Intelligence: Delegate to benchmarks</h1>
+                <aside class="notes">
+                    First, the time we are talking about here is wall time.
+                    because what we care about is how long it takes for AI to finish a real-world task instead of how
+                    the compute happends behind the APIs.
+                    Second, how do we measure the amount of intelligence produced by AI.
+                    This is pretty subjective to define and pretty challenging to accurately measure it.
+                    So, we propose 3 approximations to measure it.
+                </aside>
+            </section>
+            <section>
+                <h2 style="color: var(--gray-color)">Intelligence Goodput:</h2>
+                <!-- <h1>Weighted Average Over Time</h1> -->
+                <div style="height: 50px;"></div>
+                <h1>
+                    $$
+                    B = \frac{\sum\limits_{i=1}^{n} w_i s_i}{\sum\limits_{i=1}^{n} w_i \cdot t}
+                    $$
+                </h1>
+                <aside class="notes">
+                    The first approximation is: Weighted average over time.
+                    It is pretty similar to how we calculate GPA.
+                    In this equation,
+                    B is the intelligence goodput.
+                    We run it through n benchmarks, each benchmark has a weight w. and the score achieved is s.
+                    We take a weighted average of all the benchmarks and divide it by the total time elapsed during the
+                    exams, which is the t here.
+                    Very straight-forward approach.
+                    What are the pros and cons of this approach?
+
+                    It accurately captures the usefulness.
+                    We are only scoring the final result. Any other tokens, like the long chain of thought, does not
+                    contribute to the scores at all.
+                    the main problem of this approach is that it is pretty hard to do.
+                    You have to have all the benchmark datasets at hand and the money to pay for all the API calls.
+                </aside>
+            </section>
+            <section>
+                <div class="centered">
+                    <table style="font-size: 1em; width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th>Benchmark</th>
+                                <th>Gemini 2.5 Pro</th>
+                                <th>OpenAI o3 </th>
+                                <th>OpenAI o4-mini </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>MMLU</b></td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                            </tr>
+                            <tr>
+                                <td><b>GPQA</b></td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                            </tr>
+                            <tr>
+                                <td><b>MATH</b></td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                            </tr>
+                            <tr>
+                                <td><b>Intelligence Goodput</b></td>
+                                <td>?</td>
+                                <td>?</td>
+                                <td>?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <h2 style="color: var(--gray-color);">Limitations</h2>
+                <div class="centered">
+
+                    <div style="text-align: left;">
+                        <h1>
+                            1. Complex engineering setup
+                        </h1>
+                        <h1>
+                            2. Expensive to run
+                        </h1>
+                    </div>
+                </div>
+                <aside class="notes">
+                </aside>
+            </section>
+            <section>
                 <h2 style="color: var(--gray-color)">
                     Another Problem with TPS:
                 </h2>
@@ -836,28 +976,44 @@
                 </aside>
             </section>
             <section>
-                <h2 class="r-fit-text">A New Metric</h2>
-                <aside class="notes">
-                    To summarize, we need a new speed metric.
-                </aside>
-            </section>
-            <section>
-                <h2 style="color: var(--gray-color);">A New Metric</h2>
-                <div class="centered">
-
-                    <div style="text-align: left;">
-                        <h1>
-                            1. Task Speed
-                        </h1>
-                        <h1>
-                            2. Cross-Modality
-                        </h1>
-                    </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <svg width="1920" height="1080" viewBox="0 0 1920 1080">
+                        <!-- Axes -->
+                        <line x1="960" y1="80" x2="960" y2="1000" stroke="var(--r-main-color)" stroke-width="6" />
+                        <line x1="80" y1="540" x2="1840" y2="540" stroke="var(--r-main-color)" stroke-width="6" />
+                        <!-- Axis End Labels -->
+                        <text x="960" y="50" text-anchor="middle" font-size="48"
+                            fill="var(--r-main-color)">Qualitative</text>
+                        <text x="960" y="1060" text-anchor="middle" font-size="48"
+                            fill="var(--r-main-color)">Quantitative</text>
+                        <text x="40" y="600" text-anchor="start" font-size="48"
+                            fill="var(--r-main-color)">Single-Modal</text>
+                        <text x="1880" y="600" text-anchor="end" font-size="48"
+                            fill="var(--r-main-color)">Multi-Modal</text>
+                        <!-- Quadrant Labels -->
+                        <text x="480" y="240" text-anchor="middle" font-size="72" fill="var(--r-main-color)">
+                            <tspan x="480" dy="0">Intelligence</tspan>
+                            <tspan x="480" dy="80">Goodput</tspan>
+                        </text>
+                        <text class="fragment" x="1440" y="270" text-anchor="middle" font-size="72"
+                            fill="var(--r-main-color)">
+                            <tspan x="1440" dy="-120">Intelligence</tspan>
+                            <tspan x="1440" dy="80">Goodput</tspan>
+                            <tspan x="1440" dy="80">+</tspan>
+                            <tspan x="1440" dy="80">Multi-Modal</tspan>
+                            <tspan x="1440" dy="80">Benchmarks</tspan>
+                        </text>
+                        <text x="480" y="760" text-anchor="middle" font-size="72" fill="var(--r-main-color)">
+                            <tspan x="480" dy="0">Tokens</tspan>
+                            <tspan x="480" dy="80">per</tspan>
+                            <tspan x="450" dy="80">Second</tspan>
+                        </text>
+                        <text class="fragment" x="1440" y="810" text-anchor="middle" font-size="72"
+                            fill="var(--r-main-color)">???</text>
+                    </svg>
                 </div>
                 <aside class="notes">
-                    The new metric should tell us more about task speed, like how long does it take for AI to finish my
-                    task instead of just spitting out tokens. And, it should work across multiple modalities, and not
-                    just limited to text.
+                    Can we just see what's here.
                 </aside>
             </section>
             <section>
@@ -869,120 +1025,6 @@
                 </aside>
             </section>
             <section>
-                <div class="centered" style="font-size: 80px;">
-                    <div style="width:35%">
-                        Intelligence<br>Bandwidth
-                    </div>
-                    <div style="width: 10%;">
-                        =
-                    </div>
-                    <div style="width: 55%;">
-                        <span style="display: inline-block; vertical-align: middle; text-align: center;">
-                            <span style="display: block; border-bottom: 2px solid; padding: 0 0.3em;">
-                                Useful Information
-                            </span>
-                            <span style="display: block; margin-top: 0.1em;">
-                                Time
-                            </span>
-                        </span>
-                    </div>
-                </div>
-                <aside class="notes">
-                    It is measured as the amount of useful information produced by AI per unit time.
-                </aside>
-            </section>
-            <section>
-                <h2 class="r-fit-text">Disambiguation</h2>
-                <aside class="notes">
-                    Of course, there are some ambiguities here. So let's do a Disambiguation.
-                </aside>
-            </section>
-            <section>
-                <h2 style="color: var(--gray-color)">Disambiguation</h2>
-                <h1>Time: Wall Time&nbsp;</h1>
-                <div style="height: 100px;"></div>
-                <h1 class="fragment">Usefulness: 3 Approximations</h1>
-                <aside class="notes">
-                    First, the time we are talking about here is wall time.
-                    because what we care about is how long it takes for AI to finish a real-world task instead of how
-                    the compute happends behind the APIs.
-                    Second, how do we measure the amount of useful information produced by AI.
-                    This is pretty subjective to define and pretty challenging to accurately measure it.
-                    So, we propose 3 approximations to measure it.
-                </aside>
-            </section>
-            <section>
-                <h2 style="color: var(--gray-color)">Method 1:</h2>
-                <h1>Weighted Average Over Time</h1>
-                <div style="height: 50px;"></div>
-                <h1>
-                    $$
-                    B = \frac{\sum\limits_{i=1}^{n} w_i s_i}{\sum\limits_{i=1}^{n} w_i \cdot t}
-                    $$
-                </h1>
-                <aside class="notes">
-                    The first approximation is: Weighted average over time.
-                    It is pretty similar to how we calculate GPA.
-                    In this equation,
-                    B is the intelligence bandwidth.
-                    We run it through n benchmarks, each benchmark has a weight w. and the score achieved is s.
-                    We take a weighted average of all the benchmarks and divide it by the total time elapsed during the
-                    exams, which is the t here.
-                    Very straight-forward approach.
-                    What are the pros and cons of this approach?
-
-                    It accurately captures the usefulness.
-                    We are only scoring the final result. Any other tokens, like the long chain of thought, does not
-                    contribute to the scores at all.
-                    the main problem of this approach is that it is pretty hard to do.
-                    You have to have all the benchmark datasets at hand and the money to pay for all the API calls.
-                </aside>
-            </section>
-            <section>
-                <h2 style="color: var(--gray-color)">Method 2:</h2>
-                <h1>The Information Theory Approach</h1>
-                <div style="height: 50px;"></div>
-                <h1>
-                    $$
-                    B=\frac{I'(X)}{t}
-                    $$
-                </h1>
-                <h1>
-                    $$
-                    I'(X) = -\sum_{i=1}^{n} \log_2 P(x_i | x_1, x_2, \dots, x_{i-1})
-                    $$
-                </h1>
-                <aside class="notes">
-                    Method 2: the information theory approach.
-                    We use information theory to measure the amount of information.
-                    In this equation,
-                    B is the intelligence bandwidth.
-                    X is the output by AI.
-                    I'(X) is the total amount of information in the output.
-                    t is the time elapsed.
-
-                    If it is a large language model, I'(X) can be computed like this.
-                    We take all the conditional probabilities P, like given all the previous tokens, how likely it is
-                    for the
-                    next token to be x_i.
-                    We take a log of that and sum it up for all the tokens.
-                    This is basically, how we compute the entropy in information theory.
-
-                    So, what are the pros and cons?
-                    The concepts borrowed from information theory is well-established.
-                    I guess this is the only advantage of this method.
-
-                    The problem of it is that it is also not easy to measure.
-                    For example, you will have to have access to the probability vector output by the language
-                    model. You can not easily get it from the APIs.
-                    It does not capture the usefulness either.
-                </aside>
-            </section>
-            <section>
-                <h2 style="color: var(--gray-color)">Method 3:</h2>
-                <div style="height: 100px;"></div>
-                <h1>Raw Output Bits</h1>
-                <div style="height: 100px;"></div>
                 <h1>
                     KiloBytes per Second (KB/s)
                 </h1>
@@ -996,27 +1038,6 @@
 
                     So, it is only applicable to the best models like ChatGPT and Gemini.
                     And, we have to trust their outputs to be mostly useful.
-                </aside>
-            </section>
-            <section>
-                <h2 style="color: var(--gray-color);">Summary</h2>
-                <div class="centered">
-                    <div style="text-align: left;">
-                        <h1>1. Weighted average over time</h1>
-                        <h1 class="fragment">2. The information theory approach</h1>
-                        <h1 class="fragment">3. Raw output bits (KB/s)</h1>
-                    </div>
-                </div>
-                <aside class="notes">
-                    To summarize,
-                    ...
-
-                    They are ranked from the most accurate to the least accurate.
-                    And also from the hardest to the easiest to measure.
-
-                    With Method 3, we can actually project all the models onto the same axis.
-                    No matter they are generating text, image, or video. They can all be measured in KB/s.
-                    Let's take a look at the results.
                 </aside>
             </section>
             <section>
@@ -1052,7 +1073,8 @@
                     The y-axis is intelligence bandwidth in KB/s.
                     Each dot is a model.
 
-                    I collected the most popular models from 2023 to 2025, including text, image, and video generation
+                    I collected the most popular models from 2023 to 2025, including text, image, and video
+                    generation
                     models.
 
                     There are a few observations we can make here.
@@ -1061,9 +1083,11 @@
                     which is as expected I assume.
                     2. The Gemini 2.5 flash image generator is an outlier. Much higher than other image generators.
                     The 3rd one is the most interesting one. Video generation models, like Veo3, are lower than
-                    most of the image generators today. I believe it is mostly because of the serving technology is not
+                    most of the image generators today. I believe it is mostly because of the serving technology is
+                    not
                     well-optimized.
-                    Because video generation is rather new comparing to other modalities like text and image generation.
+                    Because video generation is rather new comparing to other modalities like text and image
+                    generation.
                 </aside>
             </section>
             <section>
@@ -1139,7 +1163,8 @@
                     which is saying that,
                     The number of transistors on a chip doubles every two years.
 
-                    The compute performance of AI, measured in floating point operations per second led to Huang's Law,
+                    The compute performance of AI, measured in floating point operations per second led to Huang's
+                    Law,
                     proposed by jensen huang, the CEO of nvidia.
                     saying that, the growth of flops is faster than the moore's law.
 
@@ -1148,7 +1173,8 @@
 
                     Are these laws useful?
                     Of course they are.
-                    For example, this Nielsen's law can predict the emergence of YouTube by predicting when the internet
+                    For example, this Nielsen's law can predict the emergence of YouTube by predicting when the
+                    internet
                     bandwidth would high enough for the users to download videos easily.
 
                     So, what about intelligence bandwidth? Is there a new growth pattern we can discover about
@@ -1257,7 +1283,8 @@
                     while AI can generate 14,000 words per minute, which is way faster than human reading speed.
                     So, it allows us to do real-time text-based interactions with AI.
 
-                    For fixed-speed ones, AI's output speed needs to match the playback speed for real-time interaction.
+                    For fixed-speed ones, AI's output speed needs to match the playback speed for real-time
+                    interaction.
                     Audio, for example, as long as it can generate 1s of audio in 1s, we can real-time audio
                     interactions with AI.
                     Today, the best model can generate 100 seconds of audio in 1 second.
@@ -1323,7 +1350,8 @@
                 <aside class="notes">
                     Now, let's talk about the limitations of this work I presented.
                     I did all of these independently from my day job.
-                    I have no pressure to publish it on a top conference, so I can be 100% honest about the limitations.
+                    I have no pressure to publish it on a top conference, so I can be 100% honest about the
+                    limitations.
                 </aside>
             </section>
             <section>
@@ -1338,7 +1366,8 @@
                 <aside class="notes">
                     There are three main limitations of this work.
                     First, the approximations. The three methods to approximate usefulness we have proposed are all
-                    pretty straight-forward. They can definitely be improved. We are just here to point out the problem
+                    pretty straight-forward. They can definitely be improved. We are just here to point out the
+                    problem
                     and provide a basic solution to kickstart the discussions. They are nowhere near perfect.
 
                     Second, the doubling period. Currently, we estimated intelligence bandwidth doubles every 1
@@ -1347,7 +1376,8 @@
                     possibly collect from the past 3 years. As we collect more data, we may have
                     a more accurate estimation of the doubling period.
 
-                    Third, the growth of intelligence bandwidth may plateau someday in the future. Just like many people
+                    Third, the growth of intelligence bandwidth may plateau someday in the future. Just like many
+                    people
                     saying that it is the end of Moore's Law, there will be an end of Jin's Law. It would not last
                     forever either. There are mainly 2 risks.
                 </aside>
@@ -1363,13 +1393,16 @@
                 <aside class="notes">
                     The number one risk to the exponential growth is the AI bubbles. We saw some hundreds million
                     packages from Meta to poach talent from
-                    other big tech companies. This is not sustainable. If the bubble bursts, the growth of AI would slow
+                    other big tech companies. This is not sustainable. If the bubble bursts, the growth of AI would
+                    slow
                     down. Thank everyone for rejecting the 100 million packages to stay with Google.
 
-                    The second risk to the exponential growth is the energy supply. We are building data centers that
+                    The second risk to the exponential growth is the energy supply. We are building data centers
+                    that
                     consumes more energy than we can produce. You all heard of the stargate project from OpenAI.
                     Projects like this are all over the country.
-                    And, 20% of them will be delayed to connect to the power grid due to the shortage of power supply.
+                    And, 20% of them will be delayed to connect to the power grid due to the shortage of power
+                    supply.
                     So, there are risks that the exponential growth may not be sustainable.
                 </aside>
             </section>
@@ -1458,8 +1491,10 @@
                 <aside class="notes">
                     Thanks everyone for listening. You can reach me at haifeng.jin@pm.me.
                     Also, I publish articles on my personal blog at haifengjin.com.
-                    There are some very interesting ones like, why doesn't google sell TPUs, why does Meta open-source
-                    llama, why does Google open-source tensorflow, and build a mini version of PyTorch from scratch with
+                    There are some very interesting ones like, why doesn't google sell TPUs, why does Meta
+                    open-source
+                    llama, why does Google open-source tensorflow, and build a mini version of PyTorch from scratch
+                    with
                     only 800 lines of code.
                     Welcome to check it out.
                 </aside>
