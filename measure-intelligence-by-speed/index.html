@@ -716,7 +716,8 @@
             <section>
                 <h2 class="r-fit-text">A New Metric</h2>
                 <aside class="notes">
-                    To summarize, we need a new speed metric.
+                    To summarize, we need a new speed metric that tells us more about the actual intelligence portion in
+                    the output of AI instead of the pure number of tokens.
                 </aside>
             </section>
             <section>
@@ -724,7 +725,7 @@
                     Intelligence<br>Goodput</div>
                 <aside class="notes">
                     It is my great honor to introduce you a new speed metric for AI,
-                    Intelligence Bandwidth.
+                    Intelligence Goodput.
                 </aside>
             </section>
             <section>
@@ -747,7 +748,8 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    It is measured as the amount of intelligence produced by AI per unit time.
+                    As simple as it sounds,
+                    it is measured as the amount of intelligence produced by AI per unit time.
                 </aside>
             </section>
             <section>
@@ -758,16 +760,17 @@
             </section>
             <section>
                 <h2 style="color: var(--gray-color)">Disambiguation</h2>
-                <h1>Time: Wall Time&nbsp;</h1>
                 <div style="height: 100px;"></div>
-                <h1 class="fragment">Intelligence: Delegate to benchmarks</h1>
+                <h1>Time: Wall Time</h1>
+                <div style="height: 100px;"></div>
+                <h1 class="fragment">Intelligence:<br>Delegate to benchmarks</h1>
                 <aside class="notes">
                     First, the time we are talking about here is wall time.
                     because what we care about is how long it takes for AI to finish a real-world task instead of how
                     the compute happends behind the APIs.
                     Second, how do we measure the amount of intelligence produced by AI.
                     This is pretty subjective to define and pretty challenging to accurately measure it.
-                    So, we propose 3 approximations to measure it.
+                    So, I just delegated it to existing benchmark datasets.
                 </aside>
             </section>
             <section>
@@ -776,25 +779,36 @@
                 <div style="height: 50px;"></div>
                 <h1>
                     $$
-                    B = \frac{\sum\limits_{i=1}^{n} w_i s_i}{\sum\limits_{i=1}^{n} w_i \cdot t}
+                    G = \frac{\sum\limits_{i=1}^{n} w_i s_i}{\sum\limits_{i=1}^{n} w_i \cdot t}
                     $$
                 </h1>
                 <aside class="notes">
-                    The first approximation is: Weighted average over time.
+                    Here is how we measure it in practice.
+
                     It is pretty similar to how we calculate GPA.
                     In this equation,
-                    B is the intelligence goodput.
+                    G is the intelligence goodput.
                     We run it through n benchmarks, each benchmark has a weight w. and the score achieved is s.
                     We take a weighted average of all the benchmarks and divide it by the total time elapsed during the
                     exams, which is the t here.
-                    Very straight-forward approach.
-                    What are the pros and cons of this approach?
+                    I know this is too simple.
+                    Hardly anyone would believe this is from someone with a PhD degree.
 
-                    It accurately captures the usefulness.
+                    However, I am also an engineer, tend to go for the simplest solution that works.
+                    It accurately captures the intelligence in the output and filters out everything else.
+                    Because if you look into the benchmark datasets, they are mostly choice-based questions.
                     We are only scoring the final result. Any other tokens, like the long chain of thought, does not
                     contribute to the scores at all.
-                    the main problem of this approach is that it is pretty hard to do.
-                    You have to have all the benchmark datasets at hand and the money to pay for all the API calls.
+                </aside>
+            </section>
+            <section>
+                <h2 class="r-fit-text">
+                    Reduce Verbosity
+                </h2>
+                <aside class="notes">
+                    An important feature of this metric is that it reduces verbosity.
+                    If the model builders keeps this metric in mind, and know that they need to optimize for it,
+                    the verbosity of their models will decrease.
                 </aside>
             </section>
             <section>
@@ -828,6 +842,18 @@
                                 <td>?% in ?s</td>
                             </tr>
                             <tr>
+                                <td><b>AIME</b></td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                            </tr>
+                            <tr>
+                                <td><b>SWE-bench</b></td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                                <td>?% in ?s</td>
+                            </tr>
+                            <tr>
                                 <td><b>Intelligence Goodput</b></td>
                                 <td>?</td>
                                 <td>?</td>
@@ -836,6 +862,11 @@
                         </tbody>
                     </table>
                 </div>
+                <aside class="notes">
+                    Ideally, I should have some experimental results that looks like this.
+                    However, this is independent research. I could not do it by myself,
+                    which also expose the limitations of this metric.
+                </aside>
             </section>
             <section>
                 <h2 style="color: var(--gray-color);">Limitations</h2>
@@ -851,6 +882,8 @@
                     </div>
                 </div>
                 <aside class="notes">
+                    the main problem of this approach is that it is pretty hard to do.
+                    You have to have all the benchmark datasets at hand and the money to pay for all the API calls.
                 </aside>
             </section>
             <section>
@@ -976,15 +1009,16 @@
                 </aside>
             </section>
             <section>
+                <h2 style="color: var(--gray-color);">Measure the speed of AI</h2>
                 <div style="display: flex; justify-content: center; align-items: center;">
                     <svg width="1920" height="1080" viewBox="0 0 1920 1080">
                         <!-- Axes -->
-                        <line x1="960" y1="80" x2="960" y2="1000" stroke="var(--r-main-color)" stroke-width="6" />
+                        <line x1="960" y1="80" x2="960" y2="900" stroke="var(--r-main-color)" stroke-width="6" />
                         <line x1="80" y1="540" x2="1840" y2="540" stroke="var(--r-main-color)" stroke-width="6" />
                         <!-- Axis End Labels -->
                         <text x="960" y="50" text-anchor="middle" font-size="48"
                             fill="var(--r-main-color)">Qualitative</text>
-                        <text x="960" y="1060" text-anchor="middle" font-size="48"
+                        <text x="960" y="960" text-anchor="middle" font-size="48"
                             fill="var(--r-main-color)">Quantitative</text>
                         <text x="40" y="600" text-anchor="start" font-size="48"
                             fill="var(--r-main-color)">Single-Modal</text>
@@ -1013,7 +1047,30 @@
                     </svg>
                 </div>
                 <aside class="notes">
-                    Can we just see what's here.
+                    We can put these metrics into 4 quadrants based on two axes.
+                    The x-axis is single-modal to multi-modal.
+                    The y-axis is qualitative to quantitative.
+
+                    The tokens per second metric is in the bottom-left quadrant.
+                    It is single-modal because it only works with text today.
+                    It is quantitative because it only measures the number of tokens.
+
+                    The intelligence goodput metric is in the top-left quadrant.
+                    It is still single-modal because it only works with text today.
+                    However, it is qualitative because it measures the intelligence in the output.
+
+                    The top-right quadrant is where we want to be.
+                    A speed metric that works with multi-modal inputs and outputs, and also measures the intelligence
+                    in the output.
+                    So, is it possible to make intelligence goodput work with multi-modal?
+
+                    As long as we have benchmark datasets for multi-modal tasks, it is possible.
+                    For example, a benchmark dataset to evaluate the intelligence of the image generator.
+                    It does not exist today. And I highly doubt if it will ever be created.
+
+                    So, may be we should try to explore what is here in the bottom-right quadrant,
+                    which is a speed metric that works with multi-modal, but only measures the quantity of the output.
+                    Maybe we can find something interesting there.
                 </aside>
             </section>
             <section>
@@ -1025,19 +1082,20 @@
                 </aside>
             </section>
             <section>
-                <h1>
-                    KiloBytes per Second (KB/s)
+                <h1 class="r-fit-text">
+                    KiloBytes per Second<br>(KB/s)
                 </h1>
                 <aside class="notes">
-                    Method 3: Raw output bits measured in KiloBytes per second.
+                    It measures the raw output bits measured in KiloBytes per second.
                     No matter it is text, image, or video, they can be measured in number of bytes,
                     and divided by the time for the AI model to produce them.
                     It is super simple and extremely easy to measure.
-                    While the problem is also obvious.
-                    It is not measuring usefulness, but only the raw output bits.
 
-                    So, it is only applicable to the best models like ChatGPT and Gemini.
-                    And, we have to trust their outputs to be mostly useful.
+                    Again, I know it is hard to believe such naive solution is from someone with a PhD degree.
+                    But it does tell us something about our serving technology and our way to interact with AI.
+
+                    With this metric we are able to map all the models, no matter it is text, image, or video
+                    generation, to the same axis, KB/s.
                 </aside>
             </section>
             <section>
@@ -1358,7 +1416,7 @@
                 <h2 style="color: var(--gray-color);">Limitations</h2>
                 <div class="centered">
                     <div style="text-align: left;">
-                        <h1>1. The approximations</h1>
+                        <h1>1. The metrics are too simple</h1>
                         <h1 class="fragment">2. The doubling period</h1>
                         <h1 class="fragment">3. The growth plateau</h1>
                     </div>
