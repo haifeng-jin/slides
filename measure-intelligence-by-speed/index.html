@@ -802,6 +802,82 @@
                 </aside>
             </section>
             <section>
+                <div class="centered">
+                    <table style="font-size: 1em; width: 100%; border-collapse: collapse; font-size: 48px;">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left">Models</th>
+                                <th style="text-align:right">Intelligence</th>
+                                <th style="text-align:right">Speed</th>
+                                <th style="text-align:right">Verbosity</th>
+                                <th style="text-align:right">Intelligence<br>Goodput</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left">Grok 4 Fast</td>
+                                <td style="text-align:right">60</td>
+                                <td style="text-align:right">257</td>
+                                <td style="text-align:right">60.5M</td>
+                                <td style="text-align:right">254.88</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left">GPT-5 Medium</td>
+                                <td style="text-align:right">66</td>
+                                <td style="text-align:right">138</td>
+                                <td style="text-align:right">44.9M</td>
+                                <td style="text-align:right">202.85</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left">Gemini 2.5 Flash</td>
+                                <td style="text-align:right">54</td>
+                                <td style="text-align:right">262</td>
+                                <td style="text-align:right">71M</td>
+                                <td style="text-align:right">199.27</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left">GPT-5 High</td>
+                                <td style="text-align:right">68</td>
+                                <td style="text-align:right">125</td>
+                                <td style="text-align:right">85M</td>
+                                <td style="text-align:right">100.00</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left">Gemini 2.5 Pro</td>
+                                <td style="text-align:right">60</td>
+                                <td style="text-align:right">156</td>
+                                <td style="text-align:right">101M</td>
+                                <td style="text-align:right">92.67</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left">Claude 4.5 Sonnet</td>
+                                <td style="text-align:right">63</td>
+                                <td style="text-align:right">60</td>
+                                <td style="text-align:right">41.2M</td>
+                                <td style="text-align:right">91.75</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left">Grok 4</td>
+                                <td style="text-align:right">65</td>
+                                <td style="text-align:right">35</td>
+                                <td style="text-align:right">121.6M</td>
+                                <td style="text-align:right">18.71</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <aside class="notes">
+                    Here are some experimental results of the best models available.
+                    The intelligence scores are similar.
+                    So, what matters here is mainly TPS and verbosity.
+
+                    They can be put into 3 groups:
+                    The 200 club ...
+                    The 100 club ...
+                    The be low 20 club ... in contrast with Grok 4 fast on the top.
+                </aside>
+            </section>
+            <section>
                 <h2 class="r-fit-text">
                     Reduce Verbosity
                 </h2>
@@ -809,63 +885,6 @@
                     An important feature of this metric is that it reduces verbosity.
                     If the model builders keeps this metric in mind, and know that they need to optimize for it,
                     the verbosity of their models will decrease.
-                </aside>
-            </section>
-            <section>
-                <div class="centered">
-                    <table style="font-size: 1em; width: 100%; border-collapse: collapse;">
-                        <thead>
-                            <tr>
-                                <th>Benchmark</th>
-                                <th>Gemini 2.5 Pro</th>
-                                <th>OpenAI o3 </th>
-                                <th>OpenAI o4-mini </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>MMLU</b></td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                            </tr>
-                            <tr>
-                                <td><b>GPQA</b></td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                            </tr>
-                            <tr>
-                                <td><b>MATH</b></td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                            </tr>
-                            <tr>
-                                <td><b>AIME</b></td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                            </tr>
-                            <tr>
-                                <td><b>SWE-bench</b></td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                                <td>?% in ?s</td>
-                            </tr>
-                            <tr>
-                                <td><b>Intelligence Goodput</b></td>
-                                <td>?</td>
-                                <td>?</td>
-                                <td>?</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <aside class="notes">
-                    Ideally, I should have some experimental results that looks like this.
-                    However, this is independent research. I could not do it by myself,
-                    which also expose the limitations of this metric.
                 </aside>
             </section>
             <section>
@@ -879,11 +898,18 @@
                         <h1>
                             2. Expensive to run
                         </h1>
+                        <h1>
+                            3. Ignored tokens
+                        </h1>
                     </div>
                 </div>
                 <aside class="notes">
                     the main problem of this approach is that it is pretty hard to do.
                     You have to have all the benchmark datasets at hand and the money to pay for all the API calls.
+                    Third, tokens wasted on incorrect answers are ignored. This characteristic of intelligence goodput
+                    as a metric may bias results in favor of more intelligent models, since less intelligent models
+                    waste many tokens while producing incorrect answers that
+                    contribute nothing to the final score.
                 </aside>
             </section>
             <section>
