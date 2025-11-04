@@ -714,6 +714,30 @@
                 </aside>
             </section>
             <section>
+                <div class="centered" style="height: 1080px;">
+                    <div class="img-overlay-container">
+                        <img class="r-fit-text invert-img" src="img/model_verbosity.svg" alt="Intelligence">
+                        <div class="fragment fade-in" data-fragment-index="1">
+                            <svg viewBox="0 0 1920 1080">
+                                <rect class="blink-fade" x="800" y="115" width="130" height="130" fill="none"
+                                    stroke="var(--r-main-color)" stroke-width="2" />
+                            </svg>
+                            <svg viewBox="0 0 1920 1080">
+                                <rect class="blink-fade" x="1740" y="840" width="130" height="130" fill="none"
+                                    stroke="var(--r-main-color)" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="centered" style="height: 1080px;">
+                    <div class="img-overlay-container">
+                        <img class="r-fit-text invert-img" src="img/model_time.svg" alt="Intelligence">
+                    </div>
+                </div>
+            </section>
+            <section>
                 <h2 class="r-fit-text">A New Metric</h2>
                 <aside class="notes">
                     To summarize, we need a new speed metric that tells us more about the actual intelligence portion in
@@ -803,68 +827,89 @@
             </section>
             <section>
                 <div class="centered">
-                    <table style="font-size: 1em; width: 100%; border-collapse: collapse; font-size: 48px;">
-                        <thead>
-                            <tr>
-                                <th style="text-align:left">Models</th>
-                                <th style="text-align:right">Intelligence</th>
-                                <th style="text-align:right">Speed</th>
-                                <th style="text-align:right">Verbosity</th>
-                                <th style="text-align:right">Intelligence<br>Goodput</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="text-align:left">Grok 4 Fast</td>
-                                <td style="text-align:right">60</td>
-                                <td style="text-align:right">257</td>
-                                <td style="text-align:right">60.5M</td>
-                                <td style="text-align:right">254.88</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:left">GPT-5 Medium</td>
-                                <td style="text-align:right">66</td>
-                                <td style="text-align:right">138</td>
-                                <td style="text-align:right">44.9M</td>
-                                <td style="text-align:right">202.85</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:left">Gemini 2.5 Flash</td>
-                                <td style="text-align:right">54</td>
-                                <td style="text-align:right">262</td>
-                                <td style="text-align:right">71M</td>
-                                <td style="text-align:right">199.27</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:left">GPT-5 High</td>
-                                <td style="text-align:right">68</td>
-                                <td style="text-align:right">125</td>
-                                <td style="text-align:right">85M</td>
-                                <td style="text-align:right">100.00</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:left">Gemini 2.5 Pro</td>
-                                <td style="text-align:right">60</td>
-                                <td style="text-align:right">156</td>
-                                <td style="text-align:right">101M</td>
-                                <td style="text-align:right">92.67</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:left">Claude 4.5 Sonnet</td>
-                                <td style="text-align:right">63</td>
-                                <td style="text-align:right">60</td>
-                                <td style="text-align:right">41.2M</td>
-                                <td style="text-align:right">91.75</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:left">Grok 4</td>
-                                <td style="text-align:right">65</td>
-                                <td style="text-align:right">35</td>
-                                <td style="text-align:right">121.6M</td>
-                                <td style="text-align:right">18.71</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div style="position: relative;">
+                        <div class="fragment fade-in" data-fragment-index="1">
+                            <div class="fragment fade-out" data-fragment-index="2">
+                                <svg viewBox="0 0 1920 1080"
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                                    <rect class="blink-fade" x="1080" y="210" width="1000" height="135" fill="none"
+                                        stroke="var(--r-main-color)" stroke-width="2" />
+                                </svg>
+                                <svg viewBox="0 0 1920 1080"
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                                    <rect class="blink-fade" x="1080" y="705" width="1000" height="135" fill="none"
+                                        stroke="var(--r-main-color)" stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="fragment fade-in" data-fragment-index="2">
+                            <svg viewBox="0 0 1920 1080"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                                <rect class="blink-fade" x="1080" y="580" width="1000" height="135" fill="none"
+                                    stroke="var(--r-main-color)" stroke-width="2" />
+                            </svg>
+                            <svg viewBox="0 0 1920 1080"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                                <rect class="blink-fade" x="1080" y="825" width="1000" height="135" fill="none"
+                                    stroke="var(--r-main-color)" stroke-width="2" />
+                            </svg>
+                        </div>
+
+                        <table style="font-size: 1em; width: 100%; border-collapse: collapse; font-size: 48px;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left">Models</th>
+                                    <th style="text-align:right">Intelligence</th>
+                                    <th style="text-align:right">Time</th>
+                                    <th style="text-align:right">Intelligence<br>Goodput</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:left">Grok 4 Fast</td>
+                                    <td style="text-align:right">60</td>
+                                    <td style="text-align:right">2.7d</td>
+                                    <td style="text-align:right">254.88</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">GPT-5 Medium</td>
+                                    <td style="text-align:right">66</td>
+                                    <td style="text-align:right">3.8d</td>
+                                    <td style="text-align:right">202.85</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Gemini 2.5 Flash</td>
+                                    <td style="text-align:right">54</td>
+                                    <td style="text-align:right">3.1d</td>
+                                    <td style="text-align:right">199.27</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">GPT-5 High</td>
+                                    <td style="text-align:right">68</td>
+                                    <td style="text-align:right">7.9d</td>
+                                    <td style="text-align:right">100.00</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Gemini 2.5 Pro</td>
+                                    <td style="text-align:right">60</td>
+                                    <td style="text-align:right">7.5d</td>
+                                    <td style="text-align:right">92.67</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Claude 4.5 Sonnet</td>
+                                    <td style="text-align:right">63</td>
+                                    <td style="text-align:right">7.9d</td>
+                                    <td style="text-align:right">91.75</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Grok 4</td>
+                                    <td style="text-align:right">65</td>
+                                    <td style="text-align:right">40.2d</td>
+                                    <td style="text-align:right">18.71</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <aside class="notes">
                     Here are some experimental results of the best models available.
