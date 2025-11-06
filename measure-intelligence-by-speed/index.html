@@ -711,6 +711,8 @@
                     To do the same task, different models may use different number of tokens.
                     So, how long does this AI service take to finish my task?
                     The tokens per second metric can no longer answer that.
+
+                    Let's see if the actual data matches these claims.
                 </aside>
             </section>
             <section>
@@ -729,6 +731,36 @@
                         </div>
                     </div>
                 </div>
+                <aside class="notes">
+                    This figure shows the number of tokens used by each model to run through all the benchmark datasets.
+                    The variance is pretty high.
+                    The highest is almost 3x the lowest.
+                    So, models indeed use different number of tokens to finish the same tasks.
+                    120m tokens does give Grok 4 an advantage in solving harder problems.
+                </aside>
+            </section>
+            <section>
+                <div class="centered" style="height: 1080px;">
+                    <div class="img-overlay-container">
+                        <img class="r-fit-text invert-img" src="img/model_time_days.svg" alt="Intelligence">
+                        <div class="fragment fade-in" data-fragment-index="1">
+                            <svg viewBox="0 0 1920 1080">
+                                <rect class="blink-fade" x="420" y="115" width="130" height="130" fill="none"
+                                    stroke="var(--r-main-color)" stroke-width="2" />
+                            </svg>
+                            <svg viewBox="0 0 1920 1080">
+                                <rect class="blink-fade" x="1740" y="840" width="130" height="130" fill="none"
+                                    stroke="var(--r-main-color)" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    If you look at the actual time taken by each model to finish all the benchmark datasets,
+                    it varies even more.
+                    The highest is almost 15x the lowest.
+                    So, these benchmarks does not fairly measure intelligence.
+                </aside>
             </section>
             <section>
                 <div class="centered" style="height: 1080px;">
@@ -736,11 +768,18 @@
                         <img class="r-fit-text invert-img" src="img/model_time.svg" alt="Intelligence">
                     </div>
                 </div>
+                <aside class="notes">
+                    Then, let's look at if the tokens per second metric can measure the time taken to finish all the
+                    benchmark datasets.
+                    The correlation is pretty low.
+                    So, token speed is indeed decoupled from task speed.
+                </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">A New Metric</h2>
                 <aside class="notes">
-                    To summarize, we need a new speed metric that tells us more about the actual intelligence portion in
+                    To summarize, we need a new speed metric that tells us more about the actual intelligence
+                    portion in
                     the output of AI instead of the pure number of tokens.
                 </aside>
             </section>
@@ -790,7 +829,8 @@
                 <h1 class="fragment">Intelligence:<br>Delegate to benchmarks</h1>
                 <aside class="notes">
                     First, the time we are talking about here is wall time.
-                    because what we care about is how long it takes for AI to finish a real-world task instead of how
+                    because what we care about is how long it takes for AI to finish a real-world task instead of
+                    how
                     the compute happends behind the APIs.
                     Second, how do we measure the amount of intelligence produced by AI.
                     This is pretty subjective to define and pretty challenging to accurately measure it.
@@ -813,7 +853,8 @@
                     In this equation,
                     G is the intelligence goodput.
                     We run it through n benchmarks, each benchmark has a weight w. and the score achieved is s.
-                    We take a weighted average of all the benchmarks and divide it by the total time elapsed during the
+                    We take a weighted average of all the benchmarks and divide it by the total time elapsed during
+                    the
                     exams, which is the t here.
                     I know this is too simple.
                     Hardly anyone would believe this is from someone with a PhD degree.
@@ -913,13 +954,10 @@
                 </div>
                 <aside class="notes">
                     Here are some experimental results of the best models available.
-                    The intelligence scores are similar.
-                    So, what matters here is mainly TPS and verbosity.
-
-                    They can be put into 3 groups:
-                    The 200 club ...
-                    The 100 club ...
-                    The be low 20 club ... in contrast with Grok 4 fast on the top.
+                    When the intelligence indices are similar, the intelligence goodput can distinguish the faster model
+                    from the slower ones.
+                    When the time taken are similar, the intelligence goodput can distinguish the more intelligent model
+                    from the less intelligent ones.
                 </aside>
             </section>
             <section>
@@ -951,7 +989,8 @@
                 <aside class="notes">
                     the main problem of this approach is that it is pretty hard to do.
                     You have to have all the benchmark datasets at hand and the money to pay for all the API calls.
-                    Third, tokens wasted on incorrect answers are ignored. This characteristic of intelligence goodput
+                    Third, tokens wasted on incorrect answers are ignored. This characteristic of intelligence
+                    goodput
                     as a metric may bias results in favor of more intelligent models, since less intelligent models
                     waste many tokens while producing incorrect answers that
                     contribute nothing to the final score.
@@ -973,7 +1012,8 @@
                 <h2 style="color: var(--gray-color);">A normal day in</h2>
                 <h2 class="r-fit-text">1990</h2>
                 <aside class="notes">
-                    Imagine a normal day in the year of 1990, John, a programmer at the time, booted up his PC with the
+                    Imagine a normal day in the year of 1990, John, a programmer at the time, booted up his PC with
+                    the
                     MS-DOS operating system installed.
                 </aside>
             </section>
@@ -1074,7 +1114,8 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    The future of AI is multimodal: text, audio, images, video, and whatever modality following that.
+                    The future of AI is multimodal: text, audio, images, video, and whatever modality following
+                    that.
                     It could be real-time gaming like Genie 3. Or VR/AR graphics generated in real-time by AI.
                     Our speed metric, tokens per second, is obviously not prepared for that future.
                 </aside>
@@ -1131,7 +1172,8 @@
                     However, it is qualitative because it measures the intelligence in the output.
 
                     The top-right quadrant is where we want to be.
-                    A speed metric that works with multi-modal inputs and outputs, and also measures the intelligence
+                    A speed metric that works with multi-modal inputs and outputs, and also measures the
+                    intelligence
                     in the output.
                     So, is it possible to make intelligence goodput work with multi-modal?
 
@@ -1140,7 +1182,8 @@
                     It does not exist today. And I highly doubt if it will ever be created.
 
                     So, may be we should try to explore what is here in the bottom-right quadrant,
-                    which is a speed metric that works with multi-modal, but only measures the quantity of the output.
+                    which is a speed metric that works with multi-modal, but only measures the quantity of the
+                    output.
                     Maybe we can find something interesting there.
                 </aside>
             </section>
