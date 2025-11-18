@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/fragment.css">
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/onedark.css">
+    <link rel="stylesheet" href="../css/webcam.css">
 
     <style>
         .katex-display {
@@ -131,49 +132,6 @@
             vertical-align: middle;
             background: #b6ffb6;
             animation: blinkFade 1.2s infinite;
-        }
-
-        /* Webcam styles */
-        .webcam-container {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 300px;
-            height: 225px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border: 3px solid #333;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .webcam-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .webcam-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scaleX(-1);
-            /* Mirror effect */
-        }
-
-        .webcam-container.hidden {
-            display: none;
-        }
-
-        .webcam-error {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #333;
-            color: #999;
-            font-size: 14px;
-            text-align: center;
-            padding: 20px;
         }
     </style>
 </head>
@@ -1679,6 +1637,7 @@
     <script src="../js/notes.min.js"></script>
     <script src="../js/highlight.min.js"></script>
     <script src="../js/math.min.js"></script>
+    <script src="../js/webcam.js"></script>
     <script>
         // More info about initialization & config:
         // - https://revealjs.com/initialization/
@@ -1711,62 +1670,6 @@
 
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX]
-        });
-
-        // Webcam functionality
-        let webcamStream = null;
-        let webcamInitialized = false;
-        let webcamVisible = false;
-
-        async function initWebcam() {
-            if (webcamInitialized) return;
-
-            const video = document.getElementById('webcamVideo');
-            const error = document.getElementById('webcamError');
-
-            try {
-                webcamStream = await navigator.mediaDevices.getUserMedia({
-                    video: {
-                        width: { ideal: 640 },
-                        height: { ideal: 480 },
-                        facingMode: 'user'
-                    },
-                    audio: false
-                });
-                video.srcObject = webcamStream;
-                webcamInitialized = true;
-                error.style.display = 'none';
-                video.style.display = 'block';
-            } catch (err) {
-                console.error('Error accessing webcam:', err);
-                error.style.display = 'flex';
-                video.style.display = 'none';
-            }
-        }
-
-        function toggleWebcamVisibility() {
-            const container = document.getElementById('webcamContainer');
-
-            if (webcamVisible) {
-                // Hide webcam
-                container.classList.add('hidden');
-                webcamVisible = false;
-            } else {
-                // Show webcam (initialize if needed)
-                if (!webcamInitialized) {
-                    initWebcam();
-                }
-                container.classList.remove('hidden');
-                webcamVisible = true;
-            }
-        }
-
-        // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'c' && e.ctrlKey) {
-                e.preventDefault();
-                toggleWebcamVisibility();
-            }
         });
 
         var current_slide = 0;
